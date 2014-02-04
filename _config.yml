@@ -1,5 +1,10 @@
 name: Karel Vuong
+author: Karel Vuong
+description: Personal Website
+
+#
 lsi: false
+permalink: none
 pygments: true
 safe: true
 
