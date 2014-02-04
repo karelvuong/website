@@ -33,73 +33,36 @@ body {
 /* Home
 /*
 /*****************************************************************************/
-.posts {
+.list {
   list-style-type: none;
-  margin-bottom: 2em;
-}
 
-.posts li {
-  line-height: 1.75em;
-}
+  li {
+    clear: both;
 
-.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
+    span {
+      color: #aaa;
+      float: left;
+      text-transform: uppercase;
+      width: 100px;
+      font-family: Monaco, "Courier New", monospace;
+      font-size: 12px;
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
+      &:after {
+        content: '\2014';
+        margin: 0 5px;
+      }
+    }
 
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
-}
-
-.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.title a {
-  color: #a00;
-}
-
-.title a:hover {
-  color: #000;
-}
-
-.header a.extra:hover {
-  color: #000;
-}
-
-.meta {
-  color: #aaa;
-}
-
-.footer .contact {
-  float: left;
-  margin-right: 3em;
-}
-
-.footer .contact a {
-  color: #8085C1;
-}
-
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.footer .rss img {
-  border: 0;
+    a {
+      display: block;
+      margin: 0 0 0 100px;
+      opacity: 0.75;
+      overflow: hidden;
+      text-decoration: underline;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 }
 
 /*****************************************************************************/
@@ -180,9 +143,9 @@ body {
 
 
 
-
-/* ----------------------------------------- */
-
+/* -------------------------------------------
+   GLOBAL
+ * ---------------------------------------- */
 body {
     font: {
         family: $font-helvetica;
@@ -200,178 +163,50 @@ body {
 /* -------------------------------------------
    TYPOGRAPHY
  * ---------------------------------------- */
-
 a {
+    color: rgba(#000000, 0.75);
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
 
     @include transition(all 0.1s ease-in-out);
 
-    &.heading {
-        display: inline-block;
-        font: {
-            size: $font-size-h1;
-            weight: 700;
-        }
-        margin-bottom: 0.5em;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: none;
-        }
-
-        &:hover::after {
-            content: ' \f064';
-            font: {
-                family: 'FontAwesome';
-                size: 12px;
-            }
-        }
-    }
-
-    &.post-edit-link {
-        font: {
-            size: 12px;
-            weight: 700;
-        }
-        position: absolute;
-        right: 1em;
-        bottom: 1em;
-        text-transform: uppercase;
-    }
+    &:hover { color: #000000; }
 }
 
-h1 {
-    font: {
-        size: $font-size-h1;
-        weight: 700;
-    }
-}
+h1 { font-size: $font-size-h1; }
 h2 { font-size: $font-size-h2; }
 h3 { font-size: $font-size-h3; }
 
 /* -------------------------------------------
    HEADER
  * ---------------------------------------- */
-
 header {
     background: white;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
-
-    @include transition(0.25s, ease-in-out);
 
     a {
         font-size: $font-size-h1;
         font-weight: 700;
-        letter-spacing: -1px;
         line-height: 50px;
         margin-right: 10px;
     }
 
     nav {
-        border-bottom: 4px solid #EEE;
+        border-bottom: 1px solid #EEE;
         position: relative;
         @include container($total-columns, $break);
     }
 
     .brand {
-        color: #E54A4B;
-    }
-
-    .links {
-        background: white;
+        background: url('../assets/images/logo.png') no-repeat center center;
+        background-size: 50px 50px;
+        display: inline-block;
         height: 50px;
-        opacity: 0;
-        position: absolute;
-        z-index: -1;
-
-        @include transition-delay(0s, 1s);
-        @include transition(opacity 0.75s, z-index 0s 1s);
-
-        &.active {
-            opacity: 1;
-            z-index: 2;
-
-            @include transition(0.5s);
-        }
-    }
-
-    .menu {
-        border: none;
-        cursor: pointer;
-        display: block;
-        height: 50px;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        right: 2px;
+        margin: 20px 0;
+        vertical-align: middle;
         width: 50px;
-        z-index: 3;
-
-        @include transition(0.25s);
-
-        @media (min-width: 59em){
-            opacity: 0;
-            z-index: -1;
-        }
-
-        &.active .transition .line {
-            &.top {
-                &.right { @include transform(translate(-2px, -1px) rotate(-45deg) scaleX(1.25)); }
-                &.left { @include transform(translate(2px, -1px) rotate(45deg) scaleX(1.25)); }
-            }
-
-            &.mid {
-                @include transform(scaleX(0));
-            }
-
-            &.bottom {
-                &.right { @include transform(translate(-2px, 2px) rotate(45deg) scaleX(1.25)); }
-                &.left { @include transform(translate(2px, 2px) rotate(-45deg) scaleX(1.25)); }
-            }
-        }
-
-        .transition {
-            width: 18px;
-            height: 14px;
-            margin: 18px 16px;
-            position: relative;
-
-            .line {
-                background: black;
-                height: 2px;
-                position: absolute;
-
-                @include transition(0.25s);
-
-                &.top {
-                    top: 0;
-                    width: 50%;
-
-                    &.right { @include transform-origins(100%, 0%); }
-                    &.left { @include transform-origins(0%, 0%); }
-                }
-
-                &.mid {
-                    width: 100%;
-                    top: 6px;
-                }
-
-                &.bottom {
-                    bottom: 0;
-                    width: 50%;
-
-                    &.right { @include transform-origins(100%, 100%); }
-                    &.left { @include transform-origins(0%, 100%); }
-                }
-
-                &.left { left: 0; }
-                &.right { right: 0; }
-            }
-        }
     }
 }
 
@@ -379,62 +214,56 @@ header {
    SIDEBAR
  * ---------------------------------------- */
 .sidebar {
-    background: white;
-    font: {
-        size: 20px;
-        weight: 700;
-    }
-    height: 100%;
-    opacity: 0;
-    position: fixed;
-    top: 54px;
-    left: 0;
-    width: 100%;
-    z-index: -1;
+  background: white;
+  font: {
+    size: 20px;
+    weight: 700;
+  }
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 
-    &.active {
-        opacity: 1;
-        z-index: 1;
+  &.active {
+    opacity: 1;
+    z-index: 1;
 
-        @include transition(background 0.25s, opacity 0.25s);
-    }
+    @include transition(background 0.25s, opacity 0.25s);
+  }
 
-    @media (min-width: 59em){
-        background: transparent;
-        font-size: 16px;
-        height: auto;
-        opacity: 1;
-        position: static;
-        width: auto;
-    }
+  @media (min-width: 59em){
+    background: transparent;
+    font-size: 16px;
+    height: auto;
+    opacity: 1;
+    position: static;
+    width: auto;
+  }
 
-    ul {
-        margin: 2em;
+  ul {
+    margin: 0em;
+
+    li {
+      text-align: center;
+
+      @media (min-width: 59em){
+        display: block;
+        margin: 0;
+        text-align: left;
+      }
+
+      &.sub a {
+        font-size: 14px;
 
         @media (min-width: 59em){
-            margin: 0;
+          margin-left: 10px;
         }
-
-        li {
-            margin: 0.5em 0;
-            text-align: center;
-
-            @media (min-width: 59em){
-                display: block;
-                margin-top: 0;
-                margin-bottom: 0.25em;
-                text-align: left;
-            }
-
-            &.sub a {
-                font-size: 14px;
-
-                @media (min-width: 59em){
-                    margin-left: 10px;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 
@@ -464,91 +293,34 @@ footer {
     .name {
         font-weight: 700;
     }
+
+    .contact {
+      float: left;
+      margin-right: 3em;
+
+        a {
+          color: #8085C1;
+        }
+    }
+
+    .rss {
+        margin-top: 1.1em;
+        margin-right: -.2em;
+        float: right;
+
+        img {
+          border: 0;
+        }
+    }
 }
 
 /* -------------------------------------------
    CONTENT
  * ---------------------------------------- */
 
-section {
-    margin-bottom: 2em;
-    padding-bottom: 1em;
-
-    &:last-child {
-        margin-bottom: 1em;
-    }
-}
-
-article {
-    clear: both;
-
-    &.blog {
-        .date, .title {
-            font-size: 20px;
-            width: auto;
-        }
-
-        .date {
-            margin-right: 5px;
-        }
-
-        .title {
-            display: inline-block;
-            font-weight: 700;
-            line-height: 1.6em;
-            margin: 0;
-            overflow: visible;
-            text-decoration: none;
-            text-overflow: clip;
-            white-space: normal;
-        }
-    }
-
-    a {
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    .date {
-        display: inline;
-        float: left;
-        line-height: 1.5em;
-        text-transform: uppercase;
-        width: 100px;
-
-        @include monospace;
-
-        &::after {
-            color: black;
-            content: ' \2014 ';
-            font-family: $font-helvetica;
-        }
-    }
-
-    .title {
-        display: block;
-        line-height: 1.2em;
-        margin: 0 0 0 100px;
-        opacity: 0.75;
-        overflow: hidden;
-        text-decoration: underline;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .site {
-        font-size: 10px;
-        text-transform: uppercase;
-    }
-}
-
 // Container
 .main {
-    margin-top: 54px;
-    padding: 1em;
-    position: relative;
+    padding: 110px 20px 20px 20px;
 
     @include container($total-columns, $break);
 }
