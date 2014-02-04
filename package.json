@@ -14,9 +14,6 @@
   "bugs": {
     "url": "https://github.com/karelvuong/karelvuong.github.io/issues"
   },
-  "engines": {
-    "node": ">= 0.10.0"
-  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",
