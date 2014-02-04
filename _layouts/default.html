@@ -9,9 +9,9 @@
     <meta name="description" content="">
 
     <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Karel Vuong">
+    <meta property="og:title" content="{{ site.author }}">
     <meta property="og:url" content="http://karel.ca">
-    <meta property="og:site_name" content="Karel Vuong">
+    <meta property="og:site_name" content="{{ site.name }}">
     <meta property="og:image" content="fb.png">
     <meta property="og:type" content="blog">
 
@@ -21,56 +21,20 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a class="brand" href="/">Karel Vuong</a>
-        <div class="menu">
-          <div class="transition">
-              <div class="line top left"></div>
-              <div class="line top right"></div>
-              <div class="line mid"></div>
-              <div class="line bottom left"></div>
-              <div class="line bottom right"></div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="main">
+    {% include header.html %}
 
-      <aside class="sidebar" role="navigation">
-        <ul>
-          <li><a class="blog " href="/blog/">Blog</a></li>
-          <li><a class="news " href="/news/">News</a></li>
-          <li><a class="work " href="/work/">Work</a></li>
-          <li class="sub"><a class="labs " href="/labs/">Labs</a></li>
-          <li class="sub"><a class="infographics " href="/infographics/">Infographics</a></li>
-        </ul>
-      </aside>
+    <div class="main">
+      {% include sidebar_left.html %}
 
       <div class="content" role="main">
         <div class="inner">
           {{ content }}
         </div>
-        <aside class="right" role="navigation">
 
-        </aside>
+        {% include sidebar_right.html %}
       </div>
     </div>
 
-    <footer>
-      <div class="contact">
-        <p>
-          Karel Vuong<br />
-          Shiny<br />
-          karelvuongg@gmail.com
-        </p>
-      </div>
-      <div class="contact">
-        <p>
-          <a href="https://github.com/yourusername">github.com/karelvuong</a><br />
-          <a href="https://twitter.com/yourusername">twitter.com/karelvuong</a><br />
-        </p>
-      </div>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>
