@@ -1,12 +1,19 @@
 ---
 layout: default
-title: Your New Jekyll Site
 ---
 
-<ul class="posts">
+<ul class="list posts">
 {% for post in site.posts %}
   <li>
-  	<span>{{ post.date | date_to_string }}</span> &raquo;
+  	<span>{{ post.date | date_to_string }}</span>
   	<a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+<ul class="list news">
+{% for article in site.data.news %}
+  <li>
+    <span>{{ article.date | date_to_string }}</span>
+    <a href="{{ article.url }}">{{ article.title }}</a></li>
 {% endfor %}
 </ul>
