@@ -1,0 +1,37 @@
+/* -------------------------------------------
+ * VARIABLES
+ * ---------------------------------------- */
+$bg-gray: #F2F2F2;
+
+$font-helvetica: "Helvetica-Neue", Helvetica, Arial, sans-serif;
+$font-size-h1: 20px;
+$font-size-h2: 18px;
+$font-size-h3: 16px;
+$font-size-p: 14px;
+
+// Susy
+$total-columns  : 7;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+$break          : 12;
+
+/* -------------------------------------------
+ * MIXINS
+ * ---------------------------------------- */
+@mixin monospace {
+    font:
+    {
+        family: Monaco, "Courier New", monospace;
+        size: 12px;
+    }
+}
+
+@mixin transform-origins($top, $left){
+    -webkit-transform-origin: $top $left;
+    -moz-transform-origin: $top $left;
+    -ms-transform-origin: $top $left;
+    -o-transform-origin: $top $left;
+    transform-origin: $top $left;
+}

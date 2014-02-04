@@ -1,0 +1,28 @@
+{
+  "name": "karelvuong.github.io",
+  "description": "Personal Website",
+  "version": "0.0.1",
+  "homepage": "https://github.com/karelvuong/karelvuong.github.io",
+  "author": {
+    "name": "Karel Vuong",
+    "url": "http://karel.ca/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/karelvuong/karelvuong.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karelvuong/karelvuong.github.io/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-compass": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jekyll": "~0.4.1",
+    "grunt-concurrent": "~0.4.3"
+  }
+}
