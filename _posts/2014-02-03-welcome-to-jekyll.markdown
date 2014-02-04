@@ -1,8 +1,9 @@
 ---
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2014-02-03 19:12:35
-categories: jekyll update
+layout:         post
+title:          "Why Keep The Bloat?"
+date:           2014-02-03 19:12:35
+categories:     blog
+tags:           personal
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
