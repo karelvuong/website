@@ -41,6 +41,7 @@ module.exports = function(grunt) {
           tasks: ['jshint:gruntfile']
         },
         files: [
+          '_data/*.html',
           '_includes/*.html',
           '_layouts/*.html',
           '_posts/*.markdown',
