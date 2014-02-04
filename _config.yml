@@ -1,0 +1,7 @@
+name: Karel Vuong
+lsi: false
+pygments: true
+safe: true
+
+# UTF-8 & parse errors fix
+markdown: redcarpet
