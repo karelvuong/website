@@ -19,10 +19,10 @@ html {
     family: $font-helvetica;
     size: 10px;
   }
-  line-height: $line-height;
 }
 
 body {
+  line-height: $line-height;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
