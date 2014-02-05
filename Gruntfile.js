@@ -36,6 +36,9 @@ module.exports = function(grunt) {
         }
       },
       watch: {
+        options: {
+          interrupt: true,
+        },
         gruntfile: {
           files: '<%= jshint.gruntfile.src %>',
           tasks: ['jshint:gruntfile']
