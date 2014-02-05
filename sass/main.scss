@@ -5,164 +5,49 @@
 
 @import "partials/_base.scss";
 
-
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-  background-color: #FFF;
-  font: 12px Helvetica, Arial, sans-serif;
-  font-size: small;
-}
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.list {
-  list-style-type: none;
-
-  li {
-    clear: both;
-
-    span {
-      color: #aaa;
-      float: left;
-      text-transform: uppercase;
-      width: 100px;
-      font-family: Monaco, "Courier New", monospace;
-      font-size: 12px;
-
-      &:after {
-        content: '\2014';
-        margin: 0 5px;
-      }
-    }
-
-    a {
-      display: block;
-      margin: 0 0 0 100px;
-      opacity: 0.75;
-      overflow: hidden;
-      text-decoration: underline;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-}
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
-}
-
-.post ul, .post ol {
-  margin-left: 1.35em;
-}
-
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
-}
-
-.post pre code {
-  border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-.post pre.terminal code {
-  background-color: #333;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -------------------------------------------
    GLOBAL
  * ---------------------------------------- */
-body {
-    font: {
-        family: $font-helvetica;
-        size: $font-size-p;
-    }
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-}
 
 ::selection, ::-moz-selection {
   background: #000000;
   color: #fff;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: {
+    family: $font-helvetica;
+    size: 16px;
+    size: 1.6rem;
+  }
+  line-height: $line-height;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* -------------------------------------------
    TYPOGRAPHY
  * ---------------------------------------- */
+
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+
+p {
+  font-size: $font-size-p;
+  margin-bottom: 1.0rem;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.highlight {
+  margin-bottom: 1.0rem;
+}
+
 a {
     color: rgba(#000000, 0.75);
     text-decoration: none;
@@ -173,145 +58,80 @@ a {
     &:hover { color: #000000; }
 }
 
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-h3 { font-size: $font-size-h3; }
-
 /* -------------------------------------------
    HEADER
  * ---------------------------------------- */
-header {
-    background: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
+body > header {
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  nav {
+    border-bottom: 1px solid #EEE;
+    position: relative;
+
+    @include container($total-columns, $break);
+  }
+
+  .brand {
+    background: url('../assets/images/logo.png') no-repeat center center;
+    background-size: 50px 50px;
+    display: inline-block;
+    height: 50px;
+    margin: 20px 0;
+    vertical-align: middle;
+    width: 50px;
+  }
+}
+
+/* -------------------------------------------
+   FOOTER
+ * ---------------------------------------- */
+body > footer {
+  border-top: 1px solid #EFEFEF;
+  margin-bottom: 1.25em;
+  padding-top: 1.25em;
+
+  @include container($total-columns, $break);
+
+  p, a {
+    display: block;
+  }
+
+  p {
+    color: #777777;
+  }
+
+  .contact {
+    float: left;
+    margin-right: 2.0rem;
 
     a {
-        font-size: $font-size-h1;
-        font-weight: 700;
-        line-height: 50px;
-        margin-right: 10px;
+      color: #8085C1;
     }
-
-    nav {
-        border-bottom: 1px solid #EEE;
-        position: relative;
-        @include container($total-columns, $break);
-    }
-
-    .brand {
-        background: url('../assets/images/logo.png') no-repeat center center;
-        background-size: 50px 50px;
-        display: inline-block;
-        height: 50px;
-        margin: 20px 0;
-        vertical-align: middle;
-        width: 50px;
-    }
+  }
 }
 
 /* -------------------------------------------
    SIDEBAR
  * ---------------------------------------- */
 .sidebar {
-  background: white;
-  font: {
-    size: 20px;
-    weight: 700;
-  }
-  height: 100%;
-  opacity: 0;
-  position: fixed;
-  top: 54px;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-
-  &.active {
-    opacity: 1;
-    z-index: 1;
-
-    @include transition(background 0.25s, opacity 0.25s);
-  }
-
-  @media (min-width: 59em){
-    background: transparent;
-    font-size: 16px;
-    height: auto;
-    opacity: 1;
-    position: static;
-    width: auto;
-  }
+  font-size: 1.4rem;
 
   ul {
     margin: 0em;
 
     li {
+      display: block;
+      margin: 0;
       text-align: center;
 
       @media (min-width: 59em){
-        display: block;
-        margin: 0;
         text-align: left;
-      }
-
-      &.sub a {
-        font-size: 14px;
-
-        @media (min-width: 59em){
-          margin-left: 10px;
-        }
       }
     }
   }
-}
-
-
-/* -------------------------------------------
-   FOOTER
- * ---------------------------------------- */
-footer {
-    border-top: 1px solid #EFEFEF;
-    margin-bottom: 1.25em;
-    padding-top: 1.25em;
-    @include container($total-columns, $break);
-
-    p, a {
-        color: #777777;
-        display: inline-block;
-        font: {
-            size: 12px;
-        }
-        margin-right: 1em;
-
-        @media (min-width: 59em){
-            display: block;
-            margin-right: 0;
-        }
-    }
-
-    .name {
-        font-weight: 700;
-    }
-
-    .contact {
-      float: left;
-      margin-right: 3em;
-
-        a {
-          color: #8085C1;
-        }
-    }
-
-    .rss {
-        margin-top: 1.1em;
-        margin-right: -.2em;
-        float: right;
-
-        img {
-          border: 0;
-        }
-    }
 }
 
 /* -------------------------------------------
@@ -320,13 +140,12 @@ footer {
 
 // Container
 .main {
-    padding: 110px 20px 20px 20px;
+    padding: 11.0rem 2.0rem 2.0rem 2.0rem;
 
     @include container($total-columns, $break);
 }
 
 // Layout
-
 @include at-breakpoint($break) {
     .sidebar {
         @include span-columns(2, $break);
@@ -345,8 +164,63 @@ footer {
     }
 }
 
-.content {
-    .wrapper {
-        margin-left: 2em;
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+.list {
+  font-size: $font-size-p;
+  list-style-type: none;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+
+  &:last-child {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    clear: both;
+
+    span {
+      float: left;
+      width: 100px;
+
+      @include date;
+
+      &:after {
+        content: '\2014';
+        margin: 0 5px;
+      }
     }
+
+    a {
+      display: block;
+      margin: 0 0 0 10.0rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Post
+/*
+/*****************************************************************************/
+article {
+  header {
+    margin-bottom: 1.0rem;
+    padding-bottom: 1.0rem;
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      @include date;
+    }
+  }
 }
