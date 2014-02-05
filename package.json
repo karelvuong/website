@@ -7,6 +7,9 @@
     "name": "Karel Vuong",
     "url": "http://karel.ca/"
   },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/karelvuong/karelvuong.github.io.git"
