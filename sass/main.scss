@@ -15,29 +15,55 @@
 }
 
 html {
-  font: {
-    family: $font-helvetica;
-    size: 10px;
-  }
+  font-size: 62.5%;
+  line-height: 1.5;
 }
 
 body {
-  line-height: $line-height;
+  font-family: 'Open Sans', Arial, sans-serif;
   position: relative;
   -webkit-font-smoothing: antialiased;
+}
+
+* {
+  font-size: $font-size-all;
 }
 
 /* -------------------------------------------
    TYPOGRAPHY
  * ---------------------------------------- */
 
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-h3 { font-size: $font-size-h3; }
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 1.0rem;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: 700;
+}
+h2 {
+  font-size: $font-size-h2;
+  font-weight: 600;
+}
+h3 {
+  font-size: $font-size-h3;
+  font-weight: 600;
+}
+h4 {
+  font-size: $font-size-h4;
+  font-weight: 600;
+}
+h5 {
+  font-size: $font-size-h5;
+  font-weight: 600;
+}
+h6 {
+  font-size: $font-size-h6;
+  font-weight: 600;
+}
 
 p {
-  font-size: $font-size-p;
-  margin-bottom: 1.0rem;
+  font-size: $font-size-all;
 
   &:last-child { margin-bottom: 0; }
 }
@@ -47,7 +73,7 @@ p {
 }
 
 a {
-    color: rgba(#000000, 0.75);
+    color: rgba(#000000, 0.8);
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
 
@@ -115,7 +141,6 @@ body > footer {
    SIDEBAR
  * ---------------------------------------- */
 .sidebar {
-  font-size: 1.4rem;
 
   ul {
     margin: 0em;
@@ -124,6 +149,11 @@ body > footer {
       display: block;
       margin: 0;
       text-align: center;
+
+      a {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
 
       @media (min-width: 59em){
         text-align: left;
@@ -168,7 +198,7 @@ body > footer {
 /*
 /*****************************************************************************/
 .list {
-  font-size: $font-size-p;
+  font-size: $font-size-all;
   list-style-type: none;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
@@ -214,11 +244,33 @@ article {
     padding-bottom: 1.0rem;
 
     h1 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
     }
 
     .meta {
       @include date;
+    }
+  }
+
+  article {
+    a { color: #8085C1; }
+
+    pre, code {
+      background: #FAFAFA;
+      border: 0.1rem solid #EEE;
+      border-radius: 0.4rem;
+      font-family: $font-monospace;
+    }
+
+    p {
+      line-height: 2.0rem;
+      code {
+        padding: 0.2rem;
+      }
+    }
+    pre {
+      font-size: 1.2rem;
+      padding: 1.0rem;
     }
   }
 }
