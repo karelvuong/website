@@ -1,7 +1,7 @@
 ---
 layout:         post
-title:          "Why Keep The Bloat?"
-date:           2014-02-03 19:12:35
+title:          "Lose The Bloat"
+date:           2014-02-04
 categories:     blog
 tags:           personal
 ---
