@@ -27,35 +27,13 @@ module.exports = function(grunt) {
         dist: {
           options: {
             banner: '<%= banner %>',
-            cssDir: 'css',
+            cssDir: 'assets/stylesheets',
             outputStyle: 'compressed',
             require: 'susy',
-            sassDir: 'sass',
-            specify: 'sass/main.scss'
+            sassDir: 'assets/sass',
+            specify: 'assets/sass/main.scss'
           }
         }
-      },
-      watch: {
-        options: {
-          interrupt: true,
-        },
-        gruntfile: {
-          files: '<%= jshint.gruntfile.src %>',
-          tasks: ['jshint:gruntfile']
-        },
-        files: [
-          '_data/*.html',
-          '_includes/*.html',
-          '_layouts/*.html',
-          '_posts/*.markdown',
-          '_config.yml',
-          'index.html'
-        ],
-        css: {
-          files: ['sass/*.scss', 'sass/*/*.scss'],
-          tasks: ['compass', 'jekyll:build']
-        },
-        tasks: ['jekyll:build']
       },
       jekyll: {
         build : {
@@ -68,18 +46,43 @@ module.exports = function(grunt) {
             serve: true
           }
         }
+      },
+      watch: {
+        options: {
+          interrupt: true,
+        },
+        gruntfile: {
+          files: '<%= jshint.gruntfile.src %>',
+          tasks: ['jshint:gruntfile']
+        },
+        css: {
+          files: ['sass/*.scss', 'sass/*/*.scss'],
+          tasks: ['compass', 'jekyll:build']
+        },
+        html: {
+          files: [
+            '_data/*.html',
+            '_includes/*.html',
+            '_layouts/*.html',
+            '_posts/*.markdown',
+            '_config.yml',
+            'index.html'
+          ],
+          tasks: ['jekyll:build']
+        }
       }
     }
   );
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['jekyll:serve']);
-  grunt.registerTask('dev', ['concurrent:target']);
+  grunt.registerTask('default', ['concurrent:target']);
+  grunt.registerTask('c', ['compass']);
+  grunt.registerTask('b', ['jekyll:build']);
 };
