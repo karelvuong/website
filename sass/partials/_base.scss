@@ -4,15 +4,17 @@
 $bg-gray: #F2F2F2;
 
 $font-helvetica: "Helvetica-Neue", Helvetica, Arial, sans-serif;
-$font-size-h1: 18px;
-$font-size-h2: 16px;
-$font-size-h3: 14px;
-$font-size-p: 14px;
+$font-size-h1: 2.0rem;
+$font-size-h2: 1.6rem;
+$font-size-h3: 1.4rem;
+$font-size-p: 1.2rem;
+
+$line-height: 1.2rem;
 
 // Susy
 $total-columns  : 7;
-$column-width   : 4em;
-$gutter-width   : 1em;
+$column-width   : 6.0rem;
+$gutter-width   : 1.0rem;
 $grid-padding   : $gutter-width;
 
 $break          : 12;
@@ -21,11 +23,17 @@ $break          : 12;
  * MIXINS
  * ---------------------------------------- */
 @mixin monospace {
-    font:
-    {
-        family: Monaco, "Courier New", monospace;
-        size: 12px;
-    }
+  font:
+  {
+    family: Monaco, "Courier New", monospace;
+  }
+}
+
+@mixin date {
+  color: #aaa;
+  text-transform: uppercase;
+
+  @include monospace();
 }
 
 @mixin transform-origins($top, $left){
