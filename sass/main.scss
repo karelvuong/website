@@ -15,15 +15,14 @@
 }
 
 html {
-  font-size: 62.5%;
+  font: {
+    family: $font-helvetica;
+    size: 10px;
+  }
+  line-height: $line-height;
 }
 
 body {
-  font: {
-    family: $font-helvetica;
-    size: 16px;
-  }
-  line-height: $line-height;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
