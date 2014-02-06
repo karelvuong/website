@@ -1,0 +1,13 @@
+---
+layout: default
+title: Work
+---
+
+<h6>Note: these links will bring you out of this site.</h6>
+<ul class="list news">
+{% for article in site.data.news %}
+  <li>
+    <span>{{ article.date | date_to_string }}</span>
+    <a href="{{ article.url }}">{{ article.title }}</a></li>
+{% endfor %}
+</ul>
