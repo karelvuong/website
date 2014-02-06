@@ -82,7 +82,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['concurrent:target']);
-  grunt.registerTask('c', ['compass']);
+  grunt.registerTask('default', ['compass', 'jekyll:build']);
+  grunt.registerTask('dev', ['concurrent:target']);
+  grunt.registerTask('serve', ['jekyll:serve']);
+  grunt.registerTask('C', ['compass']);
   grunt.registerTask('b', ['jekyll:build']);
 };
