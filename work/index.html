@@ -2,3 +2,12 @@
 layout: default
 title: Work
 ---
+
+<ul class="list works">
+{% for post in site.categories.work %}
+  <li>
+    <span>{{ post.tags }}</span>
+    <a href="{{ post.url }}" class="{{ post.class }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
