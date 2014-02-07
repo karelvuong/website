@@ -23,7 +23,6 @@ html {
 
 body {
   font-family: 'Open Sans', Arial, sans-serif;
-  position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -253,6 +252,45 @@ body > footer {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+  }
+}
+
+.works {
+  li {
+    span { width: auto; }
+
+    a {
+      margin: 0;
+      overflow: visible;
+      text-overflow: none;
+      white-space: normal;
+
+      &:hover:after {
+        height: 200px;
+        opacity: 1;
+        @include transition(opacity 0.5s ease-in-out);
+      }
+
+      &.cella {
+        &:after {
+          background: url('http://31.media.tumblr.com/3afad829ce330a66b3bbb98831c1c393/tumblr_mx3tpto69r1st5lhmo1_1280.jpg') no-repeat center center;
+          background-size: cover;
+        }
+      }
+      &:after {
+        content: '';
+        height: 0;
+        opacity: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        -webkit-filter: grayscale(100%);
+        -webkit-mask-image: -webkit-gradient(linear, left 200%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+
+        @include transition (opacity 0.5s, height 0 0.4s);
+      }
     }
   }
 }
