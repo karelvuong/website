@@ -274,10 +274,25 @@ body > footer {
 
       &.cella {
         &:after {
-          background: url('http://31.media.tumblr.com/3afad829ce330a66b3bbb98831c1c393/tumblr_mx3tpto69r1st5lhmo1_1280.jpg') no-repeat center center;
+          background: url('../images/cella.jpg') no-repeat center center;
           background-size: cover;
         }
       }
+
+      &.cooler {
+        &:after {
+          background: url('http://farm3.staticflickr.com/2384/2059479055_d9457dfa9a_b.jpg') no-repeat center center;
+          background-size: cover;
+        }
+      }
+
+      &.chromegray {
+        &:after {
+          background: url('https://raw.github.com/karelvuong/themes-for-devtools/master/chromegray/screens/long.jpg') no-repeat center top;
+          background-size: cover;
+        }
+      }
+
       &:after {
         content: '';
         height: 0;
