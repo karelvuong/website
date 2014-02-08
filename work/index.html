@@ -4,7 +4,8 @@ title: Work
 ---
 
 <ul class="list works">
-{% for post in site.categories.work %}
+{% assign sorted_pages = site.categories.work | sort:"tags" %}
+{% for post in sorted_pages %}
   <li>
     <span>{{ post.tags }}</span>
     <a href="{{ post.url }}" class="{{ post.class }}">{{ post.title }}</a>
