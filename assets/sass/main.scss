@@ -232,7 +232,9 @@ body > footer {
     margin: 0;
     padding: 0;
   }
+}
 
+.posts {
   li {
     clear: both;
 
@@ -267,47 +269,6 @@ body > footer {
       overflow: visible;
       text-overflow: none;
       white-space: normal;
-
-      &:hover:after {
-        height: 200px;
-        opacity: 1;
-        @include transition(opacity 0.5s ease-in-out);
-      }
-
-      &.cella {
-        &:after {
-          background: url('../images/cella.jpg') no-repeat center center;
-          background-size: cover;
-        }
-      }
-
-      &.cooler {
-        &:after {
-          background: url('http://farm3.staticflickr.com/2384/2059479055_d9457dfa9a_b.jpg') no-repeat center center;
-          background-size: cover;
-        }
-      }
-
-      &.chromegray {
-        &:after {
-          background: url('https://raw.github.com/karelvuong/themes-for-devtools/master/chromegray/screens/long.jpg') no-repeat center top;
-          background-size: cover;
-        }
-      }
-
-      &:after {
-        content: '';
-        height: 0;
-        opacity: 0;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        -webkit-filter: grayscale(100%);
-        -webkit-mask-image: -webkit-gradient(linear, left 200%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-
-        @include transition (opacity 0.5s, height 0 0.4s);
-      }
     }
   }
 }
