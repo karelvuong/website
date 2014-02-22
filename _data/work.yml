@@ -1,2 +1,6 @@
-- name: cooler
-  url:
+- type:     devtools
+  name:     chromegray
+  domain:   github
+  url-1:    http://www.karel.ca/themes-for-devtools/
+  url-2:    https://github.com/karelvuong/themes-for-devtools
+

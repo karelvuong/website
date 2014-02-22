@@ -11,4 +11,10 @@ title: Work
     <a href="{{ post.url }}" class="{{ post.class }}">{{ post.title }}</a>
   </li>
 {% endfor %}
+{% for work in site.data.work %}
+  <li>
+    <span>{{ work.type }}</span>
+    <a href="{{ work.url-1 }}">{{ work.name }}</a>
+  </li>
+{% endfor %}
 </ul>
