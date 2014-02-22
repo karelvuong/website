@@ -3,17 +3,6 @@ layout: default
 title: Work
 ---
 
-<article>
-  <header>
-    <h1>Hi, my name is Karel Vuong.</h1>
-  </header>
-
-  <article>
-    <p>I am a designer and developer currently working with the amazing team at BlackBerry in Waterloo. </p>
-  </article>
-
-</article>
-
 <ul class="list works">
 {% assign sorted_pages = site.categories.work | sort:"tags" %}
 {% for post in sorted_pages %}
