@@ -233,22 +233,24 @@ body > footer {
     padding: 0;
   }
 
-  span {
-    float: left;
+  li {
+    span {
+      float: left;
 
-    @include date;
+      @include date;
 
-    &:after {
-      content: '\2014';
-      margin: 0 5px;
+      &:after {
+        content: '\2014';
+        margin: 0 5px;
+      }
     }
   }
 }
 
 .posts {
-  span { width: 100px; }
-
   li {
+    span { width: 100px; }
+
     a {
       display: block;
       margin: 0 0 0 10.0rem;
