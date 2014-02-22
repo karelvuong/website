@@ -1,7 +1,9 @@
 <aside class="sidebar" role="complementary">
   <ul>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/news/">News</a></li>
-    <li><a href="/work/">Work</a></li>
+    {% for item in site.data.menu %}
+    <li>
+      <a {% if item.url == page.url %}class="active"{% endif %} href="{{ item.url }}">{{ item.title }}</a>
+    </li>
+    {% endfor %}
   </ul>
 </aside>

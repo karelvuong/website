@@ -168,6 +168,8 @@ body > header {
       a {
         font-size: 1.4rem;
         font-weight: 700;
+
+        &.active { color: #E54B4B; }
       }
     }
   }
