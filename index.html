@@ -10,12 +10,3 @@ layout: default
   </li>
 {% endfor %}
 </ul>
-
-<ul class="list news">
-{% for article in site.data.news %}
-  <li>
-    <span>{{ article.date | date_to_string }}</span>
-    <a href="{{ article.url }}">{{ article.title }}</a>
-  </li>
-{% endfor %}
-</ul>
