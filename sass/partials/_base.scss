@@ -1,0 +1,62 @@
+@mixin clr-hover($colour, $type: lighten, $percentage: 10%) {
+    color: $colour;
+    &:hover {
+        @if $type == lighten {
+            color: lighten($colour, $percentage);
+        } @else if $type == darken {
+            color: darken($colour, $percentage);
+        }
+    }
+}
+
+@mixin animation($animation-property, $method) {
+    -webkit-animation: $animation-property $method;
+       -moz-animation: $animation-property $method;
+            animation: $animation-property $method;
+}
+
+@mixin animation-delay($animation-delay) {
+    -webkit-animation-delay: $animation-delay;
+       -moz-animation-delay: $animation-delay;
+            animation-delay: $animation-delay;
+}
+
+@mixin animation-duration($animation-duration) {
+    -webkit-animation-duration: $animation-duration;
+       -moz-animation-duration: $animation-duration;
+            animation-duration: $animation-duration;
+}
+
+@mixin animation-fill-mode($animation-fill-mode) {
+    -webkit-animation-fill-mode: $animation-fill-mode;
+       -moz-animation-fill-mode: $animation-fill-mode;
+            animation-fill-mode: $animation-fill-mode;
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+       -moz-transform: rotate($degrees);
+        -ms-transform: rotate($degrees);
+         -o-transform: rotate($degrees);
+            transform: rotate($degrees);
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+       -moz-transition: $transition-property $transition-time $method;
+        -ms-transition: $transition-property $transition-time $method;
+         -o-transition: $transition-property $transition-time $method;
+            transition: $transition-property $transition-time $method;
+}
+
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+       -moz-transition-delay: $transition-delay;
+            transition-delay: $transition-delay;
+}

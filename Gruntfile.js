@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
             '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-            '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-            '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+            '<%= pkg.homepage ? " * " + pkg.homepage + "\\n" : "" %>' +
+            ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
             ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
 
       // Task configuration.
@@ -15,36 +15,25 @@ module.exports = function(grunt) {
           src: 'Gruntfile.js'
         }
       },
-      concurrent: {
-        target: {
-          tasks: ['jekyll:serve', 'watch'],
-          options: {
-              logConcurrentOutput: true
-          }
-        }
-      },
       compass: {
         dist: {
           options: {
             banner: '<%= banner %>',
-            cssDir: 'assets/stylesheets',
+            cssDir: 'dist/css',
             outputStyle: 'compressed',
-            require: 'susy',
-            sassDir: 'assets/sass',
-            specify: 'assets/sass/main.scss'
+            sassDir: 'sass',
+            specify: 'sass/app.scss'
           }
         }
       },
-      jekyll: {
-        build : {
-          options: {
-            serve: false
-          }
-        },
-        serve : {
-          options: {
-            serve: true
-          }
+      copy: {
+        main: {
+          files: [
+            { expand: true, src: ['index.html'], dest: 'dist/' },
+            { expand: true, src: ['img'], dest: 'dist/' },
+            { expand: true, src: ['js/**/*'], dest: 'dist/' },
+            { expand: true, src: ['partials/*'], dest: 'dist/' }
+          ]
         }
       },
       watch: {
@@ -57,18 +46,11 @@ module.exports = function(grunt) {
         },
         css: {
           files: ['sass/*.scss', 'sass/*/*.scss'],
-          tasks: ['compass', 'jekyll:build']
+          tasks: ['compass']
         },
         html: {
-          files: [
-            '_data/*.html',
-            '_includes/*.html',
-            '_layouts/*.html',
-            '_posts/*.markdown',
-            '_config.yml',
-            'index.html'
-          ],
-          tasks: ['jekyll:build']
+          files: ['sass/*.scss', 'index.html', 'js/**/*', 'partials/*'],
+          tasks: ['copy']
         }
       }
     }
@@ -76,15 +58,10 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['compass', 'jekyll:build']);
-  grunt.registerTask('dev', ['concurrent:target']);
-  grunt.registerTask('serve', ['jekyll:serve']);
-  grunt.registerTask('C', ['compass']);
-  grunt.registerTask('b', ['jekyll:build']);
+  grunt.registerTask('default', ['copy', 'compass', 'watch']);
 };

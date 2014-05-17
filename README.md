@@ -1,4 +1,1 @@
-karel.github.io
-===============
-
-Personal Page
+# karel.ca

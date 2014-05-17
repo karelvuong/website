@@ -1,9 +1,0 @@
-<aside class="sidebar" role="complementary">
-  <ul>
-    {% for item in site.data.menu %}
-    <li>
-      <a {% if item.url == page.url %}class="active"{% endif %} href="{{ item.url }}">{{ item.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</aside>
