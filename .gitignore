@@ -17,3 +17,4 @@ logs
 results
 build
 .grunt
+/dist/
