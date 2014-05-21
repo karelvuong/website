@@ -187,7 +187,7 @@ footer {
            -moz-animation: fadeIn ease-in 1;
                 animation: fadeIn ease-in 1;
 
-        @include animation-delay(2.8s);
+        @include animation-delay(2.2s);
         @include animation-duration(0.75s);
         @include animation-fill-mode(forwards);
         @include transition(opacity, ease-in-out, 0.15s);
@@ -224,12 +224,12 @@ footer {
         @include transition(transform, ease-in-out, 0.15s);
 
         //          1    filters takes 1st child for some goddamn reason
-        &:nth-child(2) { top: 20px; @include animation-delay(1.3s); }
-        &:nth-child(3) { top: 40px; @include animation-delay(1.6s); }
-        &:nth-child(4) { top: 80px; @include animation-delay(1.9s); }
-        &:nth-child(5) { top: 10px; @include animation-delay(2.2s); }
-        &:nth-child(6) { top: 60px; @include animation-delay(2.5s); }
-        &:nth-child(7) { top: 70px; @include animation-delay(2.8s); }
+        &:nth-child(2) { top: 20px; @include animation-delay(1.2s); }
+        &:nth-child(3) { top: 40px; @include animation-delay(1.4s); }
+        &:nth-child(4) { top: 80px; @include animation-delay(1.6s); }
+        &:nth-child(5) { top: 10px; @include animation-delay(1.8s); }
+        &:nth-child(6) { top: 60px; @include animation-delay(2.0s); }
+        &:nth-child(7) { top: 70px; @include animation-delay(2.2s); }
 
         &.active {
             &.work-bb-flow {
