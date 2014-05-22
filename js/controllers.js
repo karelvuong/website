@@ -3,7 +3,5 @@
 /* Controllers */
 
 angular.module('karel.controllers', [])
-    .controller('CtrlHome', [
-        function() {
-        }
-    ])
+    .controller('ApplicationController', function($scope, $location, $anchorScroll) {
+    })

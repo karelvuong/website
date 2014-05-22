@@ -47,12 +47,12 @@
             transform: rotate($degrees);
 }
 
-@mixin transition($transition-property, $transition-time, $method) {
-    -webkit-transition: $transition-property $transition-time $method;
-       -moz-transition: $transition-property $transition-time $method;
-        -ms-transition: $transition-property $transition-time $method;
-         -o-transition: $transition-property $transition-time $method;
-            transition: $transition-property $transition-time $method;
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+        -ms-transition: $transition;
+         -o-transition: $transition;
+            transition: $transition;
 }
 
 @mixin transition-delay($transition-delay) {

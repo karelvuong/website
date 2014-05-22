@@ -1,66 +1,43 @@
 header {
-    h1 {
-        opacity: 0;
+    background: #444444;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    z-index: 100;
 
-        -webkit-animation: fadeIn ease-in 1;
-           -moz-animation: fadeIn ease-in 1;
-                animation: fadeIn ease-in 1;
+    .logo {
+        background-color: #E54A4B;
+        background-image: url("../img/logo.png");
+        background-size: 100%;
+        border-radius: 2px;
+        display: inline-block;
+        margin: 5px;
+        height: 40px;
+        width: 40px;
 
-        @include animation-delay(1.0s);
-        @include animation-duration(0.75s);
-        @include animation-fill-mode(forwards);
-        @include transition(opacity, ease-in-out, 0.15s);
+        @include transition(background-color ease-in-out 0.15s);
+
+        &:hover { background-color: darken(#E54A4B, 10%); }
     }
 
-    //#5B9A68
-    .tagline {
-        color: #555;
-        font-size: 12px;
-        opacity: 0;
-
-        -webkit-animation: fadeIn ease-in 1;
-           -moz-animation: fadeIn ease-in 1;
-                animation: fadeIn ease-in 1;
-
-        @include animation-delay(1.3s);
-        @include animation-duration(0.75s);
-        @include animation-fill-mode(forwards);
-        @include transition(opacity, ease-in-out, 0.15s);
-
-        span { color: #333; }
-
-        a {
-            font-weight: 700;
-            &:hover { text-decoration: underline; }
-        }
-    }
-
-    .social {
-        opacity: 0;
-
-        -webkit-animation: fadeIn ease-in 1;
-           -moz-animation: fadeIn ease-in 1;
-                animation: fadeIn ease-in 1;
-
-        @include animation-delay(1.3s);
-        @include animation-duration(0.75s);
-        @include animation-fill-mode(forwards);
-        @include transition(opacity, ease-in-out, 0.15s);
+    ul {
+        list-style: none;
+        margin: 0;
 
         li {
-            display: inline-block;
-            margin: 0 5px;
-        }
+            a {
+                color: #aaa;
+                display: inline-block;
+                font-size: 20px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                width: 50px;
 
-        a {
-            color: rgba(#000, 0.25);
-            font-size: 20px;
-
-            @include transition(color, ease-in-out, 0.1s);
-
-            &.github:hover { color: #BD2C00; }
-            &.linkedin:hover { color: #0976B4; }
-            &.twitter:hover { color: #55ACEE; }
+                &:hover { color: #fff; }
+            }
         }
     }
 }

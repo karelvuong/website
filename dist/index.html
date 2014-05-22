@@ -30,32 +30,23 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/app.css">
-
     </head>
-    <body>
+    <body ng-controller="ApplicationController">
         <header>
-            <div class="container sm-container">
-                <div class="md-padding no-bottom-padding text-center">
-                    <h1>Karel Vuong</h1>
-                    <ul class="tagline sm-padding">
-                        <li>
-                            <span>#Developer</span> at <a href="http://twitter.com/BlackBerry">@BlackBerry</a>,
-                            <span>#Maestro</span> at <a href="http://twitter.com/1MMMTO">@1MMMTO</a>,
-                        </li>
-                        <li>
-                            <span>#Student</span> at <a href="http://twitter.com/UofT">@UofT</a>,
-                            <span>#Citizen</span> of <a href="http://twitter.com/Toronto">@Toronto</a>
-                        </li>
-                    </ul>
-                    <ul class="social sm-padding text-center">
-                        <li><a class="twitter" href="http://twitter.com/karelvuong" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="github" href="http://github.com/karelvuong" target="_blank"><i class="fa fa-github-alt"></i></a></li>
-                        <li><a class="linkedin" href="http://linkedin.com/in/karelvuong" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+            <a class="logo" ng-href="/"></a>
+<!--
+            <ul>
+                <li><a><i class="fa fa-question"></i></a></li>
+                <li><a><i class="fa fa-file-code-o"></i></a></li>
+                <li><a><i class="fa fa-send"></i></a></li>
+                <li><a><i class="fa fa-twitter"></i></a></li>
+            </ul>
+-->
         </header>
-        <div class="main" role="main" ng-view></div>
+
+        <div class="site">
+            <div class="panels" ng-view></div>
+        </div>
 
         <script src="js/lib/jquery-1.11.0.min.js"></script>
         <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->

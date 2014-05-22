@@ -11,10 +11,9 @@ angular.module('karel', [
 
 .config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-    $routeProvider.when('/', {
-        templateUrl: 'partials/main.html'
-    });
-    $routeProvider.otherwise({
-        redirectTo: '/404'
-    });
+    $routeProvider
+        .when('/', {
+            templateUrl: 'partials/main.html'
+        })
+        .otherwise({templateUrl: 'partials/main.html'});
 });

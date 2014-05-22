@@ -1,39 +1,170 @@
-<div class="container">
-    <div class="works sm-padding text-center">
-        <div class="inner">
-            <ul class="filters text-left">
-                <li><a class="filter active filter-all" data-filter="*">All</a></li>
-                <li><a class="filter filter-design" data-filter="design">Design</a></li>
-                <li><a class="filter filter-mobile" data-filter="mobile">Mobile</a></li>
-                <li><a class="filter filter-web" data-filter="web">Web</a></li>
-            </ul>
+<div class="panel" id="about">
+    <div class="heading">
+        <span class="shortcut">1</span>
+        <h1><i class="fa fa-question"></i> About</h1>
+    </div>
 
-            <a class="work active work-cella work-design work-mobile"></a>
-            <a class="work active work-bb-flow work-design work-web"></a>
-            <a class="work active work-cooler work-design work-mobile"></a>
-            <a class="work active work-clinico work-design work-mobile"></a>
-            <a class="work active work-tabby work-design work-mobile"></a>
-            <a class="work active work-orbit-light work-design"></a>
+    <div class="content">
+        <div class="wrapper text-justify">
+            <p>Hello, my name is <strong>Karel Vuong</strong>.</p>
+
+            <p>Design and development is the name of the game. I earn my bread primarily with HTML, CSS, and JavaScript development but I will happily play around with any language on any end of the stack.</p>
+
+            <p>Professionally, I am currently working in Waterloo with <a href="http://twitter.com/BlackBerry" target="_blank">BlackBerry</a> as an Applications Developer. I serve as the sole developer and designer for the non-profit <a href="http://twitter.com/1MMMTO" target="_blank">1 Million Music Moments</a> and provide consulting services at <a href="http://twitter.com/innovitas" target="_blank">Innovitas</a>.</p>
+
+            <p>Academically, I am a candidate for a Bachelor of Science &mdash; Computer Science at the <a href="http://twitter.com/UofT" target="_blank">University of Toronto</a> and am in my third year of studies.</p>
+
+            <p>I like to think of myself as a <strong>generalist</strong>. I believe strongly in the notion that all individuals should embrace knowledge and develop their capabilities as fully as possible. By taking on different disciplines, having dynamic mindsets, and being adaptive, all of this will allow us to bring ideas together into a broader fabric of understanding.</p>
+
+            <p>It may seem like just about everybody is into this stuff these days, but here are a couple things I am interested in:</p>
+
+            <ul>
+                <li>I am fascinated with the concept of <strong>openness</strong>. This speaks to several open movements, but more specifically, open data and open source initiatives. With regards to open data, over my short lifetime, I have already seen a shift on multiple fronts. At the government level, open data increases both transparency and accountability. Even more exciting is the enabling of third parties to leverage this data to develop applications and services that can now address public and private demands. Open source development is also very exciting. The idea of a collaborative effort to improve something with no gain apart from the betterment of the product is empowering. <a href="http://github.com" target="_blank">GitHub</a> is a wonderful site and community that has really propelled this movement forward over the last couple years. Plus their mascot, the Octocat, is pretty sweet.</li>
+
+                <li>I am also captivated by <strong>wearable technology</strong>. It was said by <a href="http://www.forbes.com/sites/ewanspence/2013/11/02/2014-will-be-the-year-of-wearable-technology/" target="_blank">Forbes</a> that 2014 will be the year of wearable tech. I look forward to the day where I will be able to fully quantify every aspect of my life. Statistics galore!</li>
+            </ul>
         </div>
     </div>
 </div>
 
-<footer class="sm-padding text-center">
-    <h1>kv.</h1>
-</footer>
+<div class="panel" id="work">
+    <div class="heading">
+        <span class="shortcut">2</span>
+        <h1><i class="fa fa-file-code-o"></i> Work</h1>
+    </div>
 
-<script type="text/javascript">
-    $('.filter').click(function() {
-        $('.filter').removeClass('active');
-        $(this).addClass('active');
+    <div class="content">
+        <ul class="works">
+            <li class="work work-1MMM">
+                <div class="info wrapper">
+                    <div class="row">
+                        <p class="name pull-left">1 Million Music Moments</p>
+                        <p class="tags pull-right">
+                            <span class="tag">Web</span>
+                        </p>
+                    </div>
+                    <p class="text-justify">A community organization that seeks to strengthen the City of Toronto's reputation as a premier musical and cultural centre by creating a connective tissue that acts as a fabric through social media to engage the greater community and demonstrate to the world all of the great talent that Toronto has to offer.</p>
+                </div>
+                <figure class="thumbnail"></figure>
+            </li>
 
-        var f = $(this).data('filter');
+            <li class="work work-flow">
+                <div class="info wrapper">
+                    <div class="row">
+                        <p class="name pull-left">Flow</p>
+                        <p class="tags pull-right">
+                            <span class="tag">Web</span>
+                        </p>
+                    </div>
+                    <p class="text-justify">A business process management platform that is a full rebuild of a current platform used by over 30% of all BlackBerry employees. Flow features applications within the platform that can be fully customized to offer comprehensive workflow management, dynamic forms, social collaboraton, and a modelling suite that is suitable for every use-case like the tracking of inventory, processes, parcel delivery, and much more.</p>
+                </div>
+                <figure class="thumbnail"></figure>
+            </li>
 
-        if (f == '*') $('.work').addClass('active');
-        else {
-            $('.work').removeClass('active')
-            var w = '.work.work-' + f;
-            $(w).addClass('active');
-        }
-    });
-</script>
+            <li class="work work-clinico">
+                <div class="info wrapper">
+                    <div class="row">
+                        <p class="name pull-left">Clinico</p>
+                        <p class="tags pull-right">
+                            <span class="tag">Mobile</span>
+                        </p>
+                    </div>
+                    <p class="text-justify">A mobile application that transforms clinical trial protocols into interactive, engaging, patient-focused platforms for discovering and understanding clinical research and data.</p>
+                </div>
+                <figure class="thumbnail"></figure>
+            </li>
+
+            <li class="work work-cooler">
+                <div class="info wrapper">
+                    <div class="row">
+                        <p class="name pull-left">Cooler</p>
+                        <p class="tags pull-right">
+                            <span class="tag">Mobile</span>
+                        </p>
+                    </div>
+                    <p class="text-justify">A tool that allows designers to create colour schemes and palettes using an algorithm that performs real-time colour manipulation.</p>
+                </div>
+                <figure class="thumbnail"></figure>
+            </li>
+
+            <li class="work work-cella">
+                <div class="info wrapper">
+                    <div class="row">
+                        <p class="name pull-left">Cella</p>
+                        <p class="tags pull-right">
+                            <span class="tag">Mobile</span>
+                        </p>
+                    </div>
+                    <p class="text-justify">A home inventory management system that securely stores location, purchase and warranty information of possessions and can generate insurance reports in the event of a disaster or emergency.</p>
+                </div>
+                <figure class="thumbnail"></figure>
+            </li>
+        </ul>
+
+        <div class="wrapper text-justify">
+            <p class="message">Importing more work.<br>Check back soon.</p>
+        </div>
+    </div>
+</div>
+
+<div class="panel" id="blog">
+    <div class="heading">
+        <span class="shortcut">3</span>
+        <h1><i class="fa fa-comment"></i> Blog</h1>
+    </div>
+
+    <div class="content">
+        <div class="wrapper text-justify">
+            <p class="message">Importing more articles.<br>Check back soon.</p>
+        </div>
+
+        <ul class="articles">
+            <li class="article"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel" id="contact">
+    <div class="heading">
+        <span class="shortcut">4</span>
+        <h1><i class="fa fa-send"></i> Contact</h1>
+    </div>
+
+    <div class="content">
+        <div class="wrapper text-justify">
+            <p><strong>Business Inquiries</strong></p>
+            <p>Website development begins at a base rate of $75/hr. For a detailed quote, please <a href="mailto:karelvuongg@gmail.com">contact me</a>.</p>
+
+            <ul>
+                <li><strong>Previous work</strong>: <a href="http://1MMM.org" target="_blank">1 Million Music Moments</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="wrapper text-justify">
+            <p><strong>Other</strong></p>
+            <p>If you'd just like to say hi or meet up for a coffee, you can reach me through:</p>
+
+            <ul>
+                <li><strong>Twitter</strong>: <a href="http://twitter.com/karelvuong" target="_blank">@karelvuong</a></li>
+                <li><strong>E-mail</strong>: <a href="mailto:karelvuongg@gmail.com">karelvuongg@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="panel" id="twitter">
+    <div class="heading">
+        <span class="shortcut">5</span>
+        <h1><i class="fa fa-twitter"></i> Twitter</h1>
+    </div>
+
+    <div class="content">
+        <div class="wrapper text-justify">
+            <p>Just you wait, this will be a feed when I am done with you!</p>
+        </div>
+    </div>
+</div>
+-->
