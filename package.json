@@ -1,11 +1,11 @@
 {
-  "name": "karel.ca",
+  "name": "Social Media Dimensions",
   "description": "Karel Vuong",
   "version": "0.0.1",
   "homepage": "https://github.com/karelvuong/karel.ca",
   "author": {
     "name": "Karel Vuong",
-    "url": "http://karel.ca/"
+    "url": "http://karelvuong.github.io/"
   },
   "engines": {
     "node": ">= 0.10.0"
