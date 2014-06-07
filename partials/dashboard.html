@@ -1,0 +1,85 @@
+<div class="content">
+    <div class="hero md-padding">
+        <div class="row">
+            <div class="performance-chart col-md-8">
+                <div class="performance-container row" ng-controller="DashboardController">
+                    <highchart config="performanceChart"></highchart>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="performance-statistics row clr-white">
+                    <li class="performance-statistic vc-container text-center">
+                        <div class="inner">
+                            <h1>Outstanding</h1>
+                            <p class="count">{{ getNotificationsToday().length || 0 }}</p>
+                        </div>
+                    </li>
+                    <li class="performance-statistic vc-container">
+                        <div class="inner">
+                            <h1>Actioned</h1>
+                            <p class="count">{{ getActionedToday().length || 0 }}</p>
+                        </div>
+                    </li>
+                    <li class="performance-statistic vc-container">
+                        <div class="inner">
+                            <h1>Successful</h1>
+                            <p class="count">{{ getSuccessfulToday().length || 0 }}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="md-padding">
+        <div class="row">
+            <div class="notifications">
+                <input type="text" placeholder="Search for a notification..." ng-model="search">
+
+                <ul class="notification-section" ng-repeat="notification in notifications">
+                    <div class="heading">
+                        <h1 ng-bind-html="notification.date"></h1>
+                    </div>
+                    <li class="notification row" ng-class="notificationClass[datum.type]" ng-repeat="datum in notification.data | filter:search">
+                        <div class="row">
+                            <div class="pull-left">
+                                <span class="notification-type">{{ datum.type }}</span>
+
+                                <p class="notification-text">
+                                    <a ui-sref="directory.client({ clientId: datum.client_id })">{{ getClientById(datum.client_id).name.full }}</a><span ng-bind-html="datum.text"></span>
+                                </p>
+                            </div>
+
+                            <a class="actions pull-right" ng-click="isPanelExpanded = !isPanelExpanded">
+                                <span ng-if="!isPanelExpanded && datum.recommendation;">
+                                    See recommendation <i class="fa fa-caret-down"></i>
+                                </span>
+                                <span ng-if="isPanelExpanded">Collapse <i class="fa fa-caret-up"></i></span>
+                            </a>
+                        </div>
+
+                        <div class="panel row" ng-show="isPanelExpanded">
+                            <div class="insights no-padding col-md-6">
+                                <h6>Insights</h6>
+                                <ul>
+                                    <li ng-repeat="insight in datum.insights">
+                                        <p ng-bind-html="insight.text"></p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="recommendation col-md-6">
+                                <h6>Recommendation</h6>
+                                <p class="text" ng-bind-html="datum.recommendation"></p>
+                                <div class="preferred">
+                                    <p ng-if="getClientById(datum.client_id).preferred == 'phone.cell'"><strong>Preferred Time:</strong> {{ getClientById(datum.client_id).preferred_time }}</p>
+                                    <button class="action" ng-bind-html="getAction(datum.client_id, getClientById(datum.client_id).preferred)"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

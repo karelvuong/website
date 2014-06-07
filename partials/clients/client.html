@@ -1,0 +1,113 @@
+<section  ng-controller="ClientController">
+    <div class="content" ng-if="client">
+        <div class="heading md-padding">
+            <h1 class="name">{{ client.name.full }}</h1>
+            <ul class="client-account-list">
+                <li>Chequings Account <i class="fa fa-check"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content md-padding">
+        <!-- MESSAGE -->
+        <p ng-if="!client">Client not found.</p>
+
+        <div class="row" ng-if="client">
+            <!-- NAVIGATION -->
+            <div class="client-sidebar col-md-2 no-padding">
+                <h6>Information</h6>
+                <ul>
+                    <li><a>General</a></li>
+                    <li><a>Residential</a></li>
+                </ul>
+
+                <h6>Debit</h6>
+                <ul>
+                    <li><a>Savings Account</a></li>
+                    <li><a>Chequings Account</a></li>
+                </ul>
+
+                <h6>Mortgage</h6>
+                <ul>
+                    <li><a>4046 Hickory Creek Dr.</a></li>
+                </ul>
+
+                <h6>Lines of Credit</h6>
+                    <li><a>???</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="client-content col-md-10">
+
+                <!-- General -->
+                <div class="client-section">
+                    <h1>General</h1>
+                    <fieldset>
+                        <label>First Name: </label>
+                        <span>{{ client.name.first }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Last Name: </label>
+                        <span>{{ client.name.last }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Date of Birth: </label>
+                        <span>{{ client.dob | date: 'MMMM d, yyyy' }}</span>
+                    </fieldset>
+                </div>
+
+                <!-- Contact -->
+                <div class="client-section">
+                    <h1>Contact</h1>
+                    <fieldset>
+                        <label>Preferred Method of Contact: </label>
+                        <span>{{ client.preferred }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>E-mail Address: </label>
+                        <span>{{ client.email }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Phone # (Home): </label>
+                        <span>{{ client.phone.home }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Phone # (Mobile): </label>
+                        <span>{{ client.phone.cell }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Phone # (Work): </label>
+                        <span>{{ client.phone.work }}</span>
+                    </fieldset>
+                </div>
+
+                <!-- Residential -->
+                <div class="client-section">
+                    <h1>Residential</h1>
+                    <fieldset>
+                        <label>Address: </label>
+                        <span>{{ client.location.street }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>City: </label>
+                        <span>{{ client.location.city }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Province: </label>
+                        <span>{{ client.location.province }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Postal Code: </label>
+                        <span>{{ client.location.postal_code }}</span>
+                    </fieldset>
+                    <fieldset>
+                        <label>Country: </label>
+                        <span>{{ client.location.country }}</span>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

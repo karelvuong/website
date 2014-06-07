@@ -1,22 +1,13 @@
 <!doctype html>
-<html lang="en" ng-app="karel">
+<html lang="en" ng-app="curo">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-Ua-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Karel Vuong</title>
-        <meta name="title" content="Karel Vuong">
+        <title>Curo</title>
+        <meta name="title" content="Curo">
         <meta name="description" content="">
-
-        <meta name="application-name" content="Karel Vuong"/>
-        <!-- <meta name="msapplication-TileColor" content="#FFFFFF" /> -->
-        <!-- <meta name="msapplication-TileImage" content="http://www.1MMM.org/img/mstile-144x144.png" /> -->
-
-        <meta property="og:site_name" content="Karel Vuong">
-        <meta property="og:url" content="http://karel.ca">
-        <meta property="og:title" content="Karel Vuong">
-        <meta property="og:description" content="">
 
         <!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
@@ -27,42 +18,94 @@
         <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" /> -->
 
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="ApplicationController">
-        <header>
-            <a class="logo" ng-href="/"></a>
-<!--
-            <ul>
-                <li><a><i class="fa fa-question"></i></a></li>
-                <li><a><i class="fa fa-file-code-o"></i></a></li>
-                <li><a><i class="fa fa-send"></i></a></li>
-                <li><a><i class="fa fa-twitter"></i></a></li>
-            </ul>
--->
-        </header>
 
-        <div class="site">
-            <div class="panels" ng-view></div>
+        <!-- UNAUTHENTICATED -->
+        <div class="login" ng-hide="isAuthenticated">
+            <div class="inner">
+                <form class="login-container">
+                    <h1>Curo</h1>
+                    <input type="text" placeholder="Username" ng-model="username">
+                    <input type="password" placeholder="Password" ng-model="password">
+                    <button type="submit" ng-click="authenticate(username, password)">Login</button>
+                </form>
+            </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+        <!-- AUTHENTICATED (ACCOUNT MANAGER) -->
+        <div ng-show="isAuthenticated">
+            <header class="primary">
+                <a class="logo" ng-href="/">curo</a>
 
-<!--
-        <script src="js/lib/jquery-1.11.0.min.js"></script>
-        <script src="js/lib/angular/angular.js"></script>
-        <script src="js/lib/angular/angular-route.js"></script>
--->
-        <script src="js/app.js"></script>
-        <script src="js/services.js"></script>
-        <script src="js/controllers.js"></script>
-        <script src="js/filters.js"></script>
-        <script src="js/directives.js"></script>
-        <script src="js/main.js"></script>
+                <nav>
+                    <!-- ?=Account Manager -->
+                    <ul ng-if="isAccountManager">
+                        <li><a ui-sref="dashboard" ui-sref-active="active">Dashboard</a></li>
+                        <li><a ui-sref="directory" ui-sref-active="active">Directory</a></li>
+                        <li><a ui-sref="report" ui-sref-active="active">Report</a></li>
+                    </ul>
+                </nav>
+
+                <span class="dropdown pull-right" on-toggle="toggled(open)">
+                    <a class="dropdown-toggle">
+                        {{ currentUser.name.full }} <i class="fa fa-caret-down"></i>
+                    </a>
+                   <ul class="dropdown-menu">
+                        <li><a>About</a></li>
+                        <li><a>Help</a></li>
+                        <li><a ui-sref="dashboard" ng-click="isAuthenticated = false">Logout</a></li>
+                    </ul>
+                </span>
+            </header>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <input type="text" placeholder="Search for a client...">
+
+                <!-- ?=Account Manager -->
+                <div ng-if="isAccountManager">
+                    <div class="sidebar-performance sidebar-container sm-padding text-center">
+                        <p class="score">{{ currentUser.score }}</p>
+                        <h6>
+                            Curo Score
+                            <a class="tooltip-help" tooltip="This is a measurement of ..." tooltip-placement="right"><i class="fa fa-question-circle"></i></a>
+                        </h6>
+                        <small>As of {{ currentDate | date:'h:mma'}} on {{ currentDate | date:'MMMM d, yyyy'}}.</small>
+                    </div>
+
+                    <div class="sidebar-navigation">
+                        <h6>Quick Information</h6>
+                        <ul>
+                            <li><a><i class="fa fa-bank"></i> Accounts</a></li>
+                            <li><a><i class="fa fa-dollar"></i> Service Fees & Charges</a></li>
+                            <li><a><i class="fa fa-credit-card"></i> Credit Cards</a></li>
+                            <li><a><i class="fa fa-pencil"></i> Lines of Credit</a></li>
+                            <li><a><i class="fa fa-home"></i> Mortgage Rates</a></li>
+                            <li><a><i class="fa fa-money"></i> Short-Term Investments</a></li>
+                            <li><a><i class="fa fa-clock-o"></i>Long-Term Investments</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="site" ui-view></div>
+        </div>
+
+        <script src="/js/lib/jquery-1.11.0.min.js"></script>
+        <script src="/js/lib/angular.min.js"></script>
+        <script src="/js/lib/angular-sanitize.min.js"></script>
+        <script src="/js/lib/angular-ui-router.min.js"></script>
+        <script src="/js/lib/ui-bootstrap-tpls-0.11.0.js"></script>
+        <script src="/js/lib/highcharts.js"></script>
+        <script src="/js/lib/ng-highcharts.min.js"></script>
+
+        <script src="/js/app.js"></script>
+        <script src="/js/services.js"></script>
+        <script src="/js/controllers.js"></script>
+        <script src="/js/filters.js"></script>
+        <script src="/js/directives.js"></script>
+        <script src="/js/main.js"></script>
     </body>
 </html>

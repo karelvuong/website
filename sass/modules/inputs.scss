@@ -1,0 +1,22 @@
+fieldset {
+    margin-bottom: 5px;
+
+    label {
+        float: left;
+        font-weight: 700;
+        padding-right: 20px;
+        width: 120px;
+    }
+}
+
+input[type="text"],
+input[type="password"] {
+    font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    min-width: 160px;
+    padding: 6px 8px;
+}
+
+.check-group {
+    font-size: 11px;
+}

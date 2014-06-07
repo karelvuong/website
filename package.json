@@ -1,11 +1,11 @@
 {
-  "name": "Social Media Dimensions",
-  "description": "Karel Vuong",
+  "name": "Curo",
+  "description": "By Innovitas",
   "version": "0.0.1",
-  "homepage": "https://github.com/karelvuong/karel.ca",
+  "homepage": "http://karel.ca",
   "author": {
-    "name": "Karel Vuong",
-    "url": "http://karelvuong.github.io/"
+    "name": "Innovitas",
+    "url": "http://karel.ca"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -18,7 +18,6 @@
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-compass": "~0.7.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-contrib-watch": "~0.5.3"
   }
 }

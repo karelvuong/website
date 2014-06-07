@@ -19,21 +19,11 @@ module.exports = function(grunt) {
         dist: {
           options: {
             banner: '<%= banner %>',
-            cssDir: 'dist/css',
+            cssDir: 'css',
             outputStyle: 'compressed',
             sassDir: 'sass',
             specify: 'sass/app.scss'
           }
-        }
-      },
-      copy: {
-        main: {
-          files: [
-            { expand: true, src: ['index.html'], dest: 'dist/' },
-            { expand: true, src: ['img'], dest: 'dist/' },
-            { expand: true, src: ['js/**/*'], dest: 'dist/' },
-            { expand: true, src: ['partials/*'], dest: 'dist/' }
-          ]
         }
       },
       watch: {
@@ -47,10 +37,6 @@ module.exports = function(grunt) {
         css: {
           files: ['sass/*.scss', 'sass/*/*.scss'],
           tasks: ['compass']
-        },
-        html: {
-          files: ['sass/*.scss', 'index.html', 'js/**/*', 'partials/*'],
-          tasks: ['copy']
         }
       }
     }
@@ -59,9 +45,8 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['copy', 'compass', 'watch']);
+  grunt.registerTask('default', ['compass', 'watch']);
 };
