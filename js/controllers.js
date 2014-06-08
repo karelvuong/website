@@ -115,6 +115,46 @@ angular.module('curo.controllers', [])
                 "date": "Today",
                 "data": [
                     {
+                        "client_id": 3,
+                        "type": "Alert",
+                        "text": " has <span class='clr-red'>exceeded debit limit</span> of 10 per month.",
+                        "actioned": false,
+                        "successful": false,
+                        "insights": [
+                            {
+                                "text": "He currently has the <a>RBC Day to Day Banking</a> account."
+                            },
+                            {
+                                "text": "This account has a limit of <u>10</u> debits per month.",
+                                "indented": true
+                            },
+                            {
+                                "text": "This account charges a <u>$4.00</u> monthly fee.",
+                                "indented": true
+                            },
+                            {
+                                "text": "<strong>CURRENT:</strong> He performed <u>22 debits</u> for this month and <u>18 debits</u> on average per month on the <a>RBC Day to Day Banking</a> account."
+                            },
+                            {
+                                "text": "<strong>POTENTIAL:</strong> Performing the same number of debits on the <a>RBC No Limit Banking</a> account would <span class='clr-green'>save</span> him at least <u>$5.00</u>."
+                            }
+                        ],
+                        "recommendation": "Curo recommends that he changes his account from <strong>RBC Day To Day Banking</strong> to <strong>RBC No Limit Banking</strong>."
+                    },
+                    {
+                        "client_id": 22,
+                        "type": "Alert",
+                        "text": " had <span class='clr-red'>insufficient funds</span> to process a cheque.",
+                        "actioned": false,
+                        "successful": false,
+                        "insights": [
+                            {
+                                "text": "N/A"
+                            }
+                        ],
+                        "recommendation": "Curo is generating a recommendation..."
+                    },
+                    {
                         "client_id": 2,
                         "type": "Notice",
                         "text": " can benefit from a <span class='clr-green'>credit card upgrade</span>.",
@@ -161,64 +201,11 @@ angular.module('curo.controllers', [])
                         "recommendation": "Curo recommends that he changes his account from <strong>RBC Day To Day Banking</strong> to <strong>RBC No Limit Banking</strong>."
                     },
                     {
-                        "client_id": 3,
-                        "type": "Alert",
-                        "text": " has <span class='clr-red'>exceeded debit limit</span> of 10 per month.",
-                        "actioned": false,
-                        "successful": false,
-                        "insights": [
-                            {
-                                "text": "He currently has the <a>RBC Day to Day Banking</a> account."
-                            },
-                            {
-                                "text": "This account has a limit of <u>10</u> debits per month.",
-                                "indented": true
-                            },
-                            {
-                                "text": "This account charges a <u>$4.00</u> monthly fee.",
-                                "indented": true
-                            },
-                            {
-                                "text": "<strong>CURRENT:</strong> He performed <u>22 debits</u> for this month and <u>18 debits</u> on average per month on the <a>RBC Day to Day Banking</a> account."
-                            },
-                            {
-                                "text": "<strong>POTENTIAL:</strong> Performing the same number of debits on the <a>RBC No Limit Banking</a> account would <span class='clr-green'>save</span> him at least <u>$5.00</u>."
-                            }
-                        ],
-                        "recommendation": "Curo recommends that he changes his account from <strong>RBC Day To Day Banking</strong> to <strong>RBC No Limit Banking</strong>."
-                    },
-                    {
-                        "client_id": 22,
-                        "type": "Alert",
-                        "text": " had <span class='clr-red'>insufficient funds</span> to process a cheque.",
-                        "actioned": false,
-                        "successful": false,
-                        "insights": [
-                            {
-                                "text": "N/A"
-                            }
-                        ],
-                        "recommendation": "Curo is generating a recommendation..."
-                    },
-                    {
                         "client_id": 5,
                         "type": "Milestone",
                         "text": " has her <span class='clr-blue'>graduation</span> from Hogwarts.",
                         "actioned": false,
-                        "successful": false,
-                        "insights": [
-                            {
-                                "text": "N/A"
-                            }
-                        ],
-                        "recommendation": "Curo is generating a recommendation..."
-                    },
-                    {
-                        "client_id": 15,
-                        "type": "Notice",
-                        "text": " is approaching her <span class='clr-orange'>$3,000</span> credit limit.",
-                        "actioned": true,
-                        "successful": true
+                        "successful": false
                     },
                     {
                         "client_id": 20,
@@ -226,6 +213,13 @@ angular.module('curo.controllers', [])
                         "text": " overdrafted by <span class='clr-red'>$28.12</span> on his chequing account.",
                         "actioned": true,
                         "successful": false
+                    },
+                    {
+                        "client_id": 15,
+                        "type": "Notice",
+                        "text": " is approaching her <span class='clr-orange'>$3,000</span> credit limit.",
+                        "actioned": true,
+                        "successful": true
                     }
                 ]
             },
@@ -463,7 +457,7 @@ var clients_json = [
         },
         "dob": "122791739",
         "preferred": "phone.cell",
-        "preferred_time": "1:00 PM to 3:00 PM",
+        "preferred_time": "9:00 AM to 10:00 AM",
         "email": "james.miller@example.com",
         "phone": {
             "home": "(905) 200-1728",
