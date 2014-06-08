@@ -3,9 +3,14 @@ button {
     border-radius: 8px;
     background: #51BF56;
     color: #fff;
-    font-size: 20px;
+    cursor: pointer;
+    font-size: 16px;
     outline: 0;
     padding: 12px 14px;
+
+    &[disabled="disabled"] {
+        opacity: 0.25;
+    }
 
     &:hover {
         background: darken(#51BF56, 5%);
@@ -13,6 +18,10 @@ button {
 
     &:focus {
         background: darken(#51BF56, 10%);
+    }
+
+    &.dismiss {
+        background: #aaa;
     }
 
     i {

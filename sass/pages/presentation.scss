@@ -1,0 +1,37 @@
+.presentation {
+    background: $clr-rbc-blue;
+    color: #fff;
+    display: table;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    .inner {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .logo {
+        color: #FFF;
+        display: inline-block;
+        font-family: 'Futura LT';
+        font-size: 120px;
+        line-height: 1;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 700;
+        opacity: 0.62;
+    }
+
+    .rbc-logo {
+        height: 80px;
+        margin-top: 20px;
+        width: auto;
+    }
+}

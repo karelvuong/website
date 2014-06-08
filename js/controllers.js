@@ -11,6 +11,7 @@ angular.module('curo.controllers', [])
         $scope.isAccountManager = false;
         $scope.isBranchManager = false;
         $scope.currentUser = {};
+        $scope.hasLoginError = false;
 
         //
         //
@@ -27,7 +28,7 @@ angular.module('curo.controllers', [])
                     "last": "Vuong"
                 },
                 "role": "accountManager",
-                "score": "87"
+                "score": 48.96
             },
             {
                 "username": "kevuong",
@@ -41,6 +42,10 @@ angular.module('curo.controllers', [])
             }
         ]
 
+        $rootScope.increaseScore = function() {
+            $scope.currentUser.score += 1.14;
+        }
+
         // Very rudimentary and unsecure authentication. :(
         $rootScope.authenticate = function(username, password) {
             var user = $.map($rootScope.users, function(user) {
@@ -52,6 +57,8 @@ angular.module('curo.controllers', [])
                 $scope.isAuthenticated = true;
                 $scope.isAccountManager = user[0].role == "accountManager" ? true : false;
                 $scope.isBranchManager = user[0].role == "branchManager" ? true : false;
+            } else {
+                $scope.hasLoginError = true;
             }
         }
 
@@ -108,59 +115,109 @@ angular.module('curo.controllers', [])
                 "date": "Today",
                 "data": [
                     {
-                        "client_id": 3,
-                        "type": "Alert",
-                        "text": " has <span class='clr-red'>exceeded debit limit</span> of 10 per month.",
-                        "actioned": true,
-                        "successful": true,
+                        "client_id": 2,
+                        "type": "Notice",
+                        "text": " can benefit from a <span class='clr-green'>credit card upgrade</span>.",
+                        "actioned": false,
+                        "successful": false,
                         "insights": [
                             {
-                                "text": "He currently has the <a>RBC Day To Day Banking</a> account."
+                                "text": "She currently has the <a>RBC RateAdvantage</a> VISA."
                             },
                             {
-                                "text": "He performed <u>22 debits</u> for this month."
+                                "text": "Her credit card has a low interest rate of <u>7.99%</u>.",
+                                "indented": true
                             },
                             {
-                                "text": "On average, he performs <u>18 debits</u> per month."
+                                "text": "Her credit card has an annual fee of <u>$39.00</u>.",
+                                "indented": true
+                            },
+                            {
+                                "text": "<strong>CURRENT:</strong> She historically pays off her balance at the end of the month and <span class='clr-red'>does not benefit</span> from the low interest rate."
+                            },
+                            {
+                                "text": "<strong>CURRENT:</strong> In the last 6 months, she has spent <u>$31,233.79</u>, <u>$5,460.98</u> of which were for travel-related expenditures."
+                            },
+                            {
+                                "text": "<strong>POTENTIAL:</strong> She can benefit from the <a>RBC Infinite Avion</a>."
+                            },
+                            {
+                                "text": "Upgrading to this card will award her with <u>15,000</u> \"Welcome Bonus\" RBC Rewards points.",
+                                "indented": true
+                            },
+                            {
+                                "text": "This credit card would have gained her a total of <u>32,598</u> RBC Rewards points: <u>25,773</u> from regular purchases and <u>6,825</u> from travel-related expenditures.",
+                                "indented": true
+                            },
+                            {
+                                "text": "She could have redeemed her potential RBC Rewards points balance of <u>32,598</u> for <u>$760.62</u> towards travel-related expenditures.",
+                                "indented": true
+                            },
+                            {
+                                "text": "This credit card has an annual fee of <u>$120.00</u>.",
+                                "indented": true
                             }
                         ],
                         "recommendation": "Curo recommends that he changes his account from <strong>RBC Day To Day Banking</strong> to <strong>RBC No Limit Banking</strong>."
                     },
                     {
-                        "client_id": 2,
+                        "client_id": 3,
                         "type": "Alert",
-                        "text": " overdrafted by <span class='clr-red'>$28.12</span> on his chequing account.",
-                        "actioned": true,
-                        "successful": false,
-                        "insights": [
-                            {
-                                "text": "He overdrafted 3 times in the past week."
-                            }
-                        ],
-                        "recommendations": [
-                            {
-                                "text": "Curo recommends that you suggest the _______ account to him.",
-                                "action": "account-recommendation"
-                            }
-                        ]
-                    },
-                    {
-                        "client_id": 10,
-                        "type": "Notice",
-                        "text": " is approaching his <span class='clr-orange'>$3,000</span> credit limit.",
+                        "text": " has <span class='clr-red'>exceeded debit limit</span> of 10 per month.",
                         "actioned": false,
                         "successful": false,
                         "insights": [
                             {
-                                "text": "She will be turning 28 this year!"
+                                "text": "He currently has the <a>RBC Day to Day Banking</a> account."
+                            },
+                            {
+                                "text": "<strong>CURRENT:</strong> He performed <u>22 debits</u> for this month and <u>18 debits</u> on average per month on the <a>RBC Day to Day Banking</a> account."
+                            },
+                            {
+                                "text": "<strong>POTENTIAL:</strong> Performing the same number of debits on the <a>RBC No Limit Banking</a> account would <span class='clr-green'>save</span> him at least <u>$5.00</u>."
                             }
                         ],
-                        "recommendations": [
+                        "recommendation": "Curo recommends that he changes his account from <strong>RBC Day To Day Banking</strong> to <strong>RBC No Limit Banking</strong>."
+                    },
+                    {
+                        "client_id": 22,
+                        "type": "Alert",
+                        "text": " had <span class='clr-red'>insufficient funds</span> to process a cheque.",
+                        "actioned": false,
+                        "successful": false,
+                        "insights": [
                             {
-                                "text": "Curo recommends that you wish her a Happy Birthday!.",
-                                "action": "birthday"
+                                "text": "N/A"
                             }
-                        ]
+                        ],
+                        "recommendation": "Curo is generating a recommendation..."
+                    },
+                    {
+                        "client_id": 5,
+                        "type": "Milestone",
+                        "text": " has her <span class='clr-blue'>graduation</span> from Hogwarts.",
+                        "actioned": false,
+                        "successful": false,
+                        "insights": [
+                            {
+                                "text": "N/A"
+                            }
+                        ],
+                        "recommendation": "Curo is generating a recommendation..."
+                    },
+                    {
+                        "client_id": 15,
+                        "type": "Notice",
+                        "text": " is approaching his <span class='clr-orange'>$3,000</span> credit limit.",
+                        "actioned": true,
+                        "successful": true
+                    },
+                    {
+                        "client_id": 20,
+                        "type": "Alert",
+                        "text": " overdrafted by <span class='clr-red'>$28.12</span> on her chequing account.",
+                        "actioned": true,
+                        "successful": false
                     }
                 ]
             },
@@ -170,68 +227,39 @@ angular.module('curo.controllers', [])
                     {
                         "client_id": 2,
                         "type": "Milestone",
-                        "text": " has her 25th Anniversary with her husband Jonathan Kent.",
-                        "insights": [
-                            {
-                                "text": "She will be turning 28 this year!"
-                            }
-                        ],
-                        "recommendations": [
-                            {
-                                "text": "Curo recommends that you wish her a Happy Birthday!.",
-                                "action": "birthday"
-                            }
-                        ]
+                        "text": " has her <span class='clr-blue'>25th Anniversary</span> with her husband Jonathan Kent."
                     },
                     {
                         "client_id": 3,
                         "type": "Milestone",
-                        "text": "'s birthday is on June 9, 2014!",
-                        "actioned": false,
-                        "successful": false,
-                        "insights": [
-                            {
-                                "text": "She will be turning 28 this year!"
-                            }
-                        ],
-                        "recommendations": [
-                            {
-                                "text": "Curo recommends that you wish her a Happy Birthday!.",
-                                "action": "birthday"
-                            }
-                        ]
+                        "text": "'s birthday is on <span class='clr-blue'>June 9, 2014</span>.",
+                        "actioned": true,
+                        "successful": true
                     }
                 ]
             },
             {
-                "date": "June 1, 2014",
+                "date": "June 7, 2014",
                 "data": [
                     {
                         "client_id": 1,
                         "type": "Notice",
-                        "text": " deposited $18,000 into his savings account.",
+                        "text": " deposited $18,000 into his chequings account.",
+                        "actioned": false,
+                        "successful": false,
                         "insights": [
                             {
                                 "text": "He currently has the <a>RBC No Limit Banking</a> account."
                             },
                             {
-                                "text": "His deposit of <u>$18,000</u> into the <a>RBC No Limit Banking</a> account will earn him <strong>$0.00</strong> in interest per year."
+                                "text": "<strong>CURRENT:</strong> His deposit of <u>$18,000</u> into the <a>RBC No Limit Banking</a> account will earn him <u>$0.00</u> in interest per year."
                             },
                             {
-                                "text": "His deposit of <u>$18,000</u> into the <a>RBC Day to Day Savings</a> account would earn him <strong>$27.00</strong> in interest per year."
-                            },
-                            {
-                                "text": "This is a difference of <u>$27.00</u>, an increase of <span class='clr-green'>&infin;%</span>."
+                                "text": "<strong>POTENTIAL:</strong> Performing the same deposit into the <a>RBC Day to Day Savings</a> account would earn him at least <u>$27.00</u> in interest per year."
                             }
                         ],
                         "recommendation": "Curo recommends that he change his account from the <strong>RBC No Limit Banking</strong> to <strong>RBC Day to Day Savings</strong> account."
-                    },
-                    {
-                        "client_id": 2,
-                        "type": "Milestone",
-                        "text": " had her 25th Anniversary with her husband Jonathan Kent.",
-                    },
-
+                    }
                 ]
             }
         ]
@@ -272,26 +300,19 @@ angular.module('curo.controllers', [])
         // TESTING
         //
         //
-        $scope.isAuthenticated = true;
-        $scope.isAccountManager = true;
-        $scope.currentUser = {
-            "username": "kavuong",
-            "password": "1234",
-            "name": {
-                "full": "Karel Vuong",
-                "first": "Karel",
-                "last": "Vuong"
-            },
-            "role": "accountManager",
-            "score": "48.96"
-        };
-
-        $scope.opportunities = {
-            "total": 32,
-            "open": 13,
-            "successful": 14,
-            "missed": 5
-        }
+        // $scope.isAuthenticated = true;
+        // $scope.isAccountManager = true;
+        // $scope.currentUser = {
+        //     "username": "kavuong",
+        //     "password": "1234",
+        //     "name": {
+        //         "full": "Karel Vuong",
+        //         "first": "Karel",
+        //         "last": "Vuong"
+        //     },
+        //     "role": "accountManager",
+        //     "score": "48.96"
+        // };
     })
 
     .controller('DashboardController', function($scope) {
@@ -468,9 +489,9 @@ var clients_json = [
         "gender": "Female",
         "name": {
             "title": "Ms.",
-            "full": "Martha Kent",
-            "first": "Martha",
-            "last": "Kent"
+            "full": "Oprah Winfrey",
+            "first": "Oprah",
+            "last": "Winfrey"
         },
         "location": {
             "street": "19 Fletchers Meadow Dr.",
@@ -480,7 +501,7 @@ var clients_json = [
         },
         "dob": "122791739",
         "preferred": "email",
-        "email": "martha.kent12@example.com",
+        "email": "oprah.winfrey@example.com",
         "phone": {
             "home": "(905) 202-1728",
             "cell": "(647) 242-6033",

@@ -1,0 +1,27 @@
+//
+//
+// DIRECTORY
+//
+//
+.directory-content {
+    .directory-search {
+        background: rgba($clr-rbc-blue, 0.05);
+        border-bottom: 1px solid #ddd;
+
+        input { width: 100%; }
+    }
+
+    .client-list {
+        font-size: 14px;
+        font-weight: 700;
+
+        -webkit-column-count: 4;
+           -moz-column-count: 4;
+                column-count: 4;
+
+        li a {
+            display: inline-block;
+            margin: 10px 0;
+        }
+    }
+}

@@ -8,24 +8,36 @@
             </div>
             <div class="col-md-4">
                 <ul class="performance-statistics row clr-white">
-                    <li class="performance-statistic vc-container text-center">
+                    <li class="performance-statistic statistic-total vc-container text-center">
+                        <div class="inner">
+                            <h1>Total</h1>
+                            <p class="count">{{ getNotificationsToday().length }}</p>
+                        </div>
+                    </li>
+                    <li class="performance-statistic statistic-outstanding vc-container text-center">
                         <div class="inner">
                             <h1>Outstanding</h1>
-                            <p class="count">{{ getNotificationsToday().length || 0 }}</p>
+                            <p class="count">{{ getNotificationsToday().length - getActionedToday().length || 0 }}</p>
                         </div>
                     </li>
-                    <li class="performance-statistic vc-container">
-                        <div class="inner">
-                            <h1>Actioned</h1>
-                            <p class="count">{{ getActionedToday().length || 0 }}</p>
+                    <div class="row">
+                        <div class="col-md-6 no-padding">
+                            <li class="performance-statistic statistic-actioned vc-container">
+                                <div class="inner">
+                                    <h1>Actioned</h1>
+                                    <p class="count">{{ getActionedToday().length || 0 }}</p>
+                                </div>
+                            </li>
                         </div>
-                    </li>
-                    <li class="performance-statistic vc-container">
-                        <div class="inner">
-                            <h1>Successful</h1>
-                            <p class="count">{{ getSuccessfulToday().length || 0 }}</p>
+                        <div class="col-md-6 no-padding">
+                            <li class="performance-statistic statistic-successful vc-container">
+                                <div class="inner">
+                                    <h1>Successful</h1>
+                                    <p class="count">{{ getSuccessfulToday().length || 0 }}</p>
+                                </div>
+                            </li>
                         </div>
-                    </li>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -40,7 +52,7 @@
                     <div class="heading">
                         <h1 ng-bind-html="notification.date"></h1>
                     </div>
-                    <li class="notification row" ng-class="notificationClass[datum.type]" ng-repeat="datum in notification.data | filter:search">
+                    <li class="notification row {{ notificationClass[datum.type] }}" ng-class="{ actioned: datum.actioned }" ng-repeat="datum in notification.data | filter:search">
                         <div class="row">
                             <div class="pull-left">
                                 <span class="notification-type">{{ datum.type }}</span>
@@ -50,19 +62,28 @@
                                 </p>
                             </div>
 
-                            <a class="actions pull-right" ng-click="isPanelExpanded = !isPanelExpanded">
-                                <span ng-if="!isPanelExpanded && datum.recommendation;">
-                                    See recommendation <i class="fa fa-caret-down"></i>
+                            <div class="actions pull-right">
+                                <span tooltip="Action was successful." tooltip-placement="bottom" ng-if="datum.successful">
+                                    <i class="fa fa-check"></i>
                                 </span>
-                                <span ng-if="isPanelExpanded">Collapse <i class="fa fa-caret-up"></i></span>
-                            </a>
+                                <span tooltip="Archive" tooltip-placement="bottom" ng-if="datum.actioned">
+                                    <i class="fa fa-archive"></i>
+                                </span>
+                            </div>
+
+                            <div class="actions pull-right" ng-click="isPanelExpanded = !isPanelExpanded">
+                                <a ng-if="!isPanelExpanded && datum.recommendation;">
+                                    See recommendation<i class="fa fa-caret-down"></i>
+                                </a>
+                                <a ng-if="isPanelExpanded">Collapse <i class="fa fa-caret-up"></i></a>
+                            </div>
                         </div>
 
                         <div class="panel row" ng-show="isPanelExpanded">
                             <div class="insights no-padding col-md-6">
                                 <h6>Insights</h6>
                                 <ul>
-                                    <li ng-repeat="insight in datum.insights">
+                                    <li ng-class="{ indented: insight.indented }" ng-repeat="insight in datum.insights">
                                         <p ng-bind-html="insight.text"></p>
                                     </li>
                                 </ul>
@@ -71,9 +92,12 @@
                             <div class="recommendation col-md-6">
                                 <h6>Recommendation</h6>
                                 <p class="text" ng-bind-html="datum.recommendation"></p>
-                                <div class="preferred">
-                                    <p ng-if="getClientById(datum.client_id).preferred == 'phone.cell'"><strong>Preferred Time:</strong> {{ getClientById(datum.client_id).preferred_time }}</p>
-                                    <button class="action" ng-bind-html="getAction(datum.client_id, getClientById(datum.client_id).preferred)"></button>
+                                <div ng-if="datum.recommendation != 'Curo is generating a recommendation...'" class="preferred">
+                                    <p ng-if="getClientById(datum.client_id).preferred == 'phone.cell'">
+                                        <strong>Preferred Time:</strong> {{ getClientById(datum.client_id).preferred_time }}
+                                    </p>
+                                    <button class="action" ng-disabled="getClientById(datum.client_id).preferred == 'phone.cell'" ng-bind-html="getAction(datum.client_id, getClientById(datum.client_id).preferred)" ng-click="increaseScore()"></button>
+                                    <button class="dismiss">Dismiss</button>
                                 </div>
                             </div>
                         </div>

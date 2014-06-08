@@ -26,11 +26,23 @@
         <div class="login" ng-hide="isAuthenticated">
             <div class="inner">
                 <form class="login-container">
-                    <h1>Curo</h1>
+                    <h1 class="logo">curo</h1>
                     <input type="text" placeholder="Username" ng-model="username">
                     <input type="password" placeholder="Password" ng-model="password">
-                    <button type="submit" ng-click="authenticate(username, password)">Login</button>
+                    <div class="row">
+                        <div class="remember-me pull-left">
+                            <input type="checkbox">
+                            <label>Remember Me</label>
+                        </div>
+                        <button class="pull-right" type="submit" ng-click="authenticate(username, password)">Login</button>
+                    </div>
+                    <div class="message" ng-class="{ active: hasLoginError }">
+                        <p class="clr-red">The credentials you typed are incorrect. Please try again or contact your help desk or system administrator.</p>
+                    </div>
                 </form>
+                <div>
+                    <img class="rbc-logo" src="/img/rbc-logo.png">
+                </div>
             </div>
         </div>
 
@@ -52,6 +64,7 @@
                     <a class="dropdown-toggle">
                         {{ currentUser.name.full }} <i class="fa fa-caret-down"></i>
                     </a>
+
                    <ul class="dropdown-menu">
                         <li><a>About</a></li>
                         <li><a>Help</a></li>
@@ -64,10 +77,9 @@
             <aside class="sidebar">
                 <input type="text" placeholder="Search for a client...">
 
-                <!-- ?=Account Manager -->
                 <div ng-if="isAccountManager">
                     <div class="sidebar-performance sidebar-container sm-padding text-center">
-                        <p class="score">{{ currentUser.score }}</p>
+                        <p class="score">{{ currentUser.score | number }}</p>
                         <h6>
                             Curo Score
                             <a class="tooltip-help" tooltip="This is a measurement of ..." tooltip-placement="right"><i class="fa fa-question-circle"></i></a>

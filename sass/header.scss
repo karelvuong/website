@@ -6,7 +6,7 @@ header {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 100;
+        z-index: 10;
 
         .logo {
             background: $clr-rbc-blue;
@@ -64,6 +64,10 @@ header {
                 font-weight: 700;
                 line-height: 50px;
                 padding: 0 20px;
+
+                &:hover {
+                    text-decoration: none;
+                }
             }
         }
     }
