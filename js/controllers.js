@@ -125,11 +125,11 @@ angular.module('curo.controllers', [])
                                 "text": "She currently has the <a>RBC RateAdvantage</a> VISA."
                             },
                             {
-                                "text": "Her credit card has a low interest rate of <u>7.99%</u>.",
+                                "text": "This credit card has a low interest rate of <u>7.99%</u>.",
                                 "indented": true
                             },
                             {
-                                "text": "Her credit card has an annual fee of <u>$39.00</u>.",
+                                "text": "This credit card has an annual fee of <u>$39.00</u>.",
                                 "indented": true
                             },
                             {
@@ -171,6 +171,14 @@ angular.module('curo.controllers', [])
                                 "text": "He currently has the <a>RBC Day to Day Banking</a> account."
                             },
                             {
+                                "text": "This account has a limit of <u>10</u> debits per month.",
+                                "indented": true
+                            },
+                            {
+                                "text": "This account charges a <u>$4.00</u> monthly fee.",
+                                "indented": true
+                            },
+                            {
                                 "text": "<strong>CURRENT:</strong> He performed <u>22 debits</u> for this month and <u>18 debits</u> on average per month on the <a>RBC Day to Day Banking</a> account."
                             },
                             {
@@ -208,14 +216,14 @@ angular.module('curo.controllers', [])
                     {
                         "client_id": 15,
                         "type": "Notice",
-                        "text": " is approaching his <span class='clr-orange'>$3,000</span> credit limit.",
+                        "text": " is approaching her <span class='clr-orange'>$3,000</span> credit limit.",
                         "actioned": true,
                         "successful": true
                     },
                     {
                         "client_id": 20,
                         "type": "Alert",
-                        "text": " overdrafted by <span class='clr-red'>$28.12</span> on her chequing account.",
+                        "text": " overdrafted by <span class='clr-red'>$28.12</span> on his chequing account.",
                         "actioned": true,
                         "successful": false
                     }
@@ -225,9 +233,9 @@ angular.module('curo.controllers', [])
                 "date": "Upcoming",
                 "data": [
                     {
-                        "client_id": 2,
+                        "client_id": 5,
                         "type": "Milestone",
-                        "text": " has her <span class='clr-blue'>25th Anniversary</span> with her husband Jonathan Kent."
+                        "text": " has her <span class='clr-blue'>3rd Anniversary</span> with her husband, Ron Weasley."
                     },
                     {
                         "client_id": 3,
@@ -372,6 +380,20 @@ angular.module('curo.controllers', [])
                         50,
                         70,
                         26
+                    ]
+                },
+                {
+                    "id": "series-missed",
+                    "name": "Missed Opportunities",
+                    "type": "column",
+                    "color": "#ECA65C",
+                    "data": [
+                        20,
+                        42,
+                        22,
+                        26,
+                        18,
+                        46
                     ]
                 },
                 {
