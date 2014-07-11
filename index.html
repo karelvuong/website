@@ -1,13 +1,24 @@
 <!doctype html>
-<html lang="en" ng-app="curo">
+<html lang="en" ng-app="karel">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-Ua-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Curo</title>
-        <meta name="title" content="Curo">
+        <title>Karel Vuong</title>
+        <meta name="title" content="Karel Vuong">
         <meta name="description" content="">
+
+        <meta name="application-name" content="Karel Vuong"/>
+        <!-- <meta name="msapplication-TileColor" content="#FFFFFF" /> -->
+        <!-- <meta name="msapplication-TileImage" content="http://www.1MMM.org/img/mstile-144x144.png" /> -->
+
+        <meta property="og:site_name" content="Karel Vuong">
+        <meta property="og:title" content="Karel Vuong">
+        <meta property="og:description" content="">
+        <meta property="og:url" content="http://karel.ca">
+
+        <base href="/"></base>
 
         <!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
@@ -21,102 +32,95 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="ApplicationController">
+        <div class="site">
+            <header role="banner" headroom offset="150">
+                <div class="banner container">
+                    <a class="brand" ui-sref="home"></a>
 
-        <!-- UNAUTHENTICATED -->
-        <div class="login" ng-hide="isAuthenticated">
-            <div class="inner">
-                <form class="login-container">
-                    <h1 class="logo">curo</h1>
-                    <input type="text" placeholder="Username" ng-model="username">
-                    <input type="password" placeholder="Password" ng-model="password">
-                    <div class="row">
-                        <div class="remember-me pull-left">
-                            <input type="checkbox">
-                            <label>Remember Me</label>
-                        </div>
-                        <button class="pull-right" type="submit" ng-click="authenticate(username, password)">Login</button>
+                    <ul class="social">
+                        <li><a href="www.github.com/karelvuong">GitHub</a></li>
+                        <li><a href="www.linkedin.com/in/karelvuong">LinkedIn</a></li>
+                        <li><a href="www.twitter.com/karelvuong">Twitter</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="content" ui-view></div>
+
+                <aside class="sidebar">
+                    <a class="back-to-top">
+                        Top
+                    </a>
+
+                    <nav class="navigation">
+                        <ul>
+                            <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+                            <li><a ui-sref="about" ui-sref-active="active">About</a></li>
+                            <li><a ui-sref="construction">Blog</a></li>
+                            <li><a ui-sref="construction">Work</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="information">
+                        <p><strong>karel.ca</strong> and all contents copyright 2012-2014 by <strong>Karel Vuong</strong> unless otherwise noted.
+Contents under Creative Commons License.</p>
                     </div>
-                    <div class="message" ng-class="{ active: hasLoginError }">
-                        <p class="clr-red">The credentials you typed are incorrect. Please try again or contact your help desk or system administrator.</p>
-                    </div>
-                </form>
-                <div>
-                    <img class="rbc-logo" src="/img/rbc-logo.png">
+
+                    <ul class="recent">
+                        <li><a ui-sref="construction">
+                            1 Million Music Moments
+                            <p>Work</p>
+                        </a></li>
+                        <li><a ui-sref="construction">
+                            Flow
+                            <p>Work</p>
+                        </a></li>
+                        <li><a ui-sref="construction">
+                            Dimensions
+                            <p>Work</p>
+                        </a></li>
+                        <li><a ui-sref="construction">
+                            Curo
+                            <p>Work</p>
+                        </a></li>
+                        <li><a ui-sref="construction">
+                            Clinico
+                            <p>Work</p>
+                        </a></li>
+                        <li><a ui-sref="construction">
+                            Cooler
+                            <p>Work</p>
+                        </a></li>
+                        <li><a ui-sref="construction">
+                            Cella
+                            <p>Work</p>
+                        </a></li>
+                    </ul>
+
+                    <a class="back-to-top">
+                        Top
+                    </a>
+                </aside>
+
+                <div class="pusher">
+                    <p>What's next?</p>
                 </div>
             </div>
         </div>
 
-        <!-- AUTHENTICATED (ACCOUNT MANAGER) -->
-        <div ng-show="isAuthenticated">
-            <header class="primary">
-                <a class="logo" ng-href="/">curo</a>
-
-                <nav>
-                    <!-- ?=Account Manager -->
-                    <ul ng-if="isAccountManager">
-                        <li><a ui-sref="dashboard" ui-sref-active="active">Dashboard</a></li>
-                        <li><a ui-sref="directory" ui-sref-active="active">Directory</a></li>
-                        <li><a ui-sref="report" ui-sref-active="active">Report</a></li>
-                    </ul>
-                </nav>
-
-                <span class="dropdown pull-right" on-toggle="toggled(open)">
-                    <a class="dropdown-toggle">
-                        {{ currentUser.name.full }} <i class="fa fa-caret-down"></i>
-                    </a>
-
-                   <ul class="dropdown-menu">
-                        <li><a>About</a></li>
-                        <li><a>Help</a></li>
-                        <li><a ui-sref="dashboard" ng-click="isAuthenticated = false">Logout</a></li>
-                    </ul>
-                </span>
-            </header>
-
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
-                <input type="text" placeholder="Search for a client...">
-
-                <div ng-if="isAccountManager">
-                    <div class="sidebar-performance sidebar-container sm-padding text-center">
-                        <p class="score">{{ currentUser.score | number }}</p>
-                        <h6>
-                            Curo Score
-                            <a class="tooltip-help" tooltip="This is a measurement of ..." tooltip-placement="right"><i class="fa fa-question-circle"></i></a>
-                        </h6>
-                        <small>As of {{ currentDate | date:'h:mma'}} on {{ currentDate | date:'MMMM d, yyyy'}}.</small>
-                    </div>
-
-                    <div class="sidebar-navigation">
-                        <h6>Quick Information</h6>
-                        <ul>
-                            <li><a><i class="fa fa-bank"></i> Accounts</a></li>
-                            <li><a><i class="fa fa-dollar"></i> Service Fees & Charges</a></li>
-                            <li><a><i class="fa fa-credit-card"></i> Credit Cards</a></li>
-                            <li><a><i class="fa fa-pencil"></i> Lines of Credit</a></li>
-                            <li><a><i class="fa fa-home"></i> Mortgage Rates</a></li>
-                            <li><a><i class="fa fa-money"></i> Short-Term Investments</a></li>
-                            <li><a><i class="fa fa-clock-o"></i>Long-Term Investments</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-
-            <div class="site" ui-view></div>
-        </div>
+        <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script> -->
 
         <script src="/js/lib/jquery-1.11.0.min.js"></script>
         <script src="/js/lib/angular.min.js"></script>
-        <script src="/js/lib/angular-sanitize.min.js"></script>
         <script src="/js/lib/angular-ui-router.min.js"></script>
-        <script src="/js/lib/ui-bootstrap-tpls-0.11.0.js"></script>
-        <script src="/js/lib/highcharts.js"></script>
-        <script src="/js/lib/ng-highcharts.min.js"></script>
+        <script src="/js/lib/headroom.min.js"></script>
+        <script src="/js/lib/angular-headroom.min.js"></script>
 
         <script src="/js/app.js"></script>
-        <script src="/js/services.js"></script>
         <script src="/js/controllers.js"></script>
-        <script src="/js/filters.js"></script>
         <script src="/js/directives.js"></script>
         <script src="/js/main.js"></script>
     </body>

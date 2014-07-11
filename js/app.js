@@ -1,34 +1,43 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('curo', [
-    'ngSanitize',
+angular.module('karel', [
     'ui.router',
-    'ui.bootstrap',
-    'highcharts-ng',
-    'curo.filters',
-    'curo.services',
-    'curo.directives',
-    'curo.controllers'
+    'headroom',
+    'karel.controllers',
+    'karel.directives'
 ])
 
-.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
-    $stateProvider
-        .state('dashboard', {
-            url: "/",
-            templateUrl: "partials/dashboard.html"
-        })
-        .state('directory', {
-            url: "/directory",
-            templateUrl: "partials/clients/directory.html"
-        })
-        .state('report', {
-            url: "/report",
-            templateUrl: "partials/report.html"
-        })
-        .state('directory.client', {
-            url: "/:clientId",
-            templateUrl: "partials/clients/client.html"
-        })
+.run(function($rootScope, $state){
+    $rootScope.$on("$viewContentLoaded", function(){
+        $('html body').scrollTop(0);
+        $rootScope.state = $state.$current.self.name;
+    });
 })
+
+.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+    .state('home', {
+        url: "/",
+        templateUrl: "/partials/main.html"
+    })
+    .state('about', {
+        url: "/about",
+        templateUrl: "/partials/about.html"
+    })
+    .state('blog', {
+        url: "/blog",
+        templateUrl: "/partials/blog.html"
+    })
+    .state('work', {
+        url: "/work",
+        templateUrl: "/partials/work.html"
+    })
+    .state('construction', {
+        url: "/construction",
+        templateUrl: "/partials/construction.html"
+    })
+});
