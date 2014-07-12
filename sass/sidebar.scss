@@ -10,7 +10,7 @@
     width: 200px;
     z-index: 10;
 
-    @include transition(opacity ease-in-out .15s);
+    @include transition(opacity ease-in-out .25s);
 
     &:hover + .pusher p {
         left: 270px;
@@ -73,7 +73,9 @@
         p {
             font-size: 0.6em;
             line-height: 1.15em;
-            margin-bottom: 0;
+            margin-bottom: 10px;
+
+            &:last-child { margin-bottom: 0; }
         }
     }
 

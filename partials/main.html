@@ -1,17 +1,9 @@
 <div class="feed">
-    <a class="hero" href="http://1MMM.org" target="_blank" ng-style="{'background-image': 'url(/img/work/1MMM-cover.jpg)'}">
+    <a class="hero" ng-class="{text: post.type == 'blog'}" ng-href="{{post.url}}" target="{{post.external == true ? '_blank' : ''}}" ng-style="{'background-image': 'url({{post.img}})'}" ng-repeat="post in feed">
         <div class="inner">
-            <p class="type">Work</p>
-            <p class="text">1 Million Music Moments</p>
-            <p class="cta">Read more</p>
-        </div>
-        <div class="overlay"></div>
-    </a>
-
-    <a class="hero" href="http://dimensions.karel.ca" target="_blank" ng-style="{'background-image': 'url(/img/work/dimensions-cover.jpg)'}">
-        <div class="inner">
-            <p class="type">Work</p>
-            <p class="text">Dimensions</p>
+            <p class="type">{{post.type}}</p>
+            <p class="title">{{post.name}}</p>
+            <p class="date">{{post.date|date:'fullDate'}}</p>
             <p class="cta">Read more</p>
         </div>
         <div class="overlay"></div>

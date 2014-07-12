@@ -6,7 +6,7 @@ header {
     width: 100%;
     z-index: 99;
 
-    &.headroom--unpinned {
+    &.headroom--not-top {
         & + .sidebar {
             .navigation {
                 padding-top: 50px;
@@ -50,6 +50,10 @@ header {
             width: 40px;
 
             @include transition(all ease-in-out .35s);
+
+            &:hover {
+                background-image: url("../img/logo-red.png");
+            }
         }
 
         .social {

@@ -32,6 +32,10 @@ angular.module('karel', [
         url: "/blog",
         templateUrl: "/partials/blog.html"
     })
+    .state('post-test', {
+        url: "/blog/2014/07/11/blackberry-here-to-stay",
+        templateUrl: "/partials/blog/20140711-blackberry-here-to-stay.html"
+    })
     .state('work', {
         url: "/work",
         templateUrl: "/partials/work.html"

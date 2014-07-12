@@ -48,10 +48,20 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+h1 {
+    font-size: 2.25em;
+    line-height: 1.33333em;
+    margin: 2em 0 1em;
+}
+
 h2 {
     font-size: 1.25em;
     line-height: 1.33333em;
     margin: 2em 0 1em;
+}
+
+h4 {
+    margin-bottom: 0.5em;
 }
 
 p {
@@ -62,7 +72,7 @@ p {
     &.p1 {
         font-size: 1.4125em;
         line-height: 1.42857em;
-        margin-bottom: 2em;
+        margin: 2em 0;
     }
 }
 
@@ -80,6 +90,35 @@ a {
     }
 }
 
+blockquote {
+    border-left: 5px solid $clr-red;
+    color: #333;
+    line-height: 2em;
+    margin: 40px 0;
+    padding-left: 40px;
+    position: relative;
+    left: -80px;
+
+    &:nth-child(even) {
+        border-right: 5px solid $clr-red;
+        border-left: 0;
+        left: auto;
+        right: -80px;
+    }
+
+    .p1 {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    footer {
+        &:before {
+            content: '\2014';
+            margin-right: 10px;
+        }
+    }
+}
+
 strong { font-weight: 900; }
 em { font-style: italic; }
 
@@ -90,14 +129,20 @@ ul, ol {
 ul {
     &.list {
         list-style: disc;
-        margin-left: 20px;
+
+        li {
+            margin-left: 20px;
+        }
     }
 }
 
 ol {
     &.list {
         list-style: decimal;
-        margin-left: 20px;
+
+        li {
+            margin-left: 20px;
+        }
     }
 }
 
@@ -181,7 +226,6 @@ ol {
     background-color: #fff;
     opacity: 0.5;
     padding-top: 100px;
-    padding-bottom: 50px;
     position: relative;
 
     @include transition(opacity ease-in-out .75s);
@@ -197,14 +241,15 @@ ol {
 
     .wrapper {
         margin: 0 auto;
-        padding: 60px 20px;
+        padding: 0 20px;
         max-width: 640px;
     }
 }
 
 .pusher {
     background-color: #fff;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #bbb;
+    cursor: w-resize;
     height: 50px;
     position: relative;
     z-index: 11;
@@ -214,6 +259,7 @@ ol {
     }
 
     p {
+        color: #000;
         line-height: 50px;
         margin-bottom: 0;
         margin-left: -50px;
@@ -221,7 +267,7 @@ ol {
         left: 50%;
         width: 200px;
 
-        @include transition(left ease-in-out .5s);
+        @include transition(left ease-in-out .35s);
     }
 }
 
@@ -231,18 +277,50 @@ ol {
 //
 //
 .text {
-    a {
-        border-bottom: 1px solid #AAA;
+    .metadata {
+        &:after {
+            content: '';
+            background-color: #000;
+            display: inline-block;
+            height: 1px;
+            margin: 0 auto;
+            width: 20px;
+        }
+
+        h1,
+        p {
+            margin-bottom: 0;
+        }
     }
 
     .references {
         border-top: 1px solid #ddd;
         margin-top: 60px;
-        padding-top: 20px;
+        padding: 20px 0 60px 0;
+        text-align: left;
+
+        .list {
+            li {
+                font-family: $font-sans;
+                font-size: 0.6em;
+            }
+        }
+    }
+
+    a { border-bottom: 1px solid #AAA; }
+
+    .list {
+        font-family: $font-sans;
+        margin-bottom: 20px;
+        margin-left: 20px;
+
+        p {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
 
         li {
-            font-family: $font-sans;
-            font-size: 0.75em;
+            font-size: 0.8em;
         }
     }
 }
@@ -262,6 +340,47 @@ ol {
     position: relative;
     width: 100%;
 
+    &:hover {
+        .overlay { opacity: 0.25; }
+    }
+
+    &.text {
+        background-color: transparent;
+        height: 200px;
+
+        &:hover {
+            .title {
+                color: $clr-red;
+            }
+        }
+
+        .type {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .overlay { background-color: #fff;}
+
+        p {
+            color: #000;
+            text-shadow: none;
+        }
+
+        .date {
+            font-size: 0.75em;
+            line-height: 1em;
+            margin-bottom: 0;
+        }
+
+        .title {
+            font-size: 2em;
+        }
+
+        .cta {
+            display: none;
+        }
+    }
+
     .overlay {
         background-color: rgba(#000, 0.25);
         height: 100%;
@@ -270,8 +389,6 @@ ol {
         top: 0;
         left: 0;
         width: 100%;
-
-        @include transition(opacity ease-in-out .15s);
     }
 
     .inner {
@@ -301,11 +418,16 @@ ol {
         margin-bottom: 10px;
     }
 
-    .text {
+    .title {
         font-size: 3em;
         font-weight: 700;
         line-height: 1.125em;
         margin-bottom: 10px;
+    }
+
+    .excerpt {
+        font-family: $font-serif;
+        font-size: 1em;
     }
 
     .cta {
