@@ -12,21 +12,17 @@
 @import "partials/_typography";
 
 @import "header";
-@import "sidebar";
+@import "footer";
 
 /* -------------------------------------------------------------------------
  * And the beauty begins ...
  * ------------------------------------------------------------------------- */
-html {
-    font-size: 16px;
-    line-height: 0.375em;
-}
 
 body {
-    color: #000;
-    font-size: 1em;
-    line-height: 1.5em;
-    font-family: $font-serif;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.6125;
+    font-family: $font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -65,7 +61,6 @@ h4 {
 }
 
 p {
-    color: #333;
     line-height: 2em;
     margin-bottom: 1em;
 
@@ -77,7 +72,7 @@ p {
 }
 
 a {
-    color: #333;
+    color: $clr-red;
     cursor: pointer;
     outline: 0;
     text-decoration: none;
@@ -219,116 +214,35 @@ ol {
  * SITE
  * ------------------------------------------------------------------------- */
 
-.site {
-}
+.bio {
+    max-width: 480px;
+    margin-bottom: 60px;
+    padding: 0 40px;
 
-.content {
-    background-color: #fff;
-    opacity: 0.5;
-    padding-top: 100px;
-    position: relative;
+    .bio_text {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
-    @include transition(opacity ease-in-out .75s);
-
-    &:hover {
-        opacity: 1;
-        z-index: 11;
-
-        & + .sidebar {
-            opacity: 0;
+        span {
+            color: #999;
         }
     }
 
-    .wrapper {
-        margin: 0 auto;
-        padding: 0 20px;
-        max-width: 640px;
-    }
-}
+    .bio_read-more {
+        color: #aaa;
+        font-size: 12px;
 
-.pusher {
-    background-color: #fff;
-    border-top: 1px solid #bbb;
-    cursor: w-resize;
-    height: 50px;
-    position: relative;
-    z-index: 11;
-
-    &:hover p {
-        left: 270px;
-    }
-
-    p {
-        color: #000;
-        line-height: 50px;
-        margin-bottom: 0;
-        margin-left: -50px;
-        position: absolute;
-        left: 50%;
-        width: 200px;
-
-        @include transition(left ease-in-out .35s);
-    }
-}
-
-//
-//
-// Page Types
-//
-//
-.text {
-    .metadata {
-        &:after {
-            content: '';
-            background-color: #000;
-            display: inline-block;
-            height: 1px;
-            margin: 0 auto;
-            width: 20px;
-        }
-
-        h1,
-        p {
-            margin-bottom: 0;
-        }
-    }
-
-    .references {
-        border-top: 1px solid #ddd;
-        margin-top: 60px;
-        padding: 20px 0 60px 0;
-        text-align: left;
-
-        .list {
-            li {
-                font-family: $font-sans;
-                font-size: 0.6em;
-            }
-        }
-    }
-
-    a { border-bottom: 1px solid #AAA; }
-
-    .list {
-        font-family: $font-sans;
-        margin-bottom: 20px;
-        margin-left: 20px;
-
-        p {
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        li {
-            font-size: 0.8em;
+        &:hover {
+            color: #777;
         }
     }
 }
 
-//
-// Elements
-//
-.hero {
+.work {
     background: {
         color: #777;
         position: center center;
@@ -336,107 +250,84 @@ ol {
         size: cover;
     }
     display: table;
-    height: 400px;
+    -webkit-filter: grayscale(100%);
+    height: 500px;
     position: relative;
     width: 100%;
 
+    @include transition (-webkit-filter ease-in-out .15s);
+
     &:hover {
-        .overlay { opacity: 0.25; }
-    }
+        -webkit-filter: grayscale(0%);
 
-    &.text {
-        background-color: transparent;
-        height: 200px;
-
-        &:hover {
-            .title {
-                color: $clr-red;
-            }
-        }
-
-        .type {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .overlay { background-color: #fff;}
-
-        p {
-            color: #000;
-            text-shadow: none;
-        }
-
-        .date {
-            font-size: 0.75em;
-            line-height: 1em;
-            margin-bottom: 0;
-        }
-
-        .title {
-            font-size: 2em;
-        }
-
-        .cta {
-            display: none;
+        &:after {
+            opacity: 0.25;
         }
     }
 
-    .overlay {
-        background-color: rgba(#000, 0.25);
-        height: 100%;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    .inner {
+    .work_cover {
         display: table-cell;
         position: relative;
         text-align: center;
         vertical-align: middle;
+        width: 100%;
         z-index: 1;
     }
 
-    p {
+    .work_text {
         color: #fff;
         font-family: $font-sans;
-        text-shadow: rgba(#000, 0.74902) 0px 1px 3px;
-    }
-
-    .type {
-        background: #fff;
-        text-shadow: none;
-        color: #666666;
-        display: inline-block;
-        font-family: $font-serif;
-        font-style: italic;
-        font-size: 1em;
-        line-height: 1.5em;
-        padding: 0 5px;
+        font-size: 20px;
         margin-bottom: 10px;
+        padding: 0 40px;
     }
 
-    .title {
-        font-size: 3em;
+    .work_title {
+        font-size: 40px;
         font-weight: 700;
         line-height: 1.125em;
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        text-shadow: rgba(#000, 0.5) 0px 1px 3px;
     }
 
-    .excerpt {
-        font-family: $font-serif;
-        font-size: 1em;
+    .work_tags {
+        .work_tag {
+            background: #fff;
+            text-shadow: none;
+            color: #666666;
+            display: inline-block;
+            font-family: $font-serif;
+            font-style: italic;
+            font-size: 12px;
+            line-height: 1.625;
+            padding: 0 5px;
+            margin-bottom: 10px;
+
+            & + .work_tag {
+                margin-left: 5px;
+            }
+        }
     }
 
-    .cta {
-        display: block;
-        font-size: 1.25em;
-        font-weight: 700;
-        line-height: 1.33333em;
-        padding: 0 0.33333em;
-        margin-bottom: 0.66667em;
+    &:after {
+        content: "";
+        background-color: #000;
+        height: 100%;
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        @include transition (opacity ease-in-out .15s);
+    }
+
+    @media (max-width: $breakpoint-md-max) {
+        height: 320px;
+
+        .work_title {
+            font-size: 30px;
+        }
     }
 }
 

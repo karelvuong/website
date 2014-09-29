@@ -1,0 +1,29 @@
+<header class="header" role="banner">
+    <a class="brand" ui-sref="home"></a>
+</header>
+
+<div class="bio">
+    <p class="bio_text">
+        Developer at <a href="http://twitter.com/blackberry">BlackBerry</a><span>+</span>Digital Director at <a href="http://twitter.com/1MMMTO">1 Million Music Moments</a><span>+</span>Comp. Sci. Student at the <a href="http://twitter.com/uoft">University of Toronto</a>.
+    </p>
+</div>
+
+<div class="feed">
+    <div class="work" ng-style="{'background-image': 'url({{post.img}})'}" ng-repeat="post in feed">
+        <a class="work_cover" ng-href="{{post.url}}" target="{{post.external == true ? '_blank' : ''}}">
+            <div class="work_text">
+                <p class="work_title">{{post.name}}</p>
+            </div>
+
+            <ul class="work_tags">
+                <li class="work_tag" ng-repeat="tag in post.tags">{{tag}}</li>
+            </ul>
+        </a>
+
+        <div ui-view></div>
+    </div>
+</div>
+
+<footer class="footer--primary">
+    <p><strong>karel.ca</strong> and all contents copyright 2012-2014 by <strong>Karel Vuong</strong> unless otherwise noted.</p>
+</footer>

@@ -1,127 +1,40 @@
 <!doctype html>
 <html lang="en" ng-app="karel">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-Ua-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Karel Vuong</title>
-        <meta name="title" content="Karel Vuong">
-        <meta name="description" content="">
+    <title>Karel Vuong</title>
+    <meta name="title" content="Karel Vuong">
+    <meta name="description" content="">
+    <meta name="application-name" content="Karel Vuong"/>
 
-        <meta name="application-name" content="Karel Vuong"/>
-        <!-- <meta name="msapplication-TileColor" content="#FFFFFF" /> -->
-        <!-- <meta name="msapplication-TileImage" content="http://www.1MMM.org/img/mstile-144x144.png" /> -->
+    <meta property="og:site_name" content="Karel Vuong">
+    <meta property="og:title" content="Karel Vuong">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="http://karel.ca">
 
-        <meta property="og:site_name" content="Karel Vuong">
-        <meta property="og:title" content="Karel Vuong">
-        <meta property="og:description" content="">
-        <meta property="og:url" content="http://karel.ca">
+    <base href="/"></base>
 
-        <base href="/"></base>
+    <link rel="stylesheet" href="/css/app.css">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+</head>
 
-        <!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" /> -->
+<body ng-controller="ApplicationController">
+    <div class="page" ui-view="page"></div>
 
-        <link rel="stylesheet" href="/css/app.css">
-    </head>
-    <body ng-controller="ApplicationController">
-        <div class="site">
-            <header role="banner" headroom offset="150">
-                <div class="banner container">
-                    <a class="brand" ui-sref="home"></a>
+    <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script> -->
 
-                    <ul class="social">
-                        <li><a ng-href="http://github.com/karelvuong">GitHub</a></li>
-                        <li><a ng-href="http://linkedin.com/in/karelvuong">LinkedIn</a></li>
-                        <li><a ng-href="http://twitter.com/karelvuong">Twitter</a></li>
-                    </ul>
-                </div>
-            </header>
+    <script src="/js/lib/jquery-1.11.0.min.js"></script>
+    <script src="/js/lib/angular.min.js"></script>
+    <script src="/js/lib/angular-ui-router.min.js"></script>
 
-            <div class="container">
-                <div class="content" ui-view></div>
-
-                <aside class="sidebar">
-                    <a class="back-to-top">
-                        Top
-                    </a>
-
-                    <nav class="navigation">
-                        <ul>
-                            <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
-                            <li><a ui-sref="about" ui-sref-active="active">About</a></li>
-                            <li><a ui-sref="construction">Blog</a></li>
-                            <li><a ui-sref="construction">Work</a></li>
-                        </ul>
-                    </nav>
-
-                    <div class="information">
-                        <p><strong>karel.ca</strong> and all contents copyright 2012-2014 by <strong>Karel Vuong</strong> unless otherwise noted.</p>
-                        <p>Contents under Creative Commons License.</p>
-                    </div>
-
-                    <ul class="recent">
-                        <li><a ui-sref="construction">
-                            1 Million Music Moments
-                            <p>Work</p>
-                        </a></li>
-                        <li><a ui-sref="construction">
-                            Flow
-                            <p>Work</p>
-                        </a></li>
-                        <li><a ui-sref="construction">
-                            Dimensions
-                            <p>Work</p>
-                        </a></li>
-                        <li><a ui-sref="construction">
-                            Curo
-                            <p>Work</p>
-                        </a></li>
-                        <li><a ui-sref="construction">
-                            Clinico
-                            <p>Work</p>
-                        </a></li>
-                        <li><a ui-sref="construction">
-                            Cooler
-                            <p>Work</p>
-                        </a></li>
-                        <li><a ui-sref="construction">
-                            Cella
-                            <p>Work</p>
-                        </a></li>
-                    </ul>
-
-                    <a class="back-to-top">
-                        Top
-                    </a>
-                </aside>
-
-                <div class="pusher">
-                    <p>What's next?</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script> -->
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script> -->
-
-        <script src="/js/lib/jquery-1.11.0.min.js"></script>
-        <script src="/js/lib/angular.min.js"></script>
-        <script src="/js/lib/angular-ui-router.min.js"></script>
-        <script src="/js/lib/headroom.min.js"></script>
-        <script src="/js/lib/angular-headroom.min.js"></script>
-
-        <script src="/js/app.js"></script>
-        <script src="/js/controllers.js"></script>
-        <script src="/js/directives.js"></script>
-        <script src="/js/main.js"></script>
-    </body>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/directives.js"></script>
+    <script src="/js/main.js"></script>
+</body>
 </html>
