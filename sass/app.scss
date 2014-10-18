@@ -309,6 +309,10 @@ ol {
     overflow: hidden;
     transform: translateY(0);
 
+    .inner {
+        padding: 0 40px;
+    }
+
     h1 {
         color: #fff;
         margin-top: 0;
@@ -331,6 +335,14 @@ ol {
 
         & + p {
             margin-top: 20px;
+        }
+
+        @media (max-width: $breakpoint-md-max){
+            font-size: 14px;
+        }
+
+        @media (max-width: $breakpoint-sm-max){
+            font-size: 12px;
         }
     }
 }
@@ -365,6 +377,10 @@ ol {
 
 .feed {
     margin: 0 40px;
+
+    @media (max-width: $breakpoint-sm-max){
+        margin: 0;
+    }
 }
 
 .post {
