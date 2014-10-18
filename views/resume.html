@@ -25,14 +25,16 @@
     <div class="row">
         <div class="resume_column col-md-6">
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-briefcase"></i> Experience</h2>
+                <div class="resume_section_header row">
+                    <h2 class="resume_section_title pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
 
-                <div class="resume_section_actions">
-                    <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
-                        <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
-                        <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
-                        Only show<span ng-if="showOnlyCurrent">ing</span> current
-                    </a>
+                    <div class="resume_section_actions pull-right">
+                        <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
+                            <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
+                            <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
+                            Only show<span ng-if="showOnlyCurrent">ing</span> current
+                        </a>
+                    </div>
                 </div>
 
                 <div class="resume_item" ng-repeat="job in experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)">
@@ -58,14 +60,16 @@
 
 
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-code"></i> Projects</h2>
+                <div class="resume_section_header row">
+                    <h2 class="resume_section_title pull-left"><i class="fa fa-code"></i> Projects</h2>
 
-                <div class="resume_section_actions">
-                    <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
-                        <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
-                        <i class="fa fa-circle" ng-if="showOnlyActive"></i>
-                        Only show<span ng-if="showOnlyActive">ing</span> active
-                    </a>
+                    <div class="resume_section_actions pull-right">
+                        <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
+                            <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
+                            <i class="fa fa-circle" ng-if="showOnlyActive"></i>
+                            Only show<span ng-if="showOnlyActive">ing</span> active
+                        </a>
+                    </div>
                 </div>
 
                 <div class="resume_item" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
