@@ -9,10 +9,10 @@ angular.module('karel', [
 ])
 
 .run(function($rootScope, $state){
-  $rootScope.$on("$viewContentLoaded", function(){
-    $('html body').scrollTop(0);
-    $rootScope.state = $state.$current.self.name;
-  });
+    $rootScope.$on("$viewContentLoaded", function(){
+        $('html body').scrollTop(0);
+        $rootScope.state = $state.$current.self.name;
+    });
 })
 
 .config(function($locationProvider, $stateProvider, $urlRouterProvider) {

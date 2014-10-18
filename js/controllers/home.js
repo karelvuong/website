@@ -4,15 +4,12 @@ angular.module('karel.controllers')
 .controller('HomeController', function($scope) {
     $scope.feed = [
         {
-          "name": "Flow",
-          "date": "Ongoing",
-          "url": "/construction",
-          "external": false,
-          "tags": [
-            "work",
-            "web"
-          ],
-          "img": "/img/work/flow-list.jpg"
+            "name": "Flow",
+            "date": "Ongoing",
+            "url": "/work/flow",
+            "external": false,
+            "tags": ["work", "web"],
+            "img": "/img/work/flow-list.jpg"
         },
         {
           "name": "Casa",
@@ -39,7 +36,7 @@ angular.module('karel.controllers')
         },
         {
           "name": "1 Million Music Moments",
-          "date": "May 2014",
+          "date": "June 2014",
           "url": "http://1MMM.org",
           "external": true,
           "tags": [

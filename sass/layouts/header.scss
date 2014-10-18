@@ -54,11 +54,24 @@
         top: 0;
         left: 0;
         width: 100%;
+        z-index: 0;
+    }
+
+    .text {
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+
+        .title {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
     }
 
     &--has-cover {
-        padding-bottom: 240px;
-
         .brand { background-image: url("../img/logo-white.png"); }
 
         &--dark { .brand { background-image: url("../img/logo-black.png"); } }
