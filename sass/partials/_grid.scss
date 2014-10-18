@@ -71,9 +71,14 @@ $breakpoint-lg-max: 1199px;
 .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11,
 .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   min-height: 1px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
   position: relative;
+}
+
+.col-tight {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4,

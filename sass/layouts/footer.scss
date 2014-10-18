@@ -1,0 +1,23 @@
+.footer--primary {
+    margin: 60px 0;
+    text-align: center;
+    width: 100%;
+
+    li {
+        display: inline-block;
+
+        a {
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0 15px;
+            opacity: 0.4;
+            text-transform: uppercase;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

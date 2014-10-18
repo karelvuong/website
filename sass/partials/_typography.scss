@@ -1,2 +1,11 @@
 $font-sans: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 $font-serif: Georgia, Times, "Times New Roman", serif;
+
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+.u-text-left      { text-align: left;     }
+.u-text-center    { text-align: center;   }
+.u-text-right     { text-align: right;    }
+.u-text-justify   { text-align: justify;  }

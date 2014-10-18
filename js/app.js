@@ -2,9 +2,10 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('karel', [
-  'ui.router',
-  'karel.controllers',
-  'karel.directives'
+    'ngSanitize',
+    'ui.router',
+    'karel.controllers',
+    'karel.directives'
 ])
 
 .run(function($rootScope, $state){
@@ -22,7 +23,7 @@ angular.module('karel', [
   .state('home', {
     url: "/",
     views: {
-      "page": {
+      "site": {
         templateUrl: "/views/home.html"
       }
     }
@@ -30,9 +31,33 @@ angular.module('karel', [
   .state('construction', {
     url: "/construction",
     views: {
-      "page": {
+      "site": {
         templateUrl: "/views/construction.html"
       }
     }
+  })
+  .state('resume', {
+    url: "/resume",
+    views: {
+      "site": {
+        templateUrl: "/views/resume.html"
+      }
+    }
+  })
+  .state('work', {
+    url: "/work",
+    views: {
+      "site": {
+        templateUrl: "/views/work/_layout.html"
+      }
+    }
+  })
+  .state('work.casa', {
+    url: "/casa",
+    templateUrl: "/views/work/casa.html"
+  })
+  .state('work.flow', {
+    url: "/flow",
+    templateUrl: "/views/work/flow.html"
   })
 });

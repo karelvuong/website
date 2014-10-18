@@ -1,0 +1,286 @@
+<div class="page page--resume" ng-controller="ResumeController">
+    <header class="header" role="banner">
+        <a class="brand" ui-sref="home"></a>
+
+        <div class="links">
+            <a href="http://github.com/karelvuong">GitHub</a>
+            <a href="http://linkedin.com/in/karelvuong">LinkedIn</a>
+            <a href="http://twitter.com/karelvuong">Twitter</a>
+        </div>
+    </header>
+
+    <div class="bio row">
+        <div class="pull-left">
+            <p class="bio_primary u-uppercase">
+                Karel Vuong<br>
+            </p>
+            <p class="bio_secondary">karelvuong <span>(at)</span> me <span>(dot)</span> com</p>
+        </div>
+
+        <div class="pull-right">
+            <a class="resume_download" href="/resume.pdf" target="_self"><i class="fa fa-cloud-download"></i></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="resume_column col-md-6">
+            <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-briefcase"></i> Experience</h2>
+
+                <div class="resume_section_actions">
+                    <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
+                        <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
+                        <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
+                        Only show<span ng-if="showOnlyCurrent">ing</span> current
+                    </a>
+                </div>
+
+                <div class="resume_item" ng-repeat="job in experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)">
+                    <p class="primary">{{job.company}}, <span>{{job.location}}</span></p>
+                    <p class="secondary">{{job.position}}</p>
+                    <p class="date">
+                        {{job.date.start | date : "MMMM y"}}{{job.date.end ? ' &mdash; ' : ''}}{{job.date.current ? "Present" : job.date.end | date : "MMMM y"}}
+                        <span class="duration">({{ job.date.duration }} months)</span>
+                    </p>
+                    <ul class="details list">
+                        <li ng-repeat="detail in job.details">
+                            <p ng-bind-html="detail.text"></p>
+                            <ul class="list" ng-if="detail.list">
+                                <li ng-repeat="subDetail in detail.list" ng-bind-html="subDetail.text"></li>
+                            </ul>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-code"></i> Projects</h2>
+
+                <div class="resume_section_actions">
+                    <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
+                        <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
+                        <i class="fa fa-circle" ng-if="showOnlyActive"></i>
+                        Only show<span ng-if="showOnlyActive">ing</span> active
+                    </a>
+                </div>
+
+                <div class="resume_item" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
+                    <p class="primary">{{project.name}}</p>
+                    <p class="secondary"><a ng-href="{{project.link}}">{{project.link}}</a></p>
+                    <p class="date">
+                        {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
+                        <span class="duration">({{ project.date.status }})</span>
+                    </p>
+                    <ul class="details list">
+                        <li ng-repeat="detail in project.details">
+                            <p ng-bind-html="detail.text"></p>
+                            <ul class="list" ng-if="detail.list">
+                                <li ng-repeat="subDetail in detail.list"><p ng-bind-html="subDetail.text"></p></li>
+                            </ul>
+                        </li>
+                   </ul>
+
+                    <ul class="tags">
+                        <li ng-repeat="tag in project.tags">#{{tag}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume_column col-md-6">
+            <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-university"></i> Education</h2>
+
+                <div class="resume_item" id="educationUofT">
+                    <header>
+                        <p class="primary">University of Toronto, Trinity College<span>, Toronto ON</span></p>
+                        <p class="secondary">Specialist in Computer Science</p>
+                        <p class="date">
+                            September 2011 &mdash; Present
+                            <span class="duration">(Expected: 2016)</span>
+                        </p>
+                    </header>
+                    <ul class="details list">
+                        <li>Trinity Entrance Scholarship for avg. of 95%</li>
+                        <li>Queen Elizabeth II Aiming for the Top Scholarship</li>
+                        <li>Professional Experience Year</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-trophy"></i> Awards</h2>
+
+                <div class="resume_item" id="awardRBCNGI">
+                    <p class="primary">RBC Next Generation Innovator <span>&mdash; Finalist</span></p>
+                    <p class="date">June 2014</p>
+                    <ul class="details list">
+                        <li>Conceived a platform that analyzes client and transaction data to offer intelligent personalization and actionable signal data to provide proactive recommendations to strengthen RBC's retail-client relationship</li>
+                    </ul>
+                </div>
+
+                <div class="resume_item" id="awardEliLilly">
+                    <p class="primary">Eli Lilly <span>&mdash; Honourable Mention</span></p>
+                    <p class="secondary">$3,000 cash prize</a></p>
+                    <p class="date">November 2013</p>
+                    <ul class="details list">
+                        <li>Transformed clinical trial protocols into interactive, engaging, patient-focused platforms for discovering and understanding clinical research and data</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-check"></i> Skills</h2>
+
+                <div class="resume_sub-section row">
+                    <div class="col-tight col-xs-6">
+                        <p class="heading">Front End</p>
+
+                        <div class="resume_item" id="competenciesDevFrontEnd">
+                            <ul class="details list">
+                                <li>HTML</li>
+                                <li>
+                                    CSS
+                                    <ul class="list list--sub">
+                                        <li>SASS</li>
+                                        <li>LESS</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    JavaScript
+                                    <ul class="list list--sub">
+                                        <li>AngularJS</li>
+                                        <li>Meteor</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-tight col-xs-6">
+                        <p class="heading">Back End</p>
+
+                        <div class="resume_item" id="competenciesDevBackEnd">
+                            <ul class="details list">
+                                <li>
+                                    Python
+                                    <ul class="list list--sub">
+                                        <li>Flask</li>
+                                    </ul>
+                                </li>
+                                <li>Node.js</li>
+                                <li>Java</li>
+                                <li>C++</li>
+                            </ul>
+
+                            <small class="note">* ordered by proficiency</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume_sub-section row">
+                    <div class="col-tight col-xs-6">
+                        <p class="heading">Database</p>
+
+                        <div class="resume_item" id="competenciesDevMobile">
+                            <ul class="details list">
+                                <li>
+                                    <strong>RDBMS</strong>
+                                    <ul class="list list--sub">
+                                        <li>Oracle</li>
+                                        <li>PostgreSQL</li>
+                                        <li>MySQL</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>NoSQL</strong>
+                                    <ul class="list list--sub">
+                                        <li>MongoDB</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-tight col-xs-6">
+                        <p class="heading">Mobile</p>
+
+                        <div class="resume_item" id="competenciesDevMobile">
+                            <ul class="details list">
+                                <li>
+                                    <strong>BlackBerry 10</strong>
+                                    <ul class="list list--sub">
+                                        <li>Native + Cascades</li>
+                                        <li>HTML5 + WebWorks</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-wrench"></i> Tools</h2>
+
+                <div class="row">
+                    <div class="col-tight col-xs-6">
+                        <div class="resume_sub-section row">
+                            <p class="heading">Development</p>
+
+                            <div class="resume_item" id="toolsDev">
+                                <ul class="details list">
+                                    <li>Chrome Developer Tools</li>
+                                    <li>Sublime Text</li>
+                                    <li>
+                                        <strong>Tools</strong>
+                                        <ul class="list list--sub">
+                                            <li>Bower</li>
+                                            <li>Grunt</li>
+                                            <li>Gulp</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Version Control</strong>
+                                        <ul class="list list--sub">
+                                            <li>Git</li>
+                                            <li>Subversion</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-tight col-xs-6">
+                        <div class="resume_sub-section row">
+                            <p class="heading">Design</p>
+
+                            <div class="resume_item" id="toolsDsgn">
+                                <ul class="details list">
+                                    <li>Adobe Illustrator</li>
+                                    <li>Adobe Photoshop</li>
+                                    <li>FramerJS</li>
+                                    <li>Sketch</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+.header {
+    padding: 120px 40px;
+    position: relative;
+    text-align: center;
+
+    .brand {
+        background: {
+            image: url("../img/logo-black.png");
+            position: center center;
+            repeat: no-repeat;
+            size: 45px 84px;
+        }
+
+        display: inline-block;
+        height: 84px;
+        position: relative;
+        width: 45px;
+        z-index: 1;
+
+        @include transition(all ease-in-out .3613s);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .links {
+        margin-top: 20px;
+
+        a {
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0 15px;
+            opacity: 0.4;
+            text-transform: uppercase;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.active {
+                color: $clr-red;
+                opacity: 1;
+            }
+        }
+    }
+
+    .cover {
+        background-color: #777;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &--has-cover {
+        padding-bottom: 240px;
+
+        .brand { background-image: url("../img/logo-white.png"); }
+
+        &--dark { .brand { background-image: url("../img/logo-black.png"); } }
+    }
+}

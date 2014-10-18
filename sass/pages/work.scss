@@ -1,0 +1,49 @@
+.page--work {
+    &--flow {
+        .accent-clr--primary {
+            color: #1C6A96;
+        }
+    }
+
+    .section {
+        h6 {
+            color: #bbb;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        & + .section:before {
+            content: '';
+            background-color: #ddd;
+            display: block;
+            height: 4px;
+            margin-left: 40px;
+            width: 50px
+        }
+    }
+
+    .section--work_logos {
+        img {
+            height: 100px;
+            width: auto;
+        }
+    }
+
+    .section--work_about {
+        max-width: 640px;
+        margin-bottom: 60px;
+
+        .work_text {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+    }
+
+    .section_inner {
+        padding: 80px 40px;
+    }
+}

@@ -1,29 +1,42 @@
-<header class="header" role="banner">
-    <a class="brand" ui-sref="home"></a>
-</header>
+<div class="me_about" ng-class="{active: isAboutShowing}">
+    <div class="container-vc">
+        <div class="inner text-left" ui-view="about">
+            <h1>Hi, I'm <a href="https://twitter.com/karelvuong">@karelvuong</a>.</h1>
 
-<div class="bio">
-    <p class="bio_text">
-        Developer at <a href="http://twitter.com/blackberry">BlackBerry</a><span>+</span>Digital Director at <a href="http://twitter.com/1MMMTO">1 Million Music Moments</a><span>+</span>Comp. Sci. Student at the <a href="http://twitter.com/uoft">University of Toronto</a>.
-    </p>
-</div>
+            <p>And I am a digital artisan. I design things, but I don't see design as pushing pixels around a screen. Taking a broad definition of <em>design</em>, I think of it as <strong>finding something that is broken and fixing it</strong>.</p>
 
-<div class="feed">
-    <div class="work" ng-style="{'background-image': 'url({{post.img}})'}" ng-repeat="post in feed">
-        <a class="work_cover" ng-href="{{post.url}}" target="{{post.external == true ? '_blank' : ''}}">
-            <div class="work_text">
-                <p class="work_title">{{post.name}}</p>
-            </div>
-
-            <ul class="work_tags">
-                <li class="work_tag" ng-repeat="tag in post.tags">{{tag}}</li>
-            </ul>
-        </a>
-
-        <div ui-view></div>
+            <p>Design starts with empathy &mdash; feeling people's pain. This leads me to try and find flaws in the system that created this pain and fix them. Whether it is through designing a solution to a complex algorithm, architecting an application from start to finish, or making something easier on the eyes, designing to improve and solve problems is what I do.</p>
+        </div>
     </div>
 </div>
 
-<footer class="footer--primary">
-    <p><strong>karel.ca</strong> and all contents copyright 2012-2014 by <strong>Karel Vuong</strong> unless otherwise noted.</p>
-</footer>
+<div class="page--home" ng-class="{active: isAboutShowing}">
+    <header class="header" role="banner">
+        <a class="brand" ui-sref="home"></a>
+
+        <div class="links">
+            <a ui-sref="resume">Resumé</a>
+            <a ng-class="{active: isAboutShowing}" ng-click="isAboutShowing = !isAboutShowing">Information</a>
+        </div>
+    </header>
+
+    <div class="feed row" ng-controller="HomeController">
+        <a class="post post--work" ng-href="{{post.url}}" target="{{post.external == true ? '_blank' : ''}}" ng-repeat="post in feed">
+            <div class="cover" ng-style="{'background-image': 'url({{post.img}})'}"></div>
+            <div class="text">
+                <div class="inner">
+                    <p class="title" ng-bind="post.name"></p>
+                    <p class="date" ng-bind="post.date"></p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <footer class="footer--primary">
+        <ul>
+            <li><a href="http://github.com/karelvuong">GitHub</a></li>
+            <li><a href="http://instagram.com/karelvuong">Instagram</a></li>
+            <li><a href="http://twitter.com/karelvuong">Twitter</a></li>
+        </ul>
+    </footer>
+</div>

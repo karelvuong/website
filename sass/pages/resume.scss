@@ -1,0 +1,184 @@
+$resume-section-padding: 60px;
+$resume-sub-section-padding: 20px;
+
+.page--resume {}
+
+.resume_column {
+    padding: 0;
+
+    @media (max-width: $breakpoint-md-max) {
+        margin-top: $resume-section-padding;
+    }
+}
+
+.resume_section {
+    border: 1px solid transparent;
+    padding: 40px;
+
+    &:hover {
+        background-color: #fcfcfc;
+        border-color: #f0f0f0;
+    }
+
+    & + & {
+        margin-top: $resume-section-padding;
+    }
+}
+
+.resume_sub-section {
+    & + & {
+        margin-top: $resume-sub-section-padding;
+    }
+}
+
+.resume_download {
+    color: #bbb;
+    font-size: 43px;
+    line-height: 1;
+
+    &:hover {
+        color: #555;
+    }
+}
+
+.resume_section_title {
+    color: $clr-red;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+.resume_section_actions {
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    i {
+        margin-right: 10px;
+    }
+
+    a {
+        color: #aaa;
+        font-size: 14px;
+
+        &:hover { color: #000; }
+
+        &.active {
+            color: #000;
+
+            i {
+                color: $clr-red;
+            }
+        }
+    }
+}
+
+.resume_item {
+    p {
+        margin-bottom: 0;
+    }
+
+    .primary,
+    .secondary {
+        font-weight: 700;
+        line-height: 1.25;
+    }
+
+    .primary {
+        display: block;
+        font-size: 14px;
+
+        span {
+            font-weight: 400;
+        }
+    }
+
+    .secondary {}
+
+    a {
+        color: #777;
+    }
+
+    .date {
+        .duration {
+            color: #aaa;
+        }
+    }
+
+    .details {
+        color: #777;
+
+        & + .details {
+            margin-top: 5px;
+        }
+
+        p {
+            line-height: 1.6125;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        .list--sub {
+            margin-bottom: 5px;
+        }
+    }
+
+    .note {
+        color: #aaa;
+    }
+
+    .tags {
+        font-size: 11px;
+        margin: 5px 20px 0;
+
+        li {
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: inline-block;
+            padding: 0 5px;
+
+            & + li {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    & + & {
+        margin-top: 40px;
+    }
+}
+
+@media print {
+    .page--resume {
+        header {
+            padding: 0 40px;
+        }
+
+        .bio {
+            margin-bottom: 0;
+        }
+
+        .links,
+        .resume_section_actions,
+        .tags {
+            display: none;
+        }
+
+        .resume_section {
+            & + .resume_section {
+                margin-top: 0;
+            }
+        }
+
+        .resume_sub-section {
+            & + .resume_sub-section {
+                margin-top: 0;
+            }
+        }
+    }
+}

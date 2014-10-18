@@ -11,8 +11,11 @@
 @import "partials/_animations";
 @import "partials/_typography";
 
-@import "header";
-@import "footer";
+@import "layouts/header";
+@import "layouts/footer";
+
+@import "pages/resume";
+@import "pages/work";
 
 /* -------------------------------------------------------------------------
  * And the beauty begins ...
@@ -35,6 +38,14 @@ body {
           box-sizing: border-box;
 }
 
+::-moz-selection {
+    background: rgba(#000, 0.1);
+}
+
+::selection {
+    background: rgba(#000, 0.1);
+}
+
 /* -------------------------------------------------------------------------
  * TYPOGRAPHY
  * ------------------------------------------------------------------------- */
@@ -45,15 +56,15 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2.25em;
-    line-height: 1.33333em;
-    margin: 2em 0 1em;
+    font-size: 30px;
+    line-height: 1.6125;
+    margin: 40px 0 20px;
 }
 
 h2 {
-    font-size: 1.25em;
-    line-height: 1.33333em;
-    margin: 2em 0 1em;
+    font-size: 20px;
+    line-height: 1.4125;
+    margin: 20px 0 10px;
 }
 
 h4 {
@@ -61,14 +72,21 @@ h4 {
 }
 
 p {
-    line-height: 2em;
-    margin-bottom: 1em;
+    line-height: 25px;
+    margin-bottom: 10px;
 
     &.p1 {
         font-size: 1.4125em;
         line-height: 1.42857em;
         margin: 2em 0;
     }
+}
+
+.heading {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 a {
@@ -141,11 +159,6 @@ ol {
     }
 }
 
-.text-left      { text-align: left;     }
-.text-center    { text-align: center;   }
-.text-right     { text-align: right;    }
-.text-justify   { text-align: justify;  }
-
 /* -------------------------------------------------------------------------
  * LAYOUT
  * ------------------------------------------------------------------------- */
@@ -199,13 +212,13 @@ ol {
 .no-top-padding     { padding-top:      0 !important; }
 .no-bottom-padding  { padding-bottom:   0 !important; }
 
-.vc-container {
+.container-vc {
     display: table;
+    height: 100%;
     width: 100%;
 
     .inner {
         display: table-cell;
-        text-align: center;
         vertical-align: middle;
     }
 }
@@ -214,119 +227,233 @@ ol {
  * SITE
  * ------------------------------------------------------------------------- */
 
-.bio {
-    max-width: 480px;
-    margin-bottom: 60px;
-    padding: 0 40px;
+.site {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
-    .bio_text {
-        font-size: 20px;
+.page {
+    padding-bottom: 120px;
+    position: relative;
+}
+
+.page--home {
+    background-color: #fff;
+    position: relative;
+    transform: translateY(-400px);
+    z-index: 1;
+    @include transition(transform cubic-bezier(1, 0.14, 0.08, 1) 0.5413s);
+
+    &.active {
+        transform: translateY(0);
+    }
+}
+
+.page--construction {
+    background-color: #212121;
+    padding-bottom: 0;
+
+    .message {
+        color: #fff;
+        font-size: 30px;
         font-weight: 700;
-        letter-spacing: -1px;
-        line-height: 1;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        span {
-            color: #999;
-        }
+        line-height: 1.6125;
+        margin: 0;
     }
 
-    .bio_read-more {
-        color: #aaa;
-        font-size: 12px;
+    .link {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        height: 30px;
+        line-height: 30px;
+        opacity: .5;
+
+        i {
+            margin-right: 5px;
+
+            @include transition(all ease-in-out .5s);
+        }
 
         &:hover {
-            color: #777;
+            font-size: 18px;
+            opacity: 1;
+
+            i {
+                font-size: 16px;
+                margin-right: 10px;
+            }
         }
     }
 }
 
-.work {
-    background: {
-        color: #777;
-        position: center center;
-        repeat: no-repeat;
-        size: cover;
-    }
+.page--full {
     display: table;
-    -webkit-filter: grayscale(100%);
-    height: 500px;
-    position: relative;
+    height: 100%;
     width: 100%;
 
-    @include transition (-webkit-filter ease-in-out .15s);
+    .inner {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
 
-    &:hover {
-        -webkit-filter: grayscale(0%);
 
-        &:after {
-            opacity: 0.25;
+
+
+.me_about {
+    background-color: #212121;
+    height: 400px;
+    overflow: hidden;
+    transform: translateY(0);
+
+    h1 {
+        color: #fff;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 640px;
+    }
+
+    a {
+        color: $clr-teal;
+    }
+
+    p {
+        color: rgba(#fff, 0.75);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4125;
+        margin: 0 auto;
+        max-width: 640px;
+
+        & + p {
+            margin-top: 20px;
+        }
+    }
+}
+
+.bio {
+    margin-bottom: 60px;
+    padding: 0 40px;
+
+    .bio_primary,
+    .bio_secondary {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .bio_primary {
+        letter-spacing: 2px;
+    }
+
+    .bio_secondary {
+        color: #999;
+
+        span {
+            color: #bbb;
         }
     }
 
-    .work_cover {
-        display: table-cell;
-        position: relative;
-        text-align: center;
-        vertical-align: middle;
+    .bio_link {
+        color: #aaa;
+    }
+}
+
+.feed {
+    margin: 0 40px;
+}
+
+.post {
+    float: left;
+    width: 50%;
+
+    @media (max-width: $breakpoint-md-max) {
+        float: none;
         width: 100%;
-        z-index: 1;
+    }
+}
+
+.post--work {
+    display: block;
+    height: 500px;
+    position: relative;
+
+    .cover {
+        background: {
+            color: #777;
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        }
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        @include transition(all ease-in-out .4s);
     }
 
-    .work_text {
-        color: #fff;
-        font-family: $font-sans;
-        font-size: 20px;
-        margin-bottom: 10px;
-        padding: 0 40px;
+    .text {
+        display: table;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+
+        .inner {
+            background-color: rgba(#000, .1);
+            color: #fff;
+            display: table-cell;
+            font: {
+                family: $font-sans;
+                weight: 700;
+                size: 20px;
+            }
+            height: 100%;
+            letter-spacing: 4px;
+            margin-bottom: 0;
+            padding: 0 40px;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .title {
+            &:after {
+                content: '';
+                background-color: #fff;
+                display: block;
+                height: 3px;
+                margin: 10px auto;
+                width: 80px;
+            }
+        }
+
+        .date {
+            font-size: 14px;
+        }
     }
 
-    .work_title {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 1.125em;
-        margin-bottom: 0;
-        text-shadow: rgba(#000, 0.5) 0px 1px 3px;
-    }
+    .tags {
+        margin-top: 10px;
 
-    .work_tags {
-        .work_tag {
-            background: #fff;
+        li {
+            background: #000;
             text-shadow: none;
-            color: #666666;
+            color: #ccc;
             display: inline-block;
             font-family: $font-serif;
             font-style: italic;
             font-size: 12px;
             line-height: 1.625;
             padding: 0 5px;
-            margin-bottom: 10px;
 
-            & + .work_tag {
+            & + li {
                 margin-left: 5px;
             }
-        }
-    }
-
-    &:after {
-        content: "";
-        background-color: #000;
-        height: 100%;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-
-        @include transition (opacity ease-in-out .15s);
-    }
-
-    @media (max-width: $breakpoint-md-max) {
-        height: 320px;
-
-        .work_title {
-            font-size: 30px;
         }
     }
 }
