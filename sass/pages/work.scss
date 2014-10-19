@@ -27,6 +27,7 @@
 
     .section--headline {
         padding: 80px 0;
+        position: relative;
 
         & + .section:before {
             margin: 0 auto 80px;

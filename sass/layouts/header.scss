@@ -89,3 +89,38 @@
         &--dark { .brand { background-image: url("../img/logo-black.png"); } }
     }
 }
+
+.header--work {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 40px;
+    z-index: 3;
+
+    .inner {
+        margin: 0 auto;
+        max-width: 720px;
+        padding: 0 40px;
+    }
+
+    .row {
+        border-bottom: 1px solid rgba(#000, 0.1);
+    }
+
+    .title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        line-height: 40px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .share {
+        color: #bbb;
+        font-size: 12px;
+        line-height: 40px;
+    }
+}
