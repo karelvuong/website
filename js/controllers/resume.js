@@ -18,14 +18,20 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Led efforts for the rebuild of an enterprise-wide business process management and modelling platform used by over 3,000 active employees to modernize its core architecture, technology stack, database design, and reporting framework"
+                    text: "Led efforts for the rebuild of an enterprise-wide business process management and modelling platform used by over 3,000 active employees."
+                },
+                {
+                    text: "Modernized platform's core architecture and technology stack to move away from being strictly Oracle based to a three-tiered architecture using AngularJS, Python, MongoDB and Oracle."
+                },
+                {
+                    text: "Oversaw seamless and successful migration of over 200 applications from the legacy platform with zero downtime and minimal work disruption in the span of four months."
                 }
             ]
         },
         {
             company: "Toronto Youth Cabinet",
             location: "Toronto, ON",
-            position: "Designer + Developer",
+            position: "Developer + Designer",
             date: {
                 current: true,
                 start: new Date(2014, 6),
@@ -61,7 +67,7 @@ angular.module('karel.controllers')
             ]
         },
         {
-            company: "Independent Application Developer",
+            company: "Mobile Application Developer",
             location: "Toronto, ON",
             position: "BlackBerry 10",
             date: {
@@ -92,6 +98,7 @@ angular.module('karel.controllers')
 
     $scope.projects = [
         {
+            id: "projectFlow",
             name: "Flow",
             date: {
                 active: true,
@@ -108,6 +115,7 @@ angular.module('karel.controllers')
             tags: ["web"]
         },
         {
+            id: "projectCasa",
             name: "Casa",
             link: "https://github.com/casa-",
             date: {
@@ -125,6 +133,7 @@ angular.module('karel.controllers')
             tags: ["web", "hackathon"]
         },
         {
+            id: "projectTYC",
             name: "Toronto Youth Cabinet",
             link: "http://theTYC.ca",
             date: {
@@ -136,12 +145,13 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "The website for the official youth advisory body to the City of Toronto"
+                    text: "The website for the official youth advisory body to the City of Toronto."
                 }
             ],
             tags: ["web"]
         },
         {
+            id: "project1MMM",
             name: "1 Million Music Moments",
             link: "http://1MMM.org",
             date: {
@@ -153,12 +163,13 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "An interactive, content driven website that aggregate musical moments hashtagged with #1MMM on social media websites to display a dynamic, ongoing feed that celebrates the musical offerings of the City of Toronto"
+                    text: "Launched with the North by Northeast Festivals and Conference (NXNE) on June 18, 2014, the 1 Million Music Moment website is an interactive, content driven web application that aggregate musical moments hashtagged with #1MMM on social media networks to display a dynamic, ongoing feed that celebrates the musical offerings of the City of Toronto."
                 }
             ],
             tags: ["web"]
         },
         {
+            id: "projectDimensions",
             name: "Dimensions",
             link: "https://github.com/karelvuong/dimensions",
             date: {
@@ -170,12 +181,13 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "A tool for designers, brand managers, social media groups, and growth hackers to optimize their branding strategy and image by offering an interactive space to visualize campaigns and designs using up-to-date dimensions of products, devices, and social media websites"
+                    text: "A tool for designers, brand managers, social media groups, and growth hackers to optimize their branding strategy and image by offering an interactive space to visualize campaigns and designs using up-to-date dimensions of products, devices, and social media websites."
                 }
             ],
             tags: ["web"]
         },
         {
+            id: "projectCuro",
             name: "Curo",
             date: {
                 active: false,
@@ -186,19 +198,19 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Conceived at the RBC Next Great Innovator Challenge 2014, Curo is a platform that leverages client and transaction data to offer intelligent personalization and actionable signal data, changing the dynamics of the current RBC retail-client relationship from one that is reactive in nature to proactive, and to one that is a real-time relationship"
+                    text: "Conceived at the RBC Next Great Innovator Challenge 2014, Curo is a platform that leverages client and transaction data to offer intelligent personalization and actionable signal data, changing the dynamics of the current RBC retail-client relationship from one that is reactive in nature to proactive, and to one that is a real-time relationship."
                 }
             ],
             tags: ["web", "hackathon"]
         },
         {
+            id: "projectChromegray",
             name: "Chromegray",
             link: "http://devthemez.com/themes/chromegray",
             date: {
                 active: false,
                 format: "MMMM y",
-                start: new Date(2014, 0, 1),
-                // end: new Date(2014, 0, 30),
+                start: new Date(2014, 0),
                 status: "On the back burner"
             },
             details: [
@@ -210,6 +222,23 @@ angular.module('karel.controllers')
                 }
             ],
             tags: ["web"]
+        },
+        {
+            id: "projectClinico",
+            name: "Clinico",
+            link: "http://challengepost.com/software/clinico",
+            date: {
+                active: false,
+                format: "MMMM y",
+                start: new Date(2013, 10),
+                status: "Inactive"
+            },
+            details: [
+                {
+                    text: "Conceived at the Eli Lilly Clinical Trial Visualization Redesign Challenge, Clinico is a mobile application that transforms clinical trial protocols into interactive, engaging, patient-focused platforms for discovering and understanding clinical research and data."
+                }
+            ],
+            tags: ["design", "mobile", "contest"]
         }
     ]
 
