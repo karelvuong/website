@@ -9,7 +9,7 @@ angular.module('karel.controllers')
         {
             company: "BlackBerry",
             location: "Waterloo, ON",
-            position: "Product Manager + Development Lead",
+            position: "Product Manager",
             date: {
                 current: true,
                 start: new Date(2014, 0),
@@ -29,9 +29,9 @@ angular.module('karel.controllers')
             ]
         },
         {
-            company: "Toronto Youth Cabinet",
+            company: "Innovitas",
             location: "Toronto, ON",
-            position: "Developer + Designer",
+            position: "Consultant",
             date: {
                 current: true,
                 start: new Date(2014, 6),
@@ -40,7 +40,18 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Launched comprehensive rebranding campaign and revamping of the website for the official youth advisory body to the City of Toronto from conception to completion"
+                    text: "<strong>Toronto Youth Cabinet</strong>",
+                    date: {
+                        current: true,
+                        start: new Date(2014, 6),
+                        end: new Date(),
+                        duration: getMonthDifference(new Date(2014, 6), new Date())
+                    },
+                    list: [
+                        {
+                            text: "Launched comprehensive rebranding campaign for the official youth advisory body to the City of Toronto by designing new logo, styleguide, and design material."
+                        }
+                    ]
                 }
             ]
         },
@@ -81,10 +92,10 @@ angular.module('karel.controllers')
                     text: "Designed and developed apps for BlackBerry 10 using the Native SDK with the Cascades UI Framework (C++, QT/QML):",
                     list: [
                         {
-                            text: "<strong>cella</strong> (Built for BlackBerry certified): a home inventory management application that securely stores location, purchase information, and warranty information of possessions in a three-tiered organizational system"
+                            text: "<strong>cella</strong> (Built for BlackBerry): a home inventory management application that securely stores location, purchase information, and warranty information of possessions in a three-tiered organizational system"
                         },
                         {
-                            text: "<strong>cooler</strong> (Built for BlackBerry certified): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
+                            text: "<strong>cooler</strong> (Built for BlackBerry): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
                         }
                     ]
                 }
@@ -164,7 +175,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Launched with the North by Northeast Festivals and Conference (NXNE) on June 18, 2014, the 1 Million Music Moment website is an interactive, content driven web application that aggregate musical moments hashtagged with #1MMM on social media networks to display a dynamic, ongoing feed that celebrates the musical offerings of the City of Toronto."
+                    text: "Launched with the North by Northeast Festivals and Conference (NXNE) on June 18, 2014, the 1 Million Music Moment website is an interactive, content driven web application that aggregates musical moments hashtagged with #1MMM on social media networks to display a dynamic, ongoing feed that celebrates the musical offerings of the City of Toronto."
                 }
             ],
             tags: ["web"]

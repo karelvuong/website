@@ -32,7 +32,7 @@
                         <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
                             <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
                             <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
-                            Only show<span ng-if="showOnlyCurrent">ing</span> current
+                            Only show<span ng-if="showOnlyCurrent">ing</span> current ({{(experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)).length}})
                         </a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     </p>
                     <ul class="details list">
                         <li ng-repeat="detail in job.details">
-                            <p ng-bind-html="detail.text"></p>
+                            <p><span ng-bind-html="detail.text"></span> <span ng-if="detail.date">({{detail.date.start | date : "MMMM y"}}{{detail.date.end ? ' &mdash; ' : ''}}{{detail.date.current ? "Present" : detail.date.end | date : "MMMM y"}})</span></p>
                             <ul class="list" ng-if="detail.list">
                                 <li ng-repeat="subDetail in detail.list" ng-bind-html="subDetail.text"></li>
                             </ul>
@@ -67,7 +67,7 @@
                         <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
                             <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
                             <i class="fa fa-circle" ng-if="showOnlyActive"></i>
-                            Only show<span ng-if="showOnlyActive">ing</span> active
+                            Only show<span ng-if="showOnlyActive">ing</span> active ({{(projects | filter: (showOnlyActive ? showOnlyActive : null)).length}})
                         </a>
                     </div>
                 </div>
@@ -121,11 +121,11 @@
 
 
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-map-marker"></i> Community Involvement</h2>
+                <h2 class="resume_section_title"><i class="fa fa-map-marker"></i> Community</h2>
 
                 <div class="resume_item" id="volunteerEdAppHack">
                     <header>
-                        <p class="primary">EdAppHack 2014<span>&mdash; Mentor</span></p>
+                        <p class="primary">EdAppHack 2014<span> &mdash; Mentor</span></p>
                         <p class="secondary"><a ng-href="http://edapphack.com">http://edapphack.com</a></p>
                         <p class="date">
                             October 2014
@@ -150,10 +150,17 @@
                 <div class="resume_item" id="awardEliLilly">
                     <p class="primary">Eli Lilly - Clinical Trial Visualization Redesign <span>&mdash; Honourable Mention</span></p>
                     <p class="secondary"><a href="#projectClinico">See Clinico <i class="fa fa-level-down"></i></a></p>
-                    <p class="secondary"></a></p>
                     <p class="date">November 2013</p>
                     <ul class="details list">
                         <li>Received a $3,000 cash prize for the Clinico solution.</li>
+                    </ul>
+                </div>
+
+                <div class="resume_item" id="awardBlackBerryCella">
+                    <p class="primary">BlackBerry Jam Camp <span>&mdash; Participant</span></p>
+                    <p class="date">September 2013</p>
+                    <ul class="details list">
+                        <li>Received four BlackBerry 10 devices and an exclusive red, developer BlackBerry Z10 device for Cella.</li>
                     </ul>
                 </div>
             </div>
