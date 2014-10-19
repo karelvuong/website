@@ -136,6 +136,7 @@ strong { font-weight: 900; }
 em { font-style: italic; }
 
 ul, ol {
+    color: #333;
     margin: 0;
 }
 
@@ -395,9 +396,14 @@ ol {
 }
 
 .post--work {
+    background-color: #212121;
     display: block;
     height: 500px;
     position: relative;
+
+    &:hover {
+        .cover { opacity: .9; }
+    }
 
     .cover {
         background: {
@@ -410,7 +416,7 @@ ol {
         position: relative;
         width: 100%;
 
-        @include transition(all ease-in-out .4s);
+        @include transition(all ease-in-out .15s);
     }
 
     .text {
