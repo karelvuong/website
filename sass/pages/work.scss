@@ -6,6 +6,9 @@
     }
 
     .section {
+        margin: 0 auto;
+        max-width: 960px;
+
         h6 {
             color: #bbb;
             font-size: 16px;
@@ -18,10 +21,14 @@
             content: '';
             background-color: #ddd;
             display: block;
-            height: 4px;
-            margin-left: 40px;
-            width: 50px
+            height: 3px;
+            margin: 0 auto;
+            width: 80px
         }
+    }
+
+    .section_inner {
+        padding: 40px;
     }
 
     .section--work_logos {
@@ -31,19 +38,12 @@
         }
     }
 
-    .section--work_about {
-        max-width: 640px;
-        margin-bottom: 60px;
-
-        .work_text {
-            font-size: 40px;
+    .text--primary {
+        p {
+            font-size: 30px;
             font-weight: 700;
             letter-spacing: -1px;
-            line-height: 1;
+            line-height: 35px;
         }
-    }
-
-    .section_inner {
-        padding: 80px 40px;
     }
 }

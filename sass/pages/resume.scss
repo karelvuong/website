@@ -15,6 +15,8 @@ $resume-sub-section-padding: 20px;
     border: 1px solid transparent;
     padding: 40px;
 
+    @include transition(all ease-in-out .1s);
+
     &:hover {
         background-color: #fcfcfc;
         border-color: #f0f0f0;
@@ -22,6 +24,48 @@ $resume-sub-section-padding: 20px;
 
     & + & {
         margin-top: $resume-section-padding;
+    }
+
+    .resume_section_title {
+        color: $clr-red;
+        margin-top: 0;
+        margin-bottom: 20px;
+
+        i {
+            margin-right: 10px;
+        }
+
+        @media (max-width: $breakpoint-md-max){
+            float: none;
+            margin-bottom: 0;
+        }
+    }
+
+    .resume_section_actions {
+        @media (max-width: $breakpoint-md-max){
+            float: none;
+            margin-bottom: 20px;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
+        a {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 2.4;
+
+            &:hover { color: #000; }
+
+            &.active {
+                color: #000;
+
+                i {
+                    color: $clr-red;
+                }
+            }
+        }
     }
 }
 
@@ -38,39 +82,6 @@ $resume-sub-section-padding: 20px;
 
     &:hover {
         color: #555;
-    }
-}
-
-.resume_section_title {
-    color: $clr-red;
-    margin-top: 0;
-    margin-bottom: 20px;
-
-    i {
-        margin-right: 10px;
-    }
-}
-
-.resume_section_actions {
-    line-height: 2;
-
-    i {
-        margin-right: 10px;
-    }
-
-    a {
-        color: #aaa;
-        font-size: 14px;
-
-        &:hover { color: #000; }
-
-        &.active {
-            color: #000;
-
-            i {
-                color: $clr-red;
-            }
-        }
     }
 }
 
