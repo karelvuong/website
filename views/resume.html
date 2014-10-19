@@ -72,7 +72,7 @@
                     </div>
                 </div>
 
-                <div class="resume_item" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
+                <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
                     <p class="primary">{{project.name}}</p>
                     <p class="secondary"><a ng-href="{{project.link}}">{{project.link}}</a></p>
                     <p class="date">
@@ -121,22 +121,39 @@
 
 
             <div class="resume_section">
+                <h2 class="resume_section_title"><i class="fa fa-globe"></i> Community Involvement</h2>
+
+                <div class="resume_item" id="volunteerEdAppHack">
+                    <header>
+                        <p class="primary">EdAppHack 2014<span>&mdash; Mentor</span></p>
+                        <p class="secondary"><a ng-href="http://edapphack.com">http://edapphack.com</a></p>
+                        <p class="date">
+                            October 2014
+                        </p>
+                    </header>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="resume_section">
                 <h2 class="resume_section_title"><i class="fa fa-trophy"></i> Awards</h2>
 
                 <div class="resume_item" id="awardRBCNGI">
-                    <p class="primary">RBC Next Generation Innovator <span>&mdash; Finalist</span></p>
+                    <p class="primary">RBC Royal Bank - Next Generation Innovator <span>&mdash; Finalist</span></p>
+                    <p class="secondary"><a href="#projectCuro">See Curo <i class="fa fa-level-down"></i></a></p>
                     <p class="date">June 2014</p>
-                    <ul class="details list">
-                        <li>Conceived a platform that analyzes client and transaction data to offer intelligent personalization and actionable signal data to provide proactive recommendations to strengthen RBC's retail-client relationship</li>
-                    </ul>
                 </div>
 
                 <div class="resume_item" id="awardEliLilly">
-                    <p class="primary">Eli Lilly <span>&mdash; Honourable Mention</span></p>
-                    <p class="secondary">$3,000 cash prize</a></p>
+                    <p class="primary">Eli Lilly - Clinical Trial Visualization Redesign <span>&mdash; Honourable Mention</span></p>
+                    <p class="secondary"><a href="#projectClinico">See Clinico <i class="fa fa-level-down"></i></a></p>
+                    <p class="secondary"></a></p>
                     <p class="date">November 2013</p>
                     <ul class="details list">
-                        <li>Transformed clinical trial protocols into interactive, engaging, patient-focused platforms for discovering and understanding clinical research and data</li>
+                        <li>Received a $3,000 cash prize for the Clinico solution.</li>
                     </ul>
                 </div>
             </div>
