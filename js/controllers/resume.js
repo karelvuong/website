@@ -21,7 +21,7 @@ angular.module('karel.controllers')
                     text: "Led efforts for the rebuild of an enterprise-wide business process management and modelling platform used by over 3,000 active employees."
                 },
                 {
-                    text: "Modernized platform's core architecture and technology stack to move away from being strictly Oracle based to a three-tiered architecture using AngularJS, Python, MongoDB and Oracle."
+                    text: "Modernized platform's core architecture and technology stack to move away from strictly Oracle based to a three-tiered architecture using AngularJS, Python, MongoDB and Oracle."
                 },
                 {
                     text: "Oversaw seamless and successful migration of over 200 applications from the legacy platform with zero downtime and minimal work disruption in the span of four months."
@@ -100,6 +100,7 @@ angular.module('karel.controllers')
         {
             id: "projectFlow",
             name: "Flow",
+            link: "http://karel.ca/work/flow",
             date: {
                 active: true,
                 format: "MMMM y",
@@ -123,7 +124,7 @@ angular.module('karel.controllers')
                 format: "MMMM y",
                 start: new Date(2014, 8),
                 end: new Date(),
-                status: "On the back burner"
+                status: "Inactive"
             },
             details: [
                 {
@@ -177,7 +178,7 @@ angular.module('karel.controllers')
                 format: "MMMM y",
                 start: new Date(2014, 6),
                 end: new Date(),
-                status: "On the back burner"
+                status: "Inactive"
             },
             details: [
                 {
@@ -194,7 +195,7 @@ angular.module('karel.controllers')
                 format: "MMMM d, y",
                 start: new Date(2014, 5, 7),
                 end: new Date(2014, 5, 8),
-                status: "Inactive"
+                status: "Complete"
             },
             details: [
                 {
@@ -211,7 +212,7 @@ angular.module('karel.controllers')
                 active: false,
                 format: "MMMM y",
                 start: new Date(2014, 0),
-                status: "On the back burner"
+                status: "Inactive"
             },
             details: [
                 {
@@ -231,7 +232,7 @@ angular.module('karel.controllers')
                 active: false,
                 format: "MMMM y",
                 start: new Date(2013, 10),
-                status: "Inactive"
+                status: "Complete"
             },
             details: [
                 {

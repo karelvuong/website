@@ -118,10 +118,13 @@ $resume-sub-section-padding: 20px;
     }
 
     .details {
-        color: #777;
 
         & + .details {
             margin-top: 5px;
+        }
+
+        p, li {
+            color: #777;
         }
 
         p {
