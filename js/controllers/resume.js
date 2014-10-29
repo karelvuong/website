@@ -9,7 +9,7 @@ angular.module('karel.controllers')
         {
             company: "BlackBerry",
             location: "Waterloo, ON",
-            position: "Product Manager",
+            position: "Product Manager, Analytics R&D",
             date: {
                 current: true,
                 start: new Date(2014, 0),
