@@ -3,6 +3,30 @@
     position: relative;
     text-align: center;
 
+    &.header--stacked {
+        .header-inner {
+            text-align: left;
+        }
+
+        .brand {
+            float: left;
+        }
+
+        .links {
+            float: left;
+            margin: 0 0 0 20px;
+
+            a {
+                display: block;
+                margin: 0;
+            }
+        }
+    }
+
+    .header-inner {
+        display: inline-block;
+    }
+
     .brand {
         background: {
             image: url("../img/logo-black.png");
@@ -15,9 +39,9 @@
         height: 84px;
         position: relative;
         width: 45px;
-        z-index: 1;
+        z-index: 2;
 
-        @include transition(all ease-in-out .3613s);
+        @include transition(all ease-in-out .15s);
 
         &:hover {
             transform: scale(1.1);
@@ -29,6 +53,7 @@
 
         a {
             color: #000;
+            display: inline-block;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 2px;
@@ -44,6 +69,12 @@
                 color: $clr-red;
                 opacity: 1;
             }
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 5px 0;
         }
     }
 
