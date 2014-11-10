@@ -1,80 +1,44 @@
 .header {
-    padding: 120px 40px;
-    position: relative;
-    text-align: center;
+    background-color: rgba(#fff, 0.9);
+    box-shadow: 0 0 2px rgba(#000, .2);
+    height: 50px;
+    padding: 10px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 
-    &.header--stacked {
-        .header-inner {
-            text-align: left;
-        }
+    .logo--header {
+        height: 30px;
+        width: 30px;
 
-        .brand {
-            float: left;
-        }
+        g {
+            transition: all ease-in-out .3s;
 
-        .links {
-            float: left;
-            margin: 0 0 0 20px;
-
-            a {
-                display: block;
-                margin: 0;
-            }
-        }
-    }
-
-    .header-inner {
-        display: inline-block;
-    }
-
-    .brand {
-        background: {
-            image: url("../img/logo-black.png");
-            position: center center;
-            repeat: no-repeat;
-            size: 45px 84px;
-        }
-
-        display: inline-block;
-        height: 84px;
-        position: relative;
-        width: 45px;
-        z-index: 2;
-
-        @include transition(all ease-in-out .15s);
-
-        &:hover {
-            transform: scale(1.1);
+            @include animation(fillfade 60s infinite forwards linear);
         }
     }
 
     .links {
-        margin-top: 20px;
+        float: right;
 
         a {
             color: #000;
             display: inline-block;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: 700;
             letter-spacing: 2px;
-            margin: 0 15px;
+            line-height: 30px;
+            margin-left: 25px;
             opacity: 0.4;
             text-transform: uppercase;
 
             &:hover {
-                opacity: 1;
+                opacity: 0.6;
             }
 
             &.active {
-                color: $clr-red;
                 opacity: 1;
             }
-        }
-
-        hr {
-            border: 0;
-            border-top: 1px solid #ddd;
-            margin: 5px 0;
         }
     }
 
@@ -118,6 +82,10 @@
         .brand { background-image: url("../img/logo-white.png"); }
 
         &--dark { .brand { background-image: url("../img/logo-black.png"); } }
+    }
+
+    @media (max-width: $breakpoint-md-max) {
+        position: relative;
     }
 }
 

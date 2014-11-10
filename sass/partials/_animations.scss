@@ -12,3 +12,11 @@
     from { opacity: 0; visibility: hidden; }
     to   { opacity: 1; visibility: visible; }
 }
+
+
+@include keyframes(fillfade) {
+    0%      { fill: #87ceeb }
+    33%     { fill: #7b68ee }
+    66%     { fill: #f3a578 }
+    100%    { fill: #87ceeb }
+}

@@ -61,7 +61,7 @@
         p {
             font-size: 30px;
             font-weight: 700;
-            line-height: 35px;
+            line-height: 40px;
         }
     }
 
@@ -69,11 +69,11 @@
         p {
             color: #555;
             font-size: 20px;
-            line-height: 30px;
+            line-height: 35px;
             margin-bottom: 0;
 
             & + p {
-                margin-top: 20px;
+                margin-top: 40px;
             }
 
             & + ol,
@@ -96,6 +96,11 @@
         ul, ol {
             li {
                 font-size: 16px;
+                line-height: 25px;
+
+                & + li {
+                    margin-top: 20px;
+                }
             }
         }
     }

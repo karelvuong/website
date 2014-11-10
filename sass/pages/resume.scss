@@ -28,11 +28,14 @@ $resume-sub-section-padding: 20px;
 
     .resume_section_title {
         color: $clr-red;
+        font-size: 14px;
+        letter-spacing: 4px;
         margin-top: 0;
         margin-bottom: 20px;
+        text-transform: uppercase;
 
         i {
-            margin-right: 10px;
+            margin-right: 5px;
         }
 
         @media (max-width: $breakpoint-md-max){
@@ -53,8 +56,7 @@ $resume-sub-section-padding: 20px;
 
         a {
             color: #aaa;
-            font-size: 14px;
-            line-height: 2.4;
+            font-size: 12px;
 
             &:hover { color: #000; }
 
@@ -93,7 +95,7 @@ $resume-sub-section-padding: 20px;
     .primary,
     .secondary {
         font-weight: 700;
-        line-height: 1.25;
+        line-height: 1.5;
     }
 
     .primary {
@@ -118,7 +120,6 @@ $resume-sub-section-padding: 20px;
     }
 
     .details {
-
         & + .details {
             margin-top: 5px;
         }
@@ -128,7 +129,7 @@ $resume-sub-section-padding: 20px;
         }
 
         p {
-            line-height: 1.6125;
+            line-height: 20px;
         }
 
         a {

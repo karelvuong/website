@@ -1,22 +1,10 @@
 <div class="page page--resume" ng-controller="ResumeController">
-    <header class="header" role="banner">
-        <div class="header-inner">
-            <a class="brand" ui-sref="home"></a>
-
-            <div class="links">
-                <a href="http://github.com/karelvuong">GitHub</a>
-                <a href="http://linkedin.com/in/karelvuong">LinkedIn</a>
-                <a href="http://twitter.com/karelvuong">Twitter</a>
-            </div>
-        </div>
-    </header>
-
-    <div class="bio row">
+    <div class="heading row">
         <div class="pull-left">
-            <p class="bio_primary u-uppercase">
+            <p class="heading_text--primary u-uppercase">
                 Karel Vuong<br>
             </p>
-            <p class="bio_secondary">karelvuong <span>(at)</span> me <span>(dot)</span> com</p>
+            <a class="heading_text--secondary" href="mailto:vuongkarel@gmail.com">vuongkarel<span>@</span>gmail.com</a>
         </div>
 
         <div class="pull-right">
@@ -28,7 +16,7 @@
         <div class="resume_column col-md-6">
             <div class="resume_section">
                 <div class="resume_section_header row">
-                    <h2 class="resume_section_title pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
+                    <h2 class="resume_section_title pull-left">Experience</h2>
 
                     <div class="resume_section_actions pull-right">
                         <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
@@ -63,7 +51,7 @@
 
             <div class="resume_section">
                 <div class="resume_section_header row">
-                    <h2 class="resume_section_title pull-left"><i class="fa fa-code"></i> Projects</h2>
+                    <h2 class="resume_section_title pull-left">Projects</h2>
 
                     <div class="resume_section_actions pull-right">
                         <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
@@ -99,7 +87,7 @@
 
         <div class="resume_column col-md-6">
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-university"></i> Education</h2>
+                <h2 class="resume_section_title">Education</h2>
 
                 <div class="resume_item" id="educationUofT">
                     <header>
@@ -123,16 +111,17 @@
 
 
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-map-marker"></i> Community</h2>
+                <h2 class="resume_section_title">Community</h2>
 
                 <div class="resume_item" id="volunteerEdAppHack">
-                    <header>
-                        <p class="primary">EdAppHack 2014<span> &mdash; Mentor</span></p>
-                        <p class="secondary"><a ng-href="http://edapphack.com">http://edapphack.com</a></p>
-                        <p class="date">
-                            October 2014
-                        </p>
-                    </header>
+                    <p class="primary">EdAppHack 2014<span> &mdash; Mentor</span></p>
+                    <p class="secondary"><a ng-href="http://edapphack.com">http://edapphack.com</a></p>
+                    <p class="date">
+                        October 2014
+                    </p>
+                    <ul class="details list">
+                        <li>Mentored group received an honourable mention for their application prototype, TimeLine.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -141,7 +130,7 @@
 
 
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-trophy"></i> Awards</h2>
+                <h2 class="resume_section_title">Awards</h2>
 
                 <div class="resume_item" id="awardRBCNGI">
                     <p class="primary">RBC Royal Bank - Next Great Innovator <span>&mdash; Finalist</span></p>
@@ -172,24 +161,24 @@
 
 
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-check"></i> Skills</h2>
+                <h2 class="resume_section_title">Skills</h2>
 
                 <div class="resume_sub-section row">
                     <div class="col-tight col-xs-6">
-                        <p class="heading">Front End</p>
+                        <p class="list_heading">Front End</p>
 
                         <div class="resume_item" id="competenciesDevFrontEnd">
                             <ul class="details list">
-                                <li>HTML</li>
+                                <li><strong>HTML</strong></li>
                                 <li>
-                                    CSS
+                                    <strong>CSS</strong>
                                     <ul class="list list--sub">
                                         <li>SASS</li>
                                         <li>LESS</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    JavaScript
+                                    <strong>JavaScript</strong>
                                     <ul class="list list--sub">
                                         <li>AngularJS</li>
                                         <li>Meteor</li>
@@ -199,7 +188,7 @@
                         </div>
                     </div>
                     <div class="col-tight col-xs-6">
-                        <p class="heading">Back End</p>
+                        <p class="list_heading">Back End</p>
 
                         <div class="resume_item" id="competenciesDevBackEnd">
                             <ul class="details list">
@@ -221,7 +210,7 @@
 
                 <div class="resume_sub-section row">
                     <div class="col-tight col-xs-6">
-                        <p class="heading">Database</p>
+                        <p class="list_heading">Database</p>
 
                         <div class="resume_item" id="competenciesDevMobile">
                             <ul class="details list">
@@ -244,7 +233,7 @@
                     </div>
 
                     <div class="col-tight col-xs-6">
-                        <p class="heading">Mobile</p>
+                        <p class="list_heading">Mobile</p>
 
                         <div class="resume_item" id="competenciesDevMobile">
                             <ul class="details list">
@@ -265,7 +254,7 @@
 
 
             <div class="resume_section">
-                <h2 class="resume_section_title"><i class="fa fa-wrench"></i> Tools</h2>
+                <h2 class="resume_section_title">Tools</h2>
 
                 <div class="row">
                     <div class="col-tight col-xs-6">

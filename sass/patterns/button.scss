@@ -1,0 +1,22 @@
+button {
+  background-color: transparent;
+  border: 2px solid #000;
+  cursor: pointer;
+  font: {
+    family: "Open Sans";
+    size: 16px;
+    weight: 700;
+  }
+  margin-top: 20px;
+  padding: 12px 18px;
+  border-radius: 4px;
+
+  i {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
