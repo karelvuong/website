@@ -12,9 +12,6 @@
         width: 30px;
 
         g {
-            transition: all ease-in-out .3s;
-
-            @include animation(fillfade 60s infinite forwards linear);
         }
     }
 

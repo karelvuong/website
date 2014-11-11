@@ -6,7 +6,7 @@ angular.module('karel.controllers')
         {
             "name": "Flow",
             "date": "Ongoing",
-            "url": "/work/flow",
+            "url": "/portfolio/flow",
             "external": false,
             "tags": ["work", "web"],
             "img": "/img/work/flow-list.jpg"

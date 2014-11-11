@@ -44,20 +44,20 @@ angular.module('karel', [
       }
     }
   })
-  .state('work', {
-    url: "/work",
+  .state('portfolio', {
+    url: "/portfolio",
     views: {
       "site": {
-        templateUrl: "/views/work/_layout.html"
+        templateUrl: "/views/portfolio/_layout.html"
       }
     }
   })
-  .state('work.casa', {
+  .state('portfolio.casa', {
     url: "/casa",
-    templateUrl: "/views/work/casa.html"
+    templateUrl: "/views/portfolio/casa.html"
   })
-  .state('work.flow', {
+  .state('portfolio.flow', {
     url: "/flow",
-    templateUrl: "/views/work/flow.html"
+    templateUrl: "/views/portfolio/flow.html"
   })
 });

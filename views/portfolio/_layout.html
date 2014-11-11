@@ -1,0 +1,13 @@
+<div class="page--work page" ui-view>
+  <div class="posts" ng-controller="HomeController">
+      <a class="post post--work" ng-href="{{post.url}}" target="{{post.external == true ? '_blank' : ''}}" ng-repeat="post in feed">
+          <div class="cover" ng-style="{'background-image': 'url({{post.img}})'}"></div>
+          <div class="text">
+              <div class="inner">
+                  <p class="title" ng-bind="post.name"></p>
+                  <p class="date" ng-bind="post.date"></p>
+              </div>
+          </div>
+      </a>
+  </div>
+</div>
