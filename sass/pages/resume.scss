@@ -3,12 +3,35 @@ $resume-sub-section-padding: 20px;
 
 .page--resume {}
 
+.resume_header {
+    background-color: #212121;
+    padding: 80px 40px;
+    text-align: center;
+
+    .heading_text--primary,
+    .heading_text--secondary {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .heading_text--primary {
+        color: #fff;
+        font-size: 55px;
+        text-transform: none;
+    }
+
+    .heading_text--secondary {
+        color: #999;
+    }
+
+    .heading_link {
+        color: #aaa;
+    }
+}
+
 .resume_column {
     padding: 0;
-
-    @media (max-width: $breakpoint-md-max) {
-        margin-top: $resume-section-padding;
-    }
 }
 
 .resume_section {
@@ -22,17 +45,11 @@ $resume-sub-section-padding: 20px;
         border-color: #f0f0f0;
     }
 
-    & + & {
-        margin-top: $resume-section-padding;
-    }
-
     .resume_section_title {
-        color: $clr-red;
-        font-size: 14px;
-        letter-spacing: 4px;
+        font-size: 24px;
         margin-top: 0;
         margin-bottom: 20px;
-        text-transform: uppercase;
+        text-transform: lowercase;
 
         i {
             margin-right: 5px;
@@ -40,7 +57,6 @@ $resume-sub-section-padding: 20px;
 
         @media (max-width: $breakpoint-md-max){
             float: none;
-            margin-bottom: 0;
         }
     }
 
@@ -57,6 +73,7 @@ $resume-sub-section-padding: 20px;
         a {
             color: #aaa;
             font-size: 12px;
+            line-height: 35px;
 
             &:hover { color: #000; }
 
@@ -64,7 +81,7 @@ $resume-sub-section-padding: 20px;
                 color: #000;
 
                 i {
-                    color: $clr-red;
+                    color: #000;
                 }
             }
         }
@@ -110,7 +127,11 @@ $resume-sub-section-padding: 20px;
     .secondary {}
 
     a {
-        color: #777;
+        color: #437BA8;
+
+        &:hover {
+            color: lighten(#437BA8, 10%)
+        }
     }
 
     .date {
@@ -163,7 +184,7 @@ $resume-sub-section-padding: 20px;
     }
 
     & + & {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }
 

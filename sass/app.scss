@@ -243,6 +243,10 @@ ol {
 .page {
     padding-top: 50px;
     position: relative;
+
+    @media (max-width: $breakpoint-md-max) {
+        padding-top: 0;
+    }
 }
 
 .page--home {
@@ -277,9 +281,13 @@ ol {
     padding-bottom: 0;
     text-align: center;
 
+    .inner {
+        padding: 0 40px;
+    }
+
     .message {
         color: #fff;
-        font-size: 30px;
+        font-size: 55px;
         font-weight: 700;
         line-height: 1.6125;
         margin: 0;
@@ -337,34 +345,6 @@ ol {
     p {
         font-size: 55px;
         line-height: 1.3125;
-    }
-}
-
-.heading {
-    margin-bottom: 60px;
-    padding: 0 40px;
-
-    .heading_text--primary,
-    .heading_text--secondary {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 1;
-    }
-
-    .heading_text--primary {
-        letter-spacing: 2px;
-    }
-
-    .heading_text--secondary {
-        color: #999;
-
-        span {
-            color: #bbb;
-        }
-    }
-
-    .heading_link {
-        color: #aaa;
     }
 }
 

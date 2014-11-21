@@ -127,24 +127,6 @@ angular.module('karel.controllers')
             tags: ["web"]
         },
         {
-            id: "projectCasa",
-            name: "Casa",
-            link: "https://github.com/casa-",
-            date: {
-                active: false,
-                format: "MMMM y",
-                start: new Date(2014, 8),
-                end: new Date(),
-                status: "Inactive"
-            },
-            details: [
-                {
-                    text: "Conceived at Hack the North on September 19-21 2014, Casa is a platform that eases the subletting process for students, co-op workers, and young professionals"
-                }
-            ],
-            tags: ["web", "hackathon"]
-        },
-        {
             id: "projectTYC",
             name: "Toronto Youth Cabinet",
             link: "http://theTYC.ca",
@@ -179,6 +161,42 @@ angular.module('karel.controllers')
                 }
             ],
             tags: ["web"]
+        },
+        {
+            id: "projectFox",
+            name: "Fox",
+            link: "http://github.com/karelvuong/fox",
+            date: {
+                active: true,
+                format: "MMMM y",
+                start: new Date(2014, 10),
+                end: new Date(),
+                status: "Active"
+            },
+            details: [
+                {
+                    text: "A Sublime Text UI and Syntax theme inspired by Mozilla Firefox Developer Edition."
+                }
+            ],
+            tags: ["tool", "design"]
+        },
+        {
+            id: "projectCasa",
+            name: "Casa",
+            link: "https://github.com/casa-",
+            date: {
+                active: false,
+                format: "MMMM y",
+                start: new Date(2014, 8),
+                end: new Date(),
+                status: "Inactive"
+            },
+            details: [
+                {
+                    text: "Conceived at Hack the North on September 19-21 2014, Casa is a platform that eases the subletting process for students, co-op workers, and young professionals"
+                }
+            ],
+            tags: ["web", "hackathon"]
         },
         {
             id: "projectDimensions",

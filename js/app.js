@@ -36,6 +36,14 @@ angular.module('karel', [
       }
     }
   })
+  .state('about', {
+    url: "/about",
+    views: {
+      "site": {
+        templateUrl: "/views/about.html"
+      }
+    }
+  })
   .state('resume', {
     url: "/resume",
     views: {
