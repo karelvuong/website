@@ -6,289 +6,291 @@
         <a class="heading_text--secondary" href="mailto:vuongkarel@gmail.com">vuongkarel@gmail.com</a>
     </div>
 
-    <div class="row">
-        <div class="resume_column col-md-6">
-            <div class="resume_section">
-                <div class="resume_section_header row">
-                    <h2 class="resume_section_title pull-left">Experience</h2>
+    <div class="resume">
+        <div class="row">
+            <div class="resume_column col-md-6">
+                <div class="resume_section">
+                    <div class="resume_section_header row">
+                        <h2 class="resume_section_title pull-left">Experience</h2>
 
-                    <div class="resume_section_actions pull-right">
-                        <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
-                            <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
-                            <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
-                            Only show<span ng-if="showOnlyCurrent">ing</span> current ({{(experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)).length}})
-                        </a>
+                        <div class="resume_section_actions pull-right">
+                            <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
+                                <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
+                                <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
+                                Only show<span ng-if="showOnlyCurrent">ing</span> current ({{(experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)).length}})
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="resume_item" ng-repeat="job in experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)">
-                    <p class="primary">{{job.company}}, <span>{{job.location}}</span></p>
-                    <p class="secondary">{{job.position}}</p>
-                    <p class="date">
-                        {{job.date.start | date : "MMMM y"}}{{job.date.end ? ' &mdash; ' : ''}}{{job.date.current ? "Present" : job.date.end | date : "MMMM y"}}
-                        <span class="duration">({{ job.date.duration }} months)</span>
-                    </p>
-                    <ul class="details list">
-                        <li ng-repeat="detail in job.details">
-                            <p><span ng-bind-html="detail.text"></span> <span ng-if="detail.date">({{detail.date.start | date : "MMMM y"}}{{detail.date.end ? ' &mdash; ' : ''}}{{detail.date.current ? "Present" : detail.date.end | date : "MMMM y"}})</span></p>
-                            <ul class="list" ng-if="detail.list">
-                                <li ng-repeat="subDetail in detail.list" ng-bind-html="subDetail.text"></li>
-                            </ul>
-                        </li>
-                   </ul>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="resume_section">
-                <div class="resume_section_header row">
-                    <h2 class="resume_section_title pull-left">Projects</h2>
-
-                    <div class="resume_section_actions pull-right">
-                        <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
-                            <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
-                            <i class="fa fa-circle" ng-if="showOnlyActive"></i>
-                            Only show<span ng-if="showOnlyActive">ing</span> active ({{(projects | filter: (showOnlyActive ? showOnlyActive : null)).length}})
-                        </a>
-                    </div>
-                </div>
-
-                <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
-                    <p class="primary">{{project.name}}</p>
-                    <p class="secondary"><a ng-href="{{project.link}}">{{project.link}}</a></p>
-                    <p class="date">
-                        {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
-                        <span class="duration">({{ project.date.status }})</span>
-                    </p>
-                    <ul class="details list">
-                        <li ng-repeat="detail in project.details">
-                            <p ng-bind-html="detail.text"></p>
-                            <ul class="list" ng-if="detail.list">
-                                <li ng-repeat="subDetail in detail.list"><p ng-bind-html="subDetail.text"></p></li>
-                            </ul>
-                        </li>
-                   </ul>
-
-                    <ul class="tags">
-                        <li ng-repeat="tag in project.tags">#{{tag}}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="resume_column col-md-6">
-            <div class="resume_section">
-                <h2 class="resume_section_title">Education</h2>
-
-                <div class="resume_item" id="educationUofT">
-                    <header>
-                        <p class="primary">University of Toronto, Trinity College<span>, Toronto ON</span></p>
-                        <p class="secondary">Specialist in Computer Science</p>
+                    <div class="resume_item" ng-repeat="job in experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)">
+                        <p class="primary">{{job.company}}, <span>{{job.location}}</span></p>
+                        <p class="secondary">{{job.position}}</p>
                         <p class="date">
-                            September 2011 &mdash; Present
-                            <span class="duration">(Expected: 2016)</span>
+                            {{job.date.start | date : "MMMM y"}}{{job.date.end ? ' &mdash; ' : ''}}{{job.date.current ? "Present" : job.date.end | date : "MMMM y"}}
+                            <span class="duration">({{ job.date.duration }} months)</span>
                         </p>
-                    </header>
-                    <ul class="details list">
-                        <li>Trinity Entrance Scholarship for avg. of 95%</li>
-                        <li>Queen Elizabeth II Aiming for the Top Scholarship</li>
-                        <li>Professional Experience Year</li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="resume_section">
-                <h2 class="resume_section_title">Community</h2>
-
-                <div class="resume_item" id="volunteerEdAppHack">
-                    <p class="primary">EdAppHack 2014<span> &mdash; Mentor</span></p>
-                    <p class="secondary"><a ng-href="http://edapphack.com">http://edapphack.com</a></p>
-                    <p class="date">
-                        October 2014
-                    </p>
-                    <ul class="details list">
-                        <li>Mentored group received an honourable mention for their application prototype, TimeLine.</li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="resume_section">
-                <h2 class="resume_section_title">Awards</h2>
-
-                <div class="resume_item" id="awardRBCNGI">
-                    <p class="primary">RBC Royal Bank - Next Great Innovator <span>&mdash; Finalist</span></p>
-                    <p class="secondary"><a href="#projectCuro">See Curo <i class="fa fa-level-down"></i></a></p>
-                    <p class="date">June 2014</p>
-                </div>
-
-                <div class="resume_item" id="awardEliLilly">
-                    <p class="primary">Eli Lilly - Clinical Trial Visualization Redesign <span>&mdash; Honourable Mention</span></p>
-                    <p class="secondary"><a href="#projectClinico">See Clinico <i class="fa fa-level-down"></i></a></p>
-                    <p class="date">November 2013</p>
-                    <ul class="details list">
-                        <li>Received a $3,000 cash prize for the Clinico solution.</li>
-                    </ul>
-                </div>
-
-                <div class="resume_item" id="awardBlackBerryCella">
-                    <p class="primary">BlackBerry Jam Camp <span>&mdash; Participant</span></p>
-                    <p class="date">September 2013</p>
-                    <ul class="details list">
-                        <li>Received four BlackBerry 10 devices and limited edition red, developer BlackBerry Z10 device for Cella.</li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="resume_section">
-                <h2 class="resume_section_title">Skills</h2>
-
-                <div class="resume_sub-section row">
-                    <div class="col-tight col-xs-6">
-                        <p class="list_heading">Front End</p>
-
-                        <div class="resume_item" id="competenciesDevFrontEnd">
-                            <ul class="details list">
-                                <li>HTML</li>
-                                <li>
-                                    CSS
-                                    <ul class="list list--sub">
-                                        <li>SASS</li>
-                                        <li>LESS</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    JavaScript
-                                    <ul class="list list--sub">
-                                        <li>AngularJS</li>
-                                        <li>Meteor</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-tight col-xs-6">
-                        <p class="list_heading">Back End</p>
-
-                        <div class="resume_item" id="competenciesDevBackEnd">
-                            <ul class="details list">
-                                <li>
-                                    Python
-                                    <ul class="list list--sub">
-                                        <li>Flask</li>
-                                    </ul>
-                                </li>
-                                <li>Node.js</li>
-                                <li>Java</li>
-                                <li>C++</li>
-                            </ul>
-
-                            <small class="note">* ordered by proficiency</small>
-                        </div>
+                        <ul class="details list">
+                            <li ng-repeat="detail in job.details">
+                                <p><span ng-bind-html="detail.text"></span> <span ng-if="detail.date">({{detail.date.start | date : "MMMM y"}}{{detail.date.end ? ' &mdash; ' : ''}}{{detail.date.current ? "Present" : detail.date.end | date : "MMMM y"}})</span></p>
+                                <ul class="list" ng-if="detail.list">
+                                    <li ng-repeat="subDetail in detail.list" ng-bind-html="subDetail.text"></li>
+                                </ul>
+                            </li>
+                       </ul>
                     </div>
                 </div>
 
-                <div class="resume_sub-section row">
-                    <div class="col-tight col-xs-6">
-                        <p class="list_heading">Database</p>
 
-                        <div class="resume_item" id="competenciesDevMobile">
-                            <ul class="details list">
-                                <li>
-                                    RDBMS
-                                    <ul class="list list--sub">
-                                        <li>Oracle</li>
-                                        <li>PostgreSQL</li>
-                                        <li>MySQL</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    NoSQL
-                                    <ul class="list list--sub">
-                                        <li>MongoDB</li>
-                                    </ul>
-                                </li>
-                            </ul>
+
+
+
+                <div class="resume_section">
+                    <div class="resume_section_header row">
+                        <h2 class="resume_section_title pull-left">Projects</h2>
+
+                        <div class="resume_section_actions pull-right">
+                            <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
+                                <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
+                                <i class="fa fa-circle" ng-if="showOnlyActive"></i>
+                                Only show<span ng-if="showOnlyActive">ing</span> active ({{(projects | filter: (showOnlyActive ? showOnlyActive : null)).length}})
+                            </a>
                         </div>
                     </div>
 
-                    <div class="col-tight col-xs-6">
-                        <p class="list_heading">Mobile</p>
+                    <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
+                        <p class="primary">{{project.name}}</p>
+                        <p class="secondary"><a ng-href="{{project.link}}">{{project.link}}</a></p>
+                        <p class="date">
+                            {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
+                            <span class="duration">({{ project.date.status }})</span>
+                        </p>
+                        <ul class="details list">
+                            <li ng-repeat="detail in project.details">
+                                <p ng-bind-html="detail.text"></p>
+                                <ul class="list" ng-if="detail.list">
+                                    <li ng-repeat="subDetail in detail.list"><p ng-bind-html="subDetail.text"></p></li>
+                                </ul>
+                            </li>
+                       </ul>
 
-                        <div class="resume_item" id="competenciesDevMobile">
-                            <ul class="details list">
-                                <li>
-                                    BlackBerry 10
-                                    <ul class="list list--sub">
-                                        <li>Native + Cascades</li>
-                                        <li>HTML5 + WebWorks</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="tags">
+                            <li ng-repeat="tag in project.tags">#{{tag}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
+            <div class="resume_column col-md-6">
+                <div class="resume_section">
+                    <h2 class="resume_section_title">Education</h2>
+
+                    <div class="resume_item" id="educationUofT">
+                        <header>
+                            <p class="primary">University of Toronto, Trinity College<span>, Toronto ON</span></p>
+                            <p class="secondary">Specialist in Computer Science</p>
+                            <p class="date">
+                                September 2011 &mdash; Present
+                                <span class="duration">(Expected: 2016)</span>
+                            </p>
+                        </header>
+                        <ul class="details list">
+                            <li>Trinity Entrance Scholarship for avg. of 95%</li>
+                            <li>Queen Elizabeth II Aiming for the Top Scholarship</li>
+                            <li>Professional Experience Year</li>
+                        </ul>
+                    </div>
+                </div>
 
 
 
-            <div class="resume_section">
-                <h2 class="resume_section_title">Tools</h2>
 
-                <div class="row">
-                    <div class="col-tight col-xs-6">
-                        <div class="resume_sub-section row">
-                            <p class="list_heading">Development</p>
 
-                            <div class="resume_item" id="toolsDev">
+                <div class="resume_section">
+                    <h2 class="resume_section_title">Community</h2>
+
+                    <div class="resume_item" id="volunteerEdAppHack">
+                        <p class="primary">EdAppHack 2014<span> &mdash; Mentor</span></p>
+                        <p class="secondary"><a ng-href="http://edapphack.com">http://edapphack.com</a></p>
+                        <p class="date">
+                            October 2014
+                        </p>
+                        <ul class="details list">
+                            <li>Mentored group received an honourable mention for their application prototype, TimeLine.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="resume_section">
+                    <h2 class="resume_section_title">Awards</h2>
+
+                    <div class="resume_item" id="awardRBCNGI">
+                        <p class="primary">RBC Royal Bank - Next Great Innovator <span>&mdash; Finalist</span></p>
+                        <p class="secondary"><a href="#projectCuro">See Curo <i class="fa fa-level-down"></i></a></p>
+                        <p class="date">June 2014</p>
+                    </div>
+
+                    <div class="resume_item" id="awardEliLilly">
+                        <p class="primary">Eli Lilly - Clinical Trial Visualization Redesign <span>&mdash; Honourable Mention</span></p>
+                        <p class="secondary"><a href="#projectClinico">See Clinico <i class="fa fa-level-down"></i></a></p>
+                        <p class="date">November 2013</p>
+                        <ul class="details list">
+                            <li>Received a $3,000 cash prize for the Clinico solution.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume_item" id="awardBlackBerryCella">
+                        <p class="primary">BlackBerry Jam Camp <span>&mdash; Participant</span></p>
+                        <p class="date">September 2013</p>
+                        <ul class="details list">
+                            <li>Received four BlackBerry 10 devices and limited edition red, developer BlackBerry Z10 device for Cella.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="resume_section">
+                    <h2 class="resume_section_title">Skills</h2>
+
+                    <div class="resume_sub-section row">
+                        <div class="col-tight col-xs-6">
+                            <p class="list_heading">Front End</p>
+
+                            <div class="resume_item" id="competenciesDevFrontEnd">
                                 <ul class="details list">
-                                    <li>Chrome Developer Tools</li>
-                                    <li>Sublime Text</li>
+                                    <li>HTML</li>
                                     <li>
-                                        Tools
+                                        CSS
                                         <ul class="list list--sub">
-                                            <li>Bower</li>
-                                            <li>Grunt</li>
-                                            <li>Gulp</li>
+                                            <li>SASS</li>
+                                            <li>LESS</li>
                                         </ul>
                                     </li>
                                     <li>
-                                        Version Control
+                                        JavaScript
                                         <ul class="list list--sub">
-                                            <li>Git</li>
-                                            <li>Subversion</li>
+                                            <li>AngularJS</li>
+                                            <li>Meteor</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-tight col-xs-6">
+                            <p class="list_heading">Back End</p>
+
+                            <div class="resume_item" id="competenciesDevBackEnd">
+                                <ul class="details list">
+                                    <li>
+                                        Python
+                                        <ul class="list list--sub">
+                                            <li>Flask</li>
+                                        </ul>
+                                    </li>
+                                    <li>Node.js</li>
+                                    <li>Java</li>
+                                    <li>C++</li>
+                                </ul>
+
+                                <small class="note">* ordered by proficiency</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume_sub-section row">
+                        <div class="col-tight col-xs-6">
+                            <p class="list_heading">Database</p>
+
+                            <div class="resume_item" id="competenciesDevMobile">
+                                <ul class="details list">
+                                    <li>
+                                        RDBMS
+                                        <ul class="list list--sub">
+                                            <li>Oracle</li>
+                                            <li>PostgreSQL</li>
+                                            <li>MySQL</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        NoSQL
+                                        <ul class="list list--sub">
+                                            <li>MongoDB</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-tight col-xs-6">
+                            <p class="list_heading">Mobile</p>
+
+                            <div class="resume_item" id="competenciesDevMobile">
+                                <ul class="details list">
+                                    <li>
+                                        BlackBerry 10
+                                        <ul class="list list--sub">
+                                            <li>Native + Cascades</li>
+                                            <li>HTML5 + WebWorks</li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-tight col-xs-6">
-                        <div class="resume_sub-section row">
-                            <p class="list_heading">Design</p>
+                </div>
 
-                            <div class="resume_item" id="toolsDsgn">
-                                <ul class="details list">
-                                    <li>Adobe Illustrator</li>
-                                    <li>Adobe Photoshop</li>
-                                    <li>FramerJS</li>
-                                    <li>Sketch</li>
-                                </ul>
+
+
+
+                <div class="resume_section">
+                    <h2 class="resume_section_title">Tools</h2>
+
+                    <div class="row">
+                        <div class="col-tight col-xs-6">
+                            <div class="resume_sub-section row">
+                                <p class="list_heading">Development</p>
+
+                                <div class="resume_item" id="toolsDev">
+                                    <ul class="details list">
+                                        <li>Chrome Developer Tools</li>
+                                        <li>Sublime Text</li>
+                                        <li>
+                                            Tools
+                                            <ul class="list list--sub">
+                                                <li>Bower</li>
+                                                <li>Grunt</li>
+                                                <li>Gulp</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Version Control
+                                            <ul class="list list--sub">
+                                                <li>Git</li>
+                                                <li>Subversion</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-tight col-xs-6">
+                            <div class="resume_sub-section row">
+                                <p class="list_heading">Design</p>
+
+                                <div class="resume_item" id="toolsDsgn">
+                                    <ul class="details list">
+                                        <li>Adobe Illustrator</li>
+                                        <li>Adobe Photoshop</li>
+                                        <li>FramerJS</li>
+                                        <li>Sketch</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
