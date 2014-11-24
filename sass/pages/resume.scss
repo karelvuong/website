@@ -49,7 +49,7 @@ $resume-sub-section-padding: 20px;
         font-size: 24px;
         margin-top: 0;
         margin-bottom: 20px;
-        text-transform: lowercase;
+        text-transform: uppercase;
 
         i {
             margin-right: 5px;
@@ -153,9 +153,7 @@ $resume-sub-section-padding: 20px;
             line-height: 20px;
         }
 
-        a {
-            text-decoration: underline;
-        }
+        a {}
 
         .list--sub {
             margin-bottom: 5px;
