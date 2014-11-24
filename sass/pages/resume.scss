@@ -25,7 +25,6 @@ $resume-sub-section-padding: 20px;
 
 .resume {
     background-color: #fff;
-    border-top: 2px solid;
     margin: 0 auto;
     max-width: 960px;
 }
@@ -40,7 +39,7 @@ $resume-sub-section-padding: 20px;
     @include transition(all ease-in-out .1s);
 
     & + & {
-        border-top: 2px solid #efefef;
+        border-top: 1px solid #efefef;
     }
 
     .resume_section_title {
@@ -49,7 +48,7 @@ $resume-sub-section-padding: 20px;
         margin-bottom: 20px;
 
         i {
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         @media (max-width: $breakpoint-md-max){
@@ -63,24 +62,24 @@ $resume-sub-section-padding: 20px;
             margin-bottom: 20px;
         }
 
-        i {
-            margin-right: 10px;
-        }
-
         a {
             color: #aaa;
             font-size: 12px;
-            line-height: 35px;
+            line-height: 30px;
 
-            &:hover { color: #000; }
+            i {
+                margin-right: 5px;
+            }
 
             &.active {
-                color: #000;
+                color: #212121;
 
                 i {
-                    color: #000;
+                    color: $clr-link;
                 }
             }
+
+            &:hover { color: #000; }
         }
     }
 }
