@@ -87,7 +87,7 @@ p {
 }
 
 a {
-    color: $clr-red;
+    color: $clr-link;
     cursor: pointer;
     outline: 0;
     text-decoration: none;
@@ -95,8 +95,8 @@ a {
     @include transition(all ease-in-out .15s);
 
     &:hover {
-        border-color: $clr-red !important;
-        color: $clr-red;
+        border-color: $clr-link !important;
+        color: darken($clr-link, 10%);
     }
 }
 
