@@ -4,30 +4,30 @@ $resume-sub-section-padding: 20px;
 .page--resume {}
 
 .resume_header {
-    background-color: #212121;
     padding: 80px 40px;
     text-align: center;
 
     .heading_text--primary,
     .heading_text--secondary {
-        font-size: 14px;
-        font-weight: 700;
         line-height: 1;
     }
 
     .heading_text--primary {
-        color: #fff;
         font-size: 55px;
+        font-weight: 700;
         text-transform: none;
     }
 
     .heading_text--secondary {
-        color: #999;
+        font-size: 16px;
     }
+}
 
-    .heading_link {
-        color: #aaa;
-    }
+.resume {
+    background-color: #fff;
+    border-top: 2px solid;
+    margin: 0 auto;
+    max-width: 960px;
 }
 
 .resume_column {
@@ -40,16 +40,10 @@ $resume-sub-section-padding: 20px;
 
     @include transition(all ease-in-out .1s);
 
-    &:hover {
-        background-color: #fcfcfc;
-        border-color: #f0f0f0;
-    }
-
     .resume_section_title {
-        font-size: 24px;
+        font-size: 20px;
         margin-top: 0;
         margin-bottom: 20px;
-        text-transform: uppercase;
 
         i {
             margin-right: 5px;
@@ -127,11 +121,7 @@ $resume-sub-section-padding: 20px;
     .secondary {}
 
     a {
-        color: #437BA8;
-
-        &:hover {
-            color: lighten(#437BA8, 10%)
-        }
+        color: $clr-link;
     }
 
     .date {
