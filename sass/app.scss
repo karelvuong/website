@@ -97,6 +97,7 @@ a {
     &:hover {
         border-color: $clr-link !important;
         color: $clr-link--hover;
+        text-decoration: underline;
     }
 }
 
