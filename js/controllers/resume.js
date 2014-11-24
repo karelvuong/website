@@ -175,7 +175,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "A Sublime Text UI and Syntax theme inspired by Mozilla Firefox Developer Edition."
+                    text: "A UI + Syntax theme for Sublime Text based on Mozilla's Firefox Developer Edition."
                 }
             ],
             tags: ["tool", "design"]
