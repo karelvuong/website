@@ -35,10 +35,13 @@ $resume-sub-section-padding: 20px;
 }
 
 .resume_section {
-    border: 1px solid transparent;
     padding: 40px;
 
     @include transition(all ease-in-out .1s);
+
+    & + & {
+        border-top: 2px solid #efefef;
+    }
 
     .resume_section_title {
         font-size: 20px;
