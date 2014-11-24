@@ -25,7 +25,7 @@
  * ------------------------------------------------------------------------- */
 
 body {
-    color: #333;
+    color: #232A2E;
     font-size: 12px;
     line-height: 1.6125;
     font-family: $font-sans;
@@ -96,7 +96,7 @@ a {
 
     &:hover {
         border-color: $clr-link !important;
-        color: darken($clr-link, 10%);
+        color: $clr-link--hover;
     }
 }
 

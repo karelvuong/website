@@ -146,7 +146,9 @@ $resume-sub-section-padding: 20px;
             line-height: 20px;
         }
 
-        a {}
+        a {
+            text-decoration: underline;
+        }
 
         .list--sub {
             margin-bottom: 5px;
