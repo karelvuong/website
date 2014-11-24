@@ -248,7 +248,7 @@ angular.module('karel.controllers')
                     text: "Chromegray is based on <a href='https://github.com/kkga'>@kkga</a>'s Spacegray Sublime Text 2/3 UI theme and <a href='https://github.com/chriskempson'>@chriskempson</a>'s base16 Ocean colour scheme."
                 },
                 {
-                    text: "<a href='http://devthemez.com/themes/chrome-developer-tools?sort=popular'>Most popular</a> Chrome Developer Tools theme and 12th <a href='http://devthemez.com/?sort=downloads'>most downloaded</a> theme among all Sublime Text, Chrome DevTools, Vim, BBEdit, and Espresso themes on <a href='http://devthemez.com'>devthemez.com</a> as of October 2014."
+                    text: "<a href='http://devthemez.com/themes/chrome-developer-tools?sort=popular'>Most popular</a> Chrome Developer Tools theme and 11th <a href='http://devthemez.com/?sort=downloads'>most downloaded</a> theme among all Sublime Text, Chrome DevTools, Vim, BBEdit, and Espresso themes on <a href='http://devthemez.com'>devthemez.com</a> as of October 2014."
                 }
             ],
             tags: ["web"]
