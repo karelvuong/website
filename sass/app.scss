@@ -252,7 +252,7 @@ section {
         background-color: #fff;
         padding: 120px 0;
 
-        @media (max-width: $breakpoint-md-max) {
+        @media (max-width: $breakpoint-sm-max) {
             padding: 0;
             display: block;
         }
@@ -379,7 +379,8 @@ section {
         line-height: 1.2125;
     }
 
-    @media (max-width: $breakpoint-md-max) {
+    @media (max-width: $breakpoint-sm-max) {
         padding: 40px 0px;
+        text-align: center;
     }
 }
