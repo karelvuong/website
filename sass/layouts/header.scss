@@ -23,18 +23,18 @@
         float: right;
 
         a {
-            color: #000;
+            color: $clr-text-body;
             display: inline-block;
             font-size: 12px;
             font-weight: 700;
             // letter-spacing: 1px;
             line-height: 30px;
             margin-left: 25px;
-            opacity: 0.4;
+            opacity: 0.6;
             // text-transform: uppercase;
 
             &:hover {
-                opacity: 0.6;
+                opacity: 0.8;
                 text-decoration: none;
             }
 

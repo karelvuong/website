@@ -2,17 +2,26 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('karel', [
-    'ngSanitize',
-    'ui.router',
-    'karel.controllers',
-    'karel.directives'
+  'ngSanitize',
+  'ui.router',
+  'duScroll',
+  'karel.controllers',
+  'karel.directives'
 ])
 
-.run(function($rootScope, $state){
-    $rootScope.$on("$viewContentLoaded", function(){
-        $('html body').scrollTop(0);
-        $rootScope.state = $state.$current.self.name;
-    });
+.run(function($rootScope, $state, $location){
+  $rootScope.$on("$viewContentLoaded", function(){
+    $('html body').scrollTop(0);
+    $rootScope.state = $state.$current.self.name;
+  });
+
+  $rootScope.$on('duScrollspy:becameActive', function($event, $element){
+    var hash = $element.prop('hash');
+    if (hash) {
+      $location.hash(hash.substr(1)).replace();
+      $rootScope.$apply();
+    }
+  });
 })
 
 .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
