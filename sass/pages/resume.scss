@@ -13,13 +13,16 @@ $resume-sub-section-padding: 20px;
     }
 
     .heading_text--primary {
-        font-size: 55px;
-        font-weight: 700;
-        text-transform: none;
+        font-size: 80px;
+        font-weight: 400;
     }
 
     .heading_text--secondary {
         font-size: 16px;
+    }
+
+    @media (max-width: $breakpoint-md-max){
+        text-align: left;
     }
 }
 
@@ -27,7 +30,7 @@ $resume-sub-section-padding: 20px;
     background-color: #fff;
     margin: 0 auto;
     padding-bottom: 120px;
-    max-width: 960px;
+    max-width: $page-width--max;
 }
 
 .resume_column {

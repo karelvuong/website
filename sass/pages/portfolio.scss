@@ -1,0 +1,91 @@
+.posts {
+    margin: 0 auto;
+    max-width: $page-width--max;
+}
+
+.post {}
+
+.post--work {
+    display: block;
+    height: 500px;
+    position: relative;
+
+    &:hover {
+        .cover { opacity: .9; }
+    }
+
+    .cover {
+        background: {
+            color: #777;
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        }
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        @include transition(all ease-in-out .15s);
+    }
+
+    .text {
+        display: table;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+
+        .inner {
+            color: #fff;
+            display: table-cell;
+            font: {
+                family: $font-sans;
+                weight: 700;
+                size: 20px;
+            }
+            height: 100%;
+            letter-spacing: 4px;
+            margin-bottom: 0;
+            padding: 0 40px;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .title {
+            &:after {
+                content: '';
+                background-color: #fff;
+                display: block;
+                height: 3px;
+                margin: 10px auto;
+                width: 80px;
+            }
+        }
+
+        .date {
+            font-size: 14px;
+        }
+    }
+
+    .tags {
+        margin-top: 10px;
+
+        li {
+            background: #000;
+            text-shadow: none;
+            color: #ccc;
+            display: inline-block;
+            font-family: $font-serif;
+            font-style: italic;
+            font-size: 12px;
+            line-height: 1.625;
+            padding: 0 5px;
+
+            & + li {
+                margin-left: 5px;
+            }
+        }
+    }
+}
