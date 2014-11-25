@@ -1,12 +1,12 @@
 <div class="page page--resume" ng-controller="ResumeController">
-    <div class="resume_header row">
-        <p class="heading_text--primary u-uppercase">
-            Karel Vuong<br>
-        </p>
-        <a class="heading_text--secondary" href="mailto:vuongkarel@gmail.com">vuongkarel@gmail.com</a>
-    </div>
-
     <div class="resume">
+        <div class="resume_header">
+            <p class="heading_text--primary">
+                Karel Vuong
+            </p>
+            <a class="heading_text--secondary" href="mailto:vuongkarel@gmail.com">vuongkarel@gmail.com</a>
+        </div>
+
         <div class="row">
             <div class="resume_column col-md-6">
                 <div class="resume_section">
@@ -15,8 +15,8 @@
 
                         <div class="resume_section_actions pull-right">
                             <a ng-class="{active: showOnlyCurrent}" ng-click="showOnlyCurrent = !showOnlyCurrent">
-                                <i class="fa fa-circle-o" ng-if="!showOnlyCurrent"></i>
-                                <i class="fa fa-circle" ng-if="showOnlyCurrent"></i>
+                                <i class="oi" data-glyph="circle-x" ng-if="!showOnlyCurrent"></i>
+                                <i class="oi" data-glyph="circle-check" ng-if="showOnlyCurrent"></i>
                                 Only show<span ng-if="showOnlyCurrent">ing</span> current ({{(experience | filter: (showOnlyCurrent ? showOnlyCurrent : null)).length}})
                             </a>
                         </div>
@@ -50,8 +50,8 @@
 
                         <div class="resume_section_actions pull-right">
                             <a ng-class="{active: showOnlyActive}" ng-click="showOnlyActive = !showOnlyActive">
-                                <i class="fa fa-circle-o" ng-if="!showOnlyActive"></i>
-                                <i class="fa fa-circle" ng-if="showOnlyActive"></i>
+                                <i class="oi" data-glyph="circle-x" ng-if="!showOnlyActive"></i>
+                                <i class="oi" data-glyph="circle-check" ng-if="showOnlyActive"></i>
                                 Only show<span ng-if="showOnlyActive">ing</span> active ({{(projects | filter: (showOnlyActive ? showOnlyActive : null)).length}})
                             </a>
                         </div>
