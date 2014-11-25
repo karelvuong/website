@@ -111,7 +111,7 @@ angular.module('karel.controllers')
         {
             id: "projectFlow",
             name: "Flow",
-            link: "http://karel.ca/work/flow",
+            link: "/portfolio/flow",
             date: {
                 active: true,
                 format: "MMMM y",
