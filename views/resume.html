@@ -58,8 +58,7 @@
                     </div>
 
                     <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
-                        <p class="primary">{{project.name}}</p>
-                        <p class="secondary"><a ng-href="{{project.link}}">{{project.link}}</a></p>
+                        <p class="primary">{{project.name}} <a ng-href="{{project.link}}"><i class="oi" data-glyph="link-intact"></i></a></p>
                         <p class="date">
                             {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
                             <span class="duration">({{ project.date.status }})</span>
