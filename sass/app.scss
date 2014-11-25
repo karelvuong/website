@@ -26,7 +26,7 @@
  * ------------------------------------------------------------------------- */
 
 body {
-    color: #232A2E;
+    color: $clr-text-body;
     font-size: 12px;
     line-height: 1.6125;
     font-family: $font-sans;
@@ -240,24 +240,205 @@ ol {
 }
 
 .page--home {
-    background-color: #fff;
-    display: table;
     height: 100%;
-    padding: 0;
     position: relative;
     width: 100%;
-    z-index: 1;
+}
 
-    @media (max-width: $breakpoint-md-max) {
-        display: block;
-        padding: 80px 0;
+section {
+    .sub-section {
+        & + .sub-section {
+            border-top: 1px solid #E0E8EF;
+            margin-top: 40px;
+            padding-top: 40px;
+        }
+    }
+
+    &.intro {
+        background-color: #fff;
+        display: table;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        @media (max-width: $breakpoint-md-max) {
+            display: block;
+        }
+    }
+
+    &.portfolio {
+        background-color: #FBFCFD;
+        border-top: 1px solid #E0E8EF;
+        padding: 40px 0;
+        // color: #44525A;
+
+        .inner {
+            margin: 0 auto;
+            padding: 20px 40px;
+            max-width: $page-width--max;
+        }
+
+        .work {
+            opacity: 0.95;
+
+            &:hover {
+                color: $clr-text-body;
+                opacity: 1.0;
+                text-decoration: none;
+
+                .inner {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+
+            @include transition(all ease-in-out .1s);
+
+            .inner {
+                background-color: #8B7DAB;
+                border-radius: 2px;
+                color: #fff;
+                display: block;
+                padding: 40px;
+
+                @include transition(all ease-in-out .1s);
+            }
+
+            p {
+                line-height: 1.315;
+                margin: 0;
+
+                & + p {
+                    margin-top: 10px;
+                }
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .type {
+                margin: 0;
+            }
+
+            .icon {
+                font-size: 30px;
+            }
+        }
+
+        .work-row {
+            & + .work-row {
+                margin-top: 40px;
+            }
+        }
+
+        .work--primary {
+            width: 100%;
+
+            .title {
+                font-size: 40px;
+            }
+
+            .description {
+                font-size: 20px;
+            }
+        }
+
+        .work--secondary {
+            float: left;
+            width: 50%;
+
+            &:nth-of-type(even){
+                padding-left: 20px;
+            }
+
+            &:nth-of-type(odd){
+                padding-right: 20px;
+            }
+        }
+
+        .work--side {
+            float: left;
+            width: 33.33%;
+
+            &:hover {
+                .outer {
+                    background-color: #fff;
+                    box-shadow: 0 1px 1px #E0E8EF;
+                }
+            }
+
+            .inner {
+                text-align: center;
+            }
+
+            .outer {
+                padding: 20px;
+
+                @include transition(all ease-in-out .15s);
+            }
+
+            .title,
+            .type {
+                color: $clr-text-body;
+            }
+
+            .description {
+                color: #8B959E;
+            }
+
+            &:nth-of-type(1){
+                padding-right: 25px;
+            }
+
+            &:nth-of-type(2){
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            &:nth-of-type(3){
+                padding-left: 25px;
+            }
+        }
+    }
+
+    &.social {
+        background-color: #212121;
+        color: #fff;
+
+        .inner {
+            margin: 0 auto;
+            padding: 20px 40px;
+            max-width: $page-width--max;
+            text-align: center;
+        }
+
+        ul {}
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 15px;
+            opacity: 0.6;
+
+            &:hover {
+                opacity: 1;
+                text-decoration: none;
+            }
+        }
     }
 }
 
 .logo--home {
-    height: 120px;
+    height: 200px;
     margin-bottom: 20px;
-    width: 120px;
+    width: 110px;
 
     g {
         transition: all .3s ease-out;
@@ -333,5 +514,17 @@ ol {
     p {
         font-size: 40px;
         line-height: 1.2125;
+
+        a {
+            color: #ddd;
+
+            &:hover {
+                color: #aaa;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-md-max) {
+        padding: 80px 0px;
     }
 }

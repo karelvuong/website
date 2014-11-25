@@ -157,7 +157,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Launched with the North by Northeast Festivals and Conference (NXNE) on June 18, 2014, the 1 Million Music Moment website is an interactive, content driven web application that aggregates musical moments hashtagged with #1MMM on social media networks to display a dynamic, ongoing feed that celebrates the musical offerings of the City of Toronto."
+                    text: "Launched with the North by Northeast festivals and Conference (NXNE) on June 18, 2014, the 1 Million Music Moment website is an interactive, content driven feed that aggregates musical moments hashtagged with #1MMM on all social media networks."
                 }
             ],
             tags: ["web"]

@@ -52,14 +52,6 @@ angular.module('karel', [
       }
     }
   })
-  .state('portfolio', {
-    url: "/portfolio",
-    views: {
-      "site": {
-        templateUrl: "/views/portfolio/_layout.html"
-      }
-    }
-  })
   .state('portfolio.casa', {
     url: "/casa",
     templateUrl: "/views/portfolio/casa.html"
