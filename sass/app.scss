@@ -239,12 +239,6 @@ ol {
     }
 }
 
-.page--home {
-    height: 100%;
-    position: relative;
-    width: 100%;
-}
-
 section {
     .sub-section {
         & + .sub-section {
@@ -256,12 +250,10 @@ section {
 
     &.intro {
         background-color: #fff;
-        display: table;
-        height: 100%;
-        width: 100%;
-        z-index: 1;
+        padding: 120px 0;
 
         @media (max-width: $breakpoint-md-max) {
+            padding: 0;
             display: block;
         }
     }
@@ -269,137 +261,11 @@ section {
     &.portfolio {
         background-color: #FBFCFD;
         border-top: 1px solid #E0E8EF;
-        padding: 40px 0;
-        // color: #44525A;
+        padding: 60px 40px;
 
         .inner {
             margin: 0 auto;
-            padding: 20px 40px;
             max-width: $page-width--max;
-        }
-
-        .work {
-            opacity: 0.95;
-
-            &:hover {
-                color: $clr-text-body;
-                opacity: 1.0;
-                text-decoration: none;
-
-                .inner {
-                    border-bottom-left-radius: 0;
-                    border-bottom-right-radius: 0;
-                }
-            }
-
-            @include transition(all ease-in-out .1s);
-
-            .inner {
-                background-color: #8B7DAB;
-                border-radius: 2px;
-                color: #fff;
-                display: block;
-                padding: 40px;
-
-                @include transition(all ease-in-out .1s);
-            }
-
-            p {
-                line-height: 1.315;
-                margin: 0;
-
-                & + p {
-                    margin-top: 10px;
-                }
-            }
-
-            .title {
-                font-size: 20px;
-                font-weight: 700;
-            }
-
-            .type {
-                margin: 0;
-            }
-
-            .icon {
-                font-size: 30px;
-            }
-        }
-
-        .work-row {
-            & + .work-row {
-                margin-top: 40px;
-            }
-        }
-
-        .work--primary {
-            width: 100%;
-
-            .title {
-                font-size: 40px;
-            }
-
-            .description {
-                font-size: 20px;
-            }
-        }
-
-        .work--secondary {
-            float: left;
-            width: 50%;
-
-            &:nth-of-type(even){
-                padding-left: 20px;
-            }
-
-            &:nth-of-type(odd){
-                padding-right: 20px;
-            }
-        }
-
-        .work--side {
-            float: left;
-            width: 33.33%;
-
-            &:hover {
-                .outer {
-                    background-color: #fff;
-                    box-shadow: 0 1px 1px #E0E8EF;
-                }
-            }
-
-            .inner {
-                text-align: center;
-            }
-
-            .outer {
-                padding: 20px;
-
-                @include transition(all ease-in-out .15s);
-            }
-
-            .title,
-            .type {
-                color: $clr-text-body;
-            }
-
-            .description {
-                color: #8B959E;
-            }
-
-            &:nth-of-type(1){
-                padding-right: 25px;
-            }
-
-            &:nth-of-type(2){
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-
-            &:nth-of-type(3){
-                padding-left: 25px;
-            }
         }
     }
 
@@ -448,7 +314,6 @@ section {
 }
 
 .page--construction {
-    background-color: #212121;
     padding-bottom: 0;
     text-align: center;
 
@@ -457,10 +322,9 @@ section {
     }
 
     .message {
-        color: #fff;
-        font-size: 55px;
+        font-size: 30px;
         font-weight: 700;
-        line-height: 1.6125;
+        line-height: 1.4125;
         margin: 0;
     }
 
@@ -502,8 +366,7 @@ section {
 }
 
 .bio {
-    display: table-cell;
-    vertical-align: middle;
+    margin: 0 auto;
     width: 100%;
 
     .inner {
@@ -514,17 +377,9 @@ section {
     p {
         font-size: 40px;
         line-height: 1.2125;
-
-        a {
-            color: #ddd;
-
-            &:hover {
-                color: #aaa;
-            }
-        }
     }
 
     @media (max-width: $breakpoint-md-max) {
-        padding: 80px 0px;
+        padding: 40px 0px;
     }
 }
