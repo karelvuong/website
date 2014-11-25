@@ -14,8 +14,8 @@
 }
 
 @include keyframes(fillfade) {
-    0%      { fill: #87ceeb }
-    33%     { fill: #7b68ee }
-    66%     { fill: #f3a578 }
-    100%    { fill: #87ceeb }
+    0%      { fill: #87CEEB; }
+    33%     { fill: #F3A578; }
+    66%     { fill: #7B68EE; }
+    100%    { fill: #87CEEB; }
 }
