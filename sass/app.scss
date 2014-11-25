@@ -322,18 +322,16 @@ ol {
 
 .bio {
     display: table-cell;
-    text-align: center;
     vertical-align: middle;
     width: 100%;
 
     .inner {
         margin: 0 auto;
         max-width: $page-width--max;
-        padding: 0 40px;
     }
 
     p {
-        font-size: 55px;
-        line-height: 1.3125;
+        font-size: 40px;
+        line-height: 1.2125;
     }
 }
