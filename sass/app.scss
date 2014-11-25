@@ -41,16 +41,6 @@ body {
           box-sizing: border-box;
 }
 
-::-moz-selection {
-    background: yellow;
-    color: black;
-}
-
-::selection {
-    background: yellow;
-    color: black;
-}
-
 /* -------------------------------------------------------------------------
  * TYPOGRAPHY
  * ------------------------------------------------------------------------- */
@@ -163,8 +153,6 @@ ol {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.25;
-    margin: 0;
-    padding: 0;
 }
 
 /* -------------------------------------------------------------------------

@@ -26,6 +26,7 @@ $resume-sub-section-padding: 20px;
 .resume {
     background-color: #fff;
     margin: 0 auto;
+    padding-bottom: 120px;
     max-width: 960px;
 }
 
@@ -34,12 +35,14 @@ $resume-sub-section-padding: 20px;
 }
 
 .resume_section {
-    padding: 40px;
+    margin: 0 40px;
 
     @include transition(all ease-in-out .1s);
 
     & + & {
         border-top: 1px solid #efefef;
+        margin-top: 60px;
+        padding-top: 60px;
     }
 
     .resume_section_title {
@@ -63,7 +66,7 @@ $resume-sub-section-padding: 20px;
         }
 
         a {
-            color: #aaa;
+            color: #ABB4B9;
             font-size: 12px;
             line-height: 30px;
 
@@ -72,14 +75,17 @@ $resume-sub-section-padding: 20px;
             }
 
             &.active {
-                color: #212121;
+                color: #232A2E;
 
                 i {
                     color: $clr-link;
                 }
             }
 
-            &:hover { color: #000; }
+            &:hover {
+                color: #44525A;
+                text-decoration: none;
+            }
         }
     }
 }
@@ -101,6 +107,10 @@ $resume-sub-section-padding: 20px;
 }
 
 .resume_item {
+    & + & {
+        margin-top: 40px;
+    }
+
     p {
         margin-bottom: 0;
     }
@@ -115,6 +125,10 @@ $resume-sub-section-padding: 20px;
         display: block;
         font-size: 14px;
 
+        i {
+            margin-left: 5px;
+        }
+
         span {
             font-weight: 400;
         }
@@ -128,7 +142,7 @@ $resume-sub-section-padding: 20px;
 
     .date {
         .duration {
-            color: #aaa;
+            color: #ABB4B9;
         }
     }
 
@@ -161,8 +175,9 @@ $resume-sub-section-padding: 20px;
         margin: 5px 20px 0;
 
         li {
-            background-color: #f6f6f6;
-            border: 1px solid #ddd;
+            background: #fff9ea;
+            border: 1px solid rgba(#ffba00, 0.1);
+            color: #967313;
             border-radius: 4px;
             display: inline-block;
             padding: 0 5px;
@@ -171,10 +186,6 @@ $resume-sub-section-padding: 20px;
                 margin-left: 5px;
             }
         }
-    }
-
-    & + & {
-        margin-top: 20px;
     }
 }
 
