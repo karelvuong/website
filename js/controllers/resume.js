@@ -8,8 +8,8 @@ angular.module('karel.controllers')
     $scope.experience = [
         {
             company: "BlackBerry",
-            location: "Waterloo, ON",
             position: "Product Manager, Analytics R&D",
+            location: "Waterloo, ON",
             date: {
                 current: true,
                 start: new Date(2014, 0),
@@ -30,8 +30,8 @@ angular.module('karel.controllers')
         },
         {
             company: "Innovitas",
-            location: "Toronto, ON",
             position: "Consultant",
+            location: "Toronto, ON",
             date: {
                 current: true,
                 start: new Date(2014, 6),
@@ -57,8 +57,8 @@ angular.module('karel.controllers')
         },
         {
             company: "1 Million Music Moments",
-            location: "Toronto, ON",
             position: "Digital Director",
+            location: "Toronto, ON",
             date: {
                 current: true,
                 start: new Date(2014, 0),
@@ -78,9 +78,9 @@ angular.module('karel.controllers')
             ]
         },
         {
-            company: "Mobile Application Developer",
+            company: "Independent",
+            position: "Mobile Application Developer (BlackBerry 10)",
             location: "Toronto, ON",
-            position: "BlackBerry 10",
             date: {
                 current: false,
                 start: new Date(2013, 8),
