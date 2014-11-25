@@ -1,6 +1,7 @@
 button {
-  background-color: transparent;
-  border: 2px solid #000;
+  background-color: #000;
+  border: none;
+  color: #fff;
   cursor: pointer;
   font: {
     family: "Open Sans";
@@ -8,11 +9,11 @@ button {
     weight: 700;
   }
   margin-top: 20px;
-  padding: 12px 18px;
+  padding: 10px 14px;
   border-radius: 4px;
 
   i {
-    margin-left: 5px;
+    margin-right: 8px;
   }
 
   &:hover {
