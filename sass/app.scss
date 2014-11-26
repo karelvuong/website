@@ -125,7 +125,7 @@ strong { font-weight: 700; }
 em { font-style: italic; }
 
 ul, ol {
-    color: #333;
+    color: $clr-text-body;
     margin: 0;
 }
 
@@ -260,43 +260,13 @@ section {
 
     &.portfolio {
         background-color: #FBFCFD;
-        border-top: 1px solid #E0E8EF;
+        border-top: 1px solid $clr-portfolio-border;
+        border-bottom: 1px solid $clr-portfolio-border;
         padding: 60px 40px;
 
         .inner {
             margin: 0 auto;
             max-width: $page-width--max;
-        }
-    }
-
-    &.social {
-        background-color: #212121;
-        color: #fff;
-
-        .inner {
-            margin: 0 auto;
-            padding: 20px 40px;
-            max-width: $page-width--max;
-            text-align: center;
-        }
-
-        ul {}
-
-        li {
-            display: inline-block;
-        }
-
-        a {
-            color: #fff;
-            font-size: 12px;
-            font-weight: 700;
-            margin: 0 15px;
-            opacity: 0.6;
-
-            &:hover {
-                opacity: 1;
-                text-decoration: none;
-            }
         }
     }
 }
