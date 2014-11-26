@@ -1,9 +1,49 @@
 .footer {
-    background-color: #212121;
-    padding: 20px 40px;
-    width: 100%;
+    .inner {
+        margin: 0 auto;
+        padding: 120px 40px;
+        max-width: $page-width--max;
+        text-align: center;
+    }
 
+    ul {}
 
+    li {
+        display: inline-block;
+    }
+
+    p {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2125;
+        margin-bottom: 40px;
+    }
+
+    .footer_btn {
+        border-radius: 4px;
+        color: #fff;
+        font-weight: 700;
+        opacity: 0.90;
+        padding: 4px 10px;
+
+        @include transition(all ease-in-out .15s);
+
+        &:hover {
+            opacity: 1.0;
+            text-decoration: none;
+        }
+
+        &.dribbble  { background-color: #EA4C89; }
+        &.github    { background-color: #BD2C00; }
+        &.linkedin  { background-color: #0976B4; }
+        &.quora     { background-color: #A82400; }
+        &.twitter   { background-color: #55ACEE; }
+    }
+
+    a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
 
     &--fixed {
         position: fixed;
