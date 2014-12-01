@@ -350,7 +350,11 @@ section {
     }
 
     @media (max-width: $breakpoint-sm-max) {
-        padding: 40px 0px;
+        padding: 80px 0px;
         text-align: center;
+
+        p {
+            font-size: 30px;
+        }
     }
 }
