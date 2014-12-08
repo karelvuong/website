@@ -8,13 +8,13 @@ angular.module('karel.controllers')
     $scope.experience = [
         {
             company: "BlackBerry",
-            position: "Product Manager, Analytics R&D",
+            position: "Product Manager Intern, Analytics R&D",
             location: "Waterloo, ON",
             date: {
                 current: true,
-                start: new Date(2014, 0),
+                start: new Date(2014, 6),
                 end: new Date(),
-                duration: getMonthDifference(new Date(2014, 0), new Date())
+                duration: getMonthDifference(new Date(2014, 6), new Date())
             },
             details: [
                 {
@@ -22,10 +22,20 @@ angular.module('karel.controllers')
                 },
                 {
                     text: "Modernized platform's core architecture and technology stack to move away from strictly Oracle based to a three-tiered architecture using AngularJS, Python, MongoDB and Oracle."
-                },
-                {
-                    text: "Oversaw seamless and successful migration of over 200 applications from the legacy platform with zero downtime and minimal work disruption in the span of four months."
                 }
+            ]
+        },
+        {
+            company: "BlackBerry",
+            position: "Applications Developer Intern, Analytics R&D",
+            location: "Waterloo, ON",
+            date: {
+                current: false,
+                start: new Date(2014, 0),
+                end: new Date(2014, 6),
+                duration: getMonthDifference(new Date(2014, 0), new Date(2014, 6))
+            },
+            details: [
             ]
         },
         {
