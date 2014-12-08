@@ -12,15 +12,6 @@ angular.module('karel', [
 .run(function($rootScope, $state, $location){
   $rootScope.$on("$viewContentLoaded", function(){
     $('html body').scrollTop(0);
-    $rootScope.state = $state.$current.self.name;
-  });
-
-  $rootScope.$on('duScrollspy:becameActive', function($event, $element){
-    var hash = $element.prop('hash');
-    if (hash) {
-      $location.hash(hash.substr(1)).replace();
-      $rootScope.$apply();
-    }
   });
 })
 
