@@ -18,7 +18,6 @@
 
     p {
         font-size: 30px;
-        font-weight: 700;
         line-height: 1.2125;
         margin-bottom: 40px;
     }
@@ -27,6 +26,7 @@
         border-radius: 4px;
         color: #fff;
         display: inline-block;
+        font-size: 12px;
         font-weight: 700;
         margin-bottom: 4px;
         opacity: 0.90;
@@ -44,10 +44,6 @@
         &.linkedin  { background-color: #0976B4; }
         &.quora     { background-color: #A82400; }
         &.twitter   { background-color: #55ACEE; }
-    }
-
-    a {
-        font-size: 14px;
     }
 
     &--fixed {
