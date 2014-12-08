@@ -8,7 +8,7 @@ angular.module('karel.controllers')
     $scope.experience = [
         {
             company: "BlackBerry",
-            position: "Product Manager Intern, Analytics R&D",
+            position: "Product Manager Intern, Analytics - Quality",
             location: "Waterloo, ON",
             date: {
                 current: true,
@@ -27,7 +27,7 @@ angular.module('karel.controllers')
         },
         {
             company: "BlackBerry",
-            position: "Applications Developer Intern, Analytics R&D",
+            position: "Applications Developer Intern, Analytics - Quality",
             location: "Waterloo, ON",
             date: {
                 current: false,
@@ -173,9 +173,42 @@ angular.module('karel.controllers')
             tags: ["web"]
         },
         {
-            id: "projectFox",
-            name: "Fox",
-            link: "http://github.com/karelvuong/fox",
+            id: "projectThemesBrackets",
+            name: "Themes (Brackets)",
+            date: {
+                active: true,
+                format: "MMMM y",
+                start: new Date(2014, 11),
+                end: new Date(),
+                status: "Active"
+            },
+            details: [
+                {
+                    text: "<strong>Fox</strong>: A syntax theme based on Mozilla's Firefox Developer Edition."
+                }
+            ],
+            tags: ["tool", "design"]
+        },
+        {
+            id: "projectThemesChrome",
+            name: "Themes (Chrome Developer Tools)",
+            date: {
+                active: true,
+                format: "MMMM y",
+                start: new Date(2014, 11),
+                end: new Date(),
+                status: "Active"
+            },
+            details: [
+                {
+                    text: "<strong>Chromegray</strong>: A theme based on <a href='https://github.com/kkga'>@kkga</a>'s Spacegray Sublime Text 2/3 UI theme and <a href='https://github.com/chriskempson'>@chriskempson</a>'s base16 Ocean syntax theme."
+                }
+            ],
+            tags: ["tool", "design"]
+        },
+        {
+            id: "projectThemesST",
+            name: "Themes (Sublime Text)",
             date: {
                 active: true,
                 format: "MMMM y",
@@ -185,7 +218,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "A UI + Syntax theme for Sublime Text based on Mozilla's Firefox Developer Edition."
+                    text: "<strong>Fox</strong>: A UI + Syntax theme based on Mozilla's Firefox Developer Edition."
                 }
             ],
             tags: ["tool", "design"]
@@ -242,26 +275,6 @@ angular.module('karel.controllers')
                 }
             ],
             tags: ["web", "hackathon"]
-        },
-        {
-            id: "projectChromegray",
-            name: "Chromegray",
-            link: "http://devthemez.com/themes/chromegray",
-            date: {
-                active: false,
-                format: "MMMM y",
-                start: new Date(2014, 0),
-                status: "Inactive"
-            },
-            details: [
-                {
-                    text: "Chromegray is based on <a href='https://github.com/kkga'>@kkga</a>'s Spacegray Sublime Text 2/3 UI theme and <a href='https://github.com/chriskempson'>@chriskempson</a>'s base16 Ocean colour scheme."
-                },
-                {
-                    text: "<a href='http://devthemez.com/themes/chrome-developer-tools?sort=popular'>Most popular</a> Chrome Developer Tools theme and 11th <a href='http://devthemez.com/?sort=downloads'>most downloaded</a> theme among all Sublime Text, Chrome DevTools, Vim, BBEdit, and Espresso themes on <a href='http://devthemez.com'>devthemez.com</a> as of October 2014."
-                }
-            ],
-            tags: ["web"]
         },
         {
             id: "projectClinico",
