@@ -7,8 +7,17 @@ angular.module('karel.controllers')
 
     $scope.experience = [
         {
+            company: "Zazzle",
+            position: "Product Manager Intern",
+            location: "Redwood City, CA",
+            date: {
+                current: false,
+                start: new Date(2015, 0)
+            }
+        },
+        {
             company: "BlackBerry",
-            position: "Product Manager Intern, Analytics - Quality",
+            position: "Product Manager Intern, Analytics R&D - Quality",
             location: "Waterloo, ON",
             date: {
                 current: true,
@@ -27,7 +36,7 @@ angular.module('karel.controllers')
         },
         {
             company: "BlackBerry",
-            position: "Applications Developer Intern, Analytics - Quality",
+            position: "Applications Developer Intern, Analytics R&D - Quality",
             location: "Waterloo, ON",
             date: {
                 current: false,
@@ -80,7 +89,7 @@ angular.module('karel.controllers')
                     text: "Defined brand identity across all print and digital mediums: corporate identity, logo, electronic pitch kit, promotional material, sponsor packages, and email campaigns"
                 },
                 {
-                    text: "Developed interactive, content driven web application to aggregate musical moments hashtagged with #1MMM on social media websites to produce a dynamic, ongoing feed"
+                    text: "Developed interactive, content driven feed to aggregate musical moments hashtagged with #1MMM on social media websites."
                 },
                 {
                     text: "Oversaw digital outreach by developing concepts with viral potential to drive brand awareness and achieve visible social media presence through analytics and content strategy"
@@ -102,10 +111,10 @@ angular.module('karel.controllers')
                     text: "Designed and developed apps for BlackBerry 10 using the Native SDK with the Cascades UI Framework (C++, QT/QML):",
                     list: [
                         {
-                            text: "<strong>cella</strong> (Built for BlackBerry): a home inventory management application that securely stores location, purchase information, and warranty information of possessions in a three-tiered organizational system"
+                            text: "<strong>cella</strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
                         },
                         {
-                            text: "<strong>cooler</strong> (Built for BlackBerry): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
+                            text: "<strong>cooler</strong> (BfB Certified): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
                         }
                     ]
                 }
@@ -167,7 +176,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Launched with the North by Northeast festivals and Conference (NXNE) on June 18, 2014, the 1 Million Music Moment website is an interactive, content driven feed that aggregates musical moments hashtagged with #1MMM on all social media networks."
+                    text: "A feed that aggregates musical moments hashtagged with #1MMM on all social media networks."
                 }
             ],
             tags: ["web"]
@@ -175,65 +184,46 @@ angular.module('karel.controllers')
         {
             id: "projectThemesBrackets",
             name: "Themes (Brackets)",
-            date: {
-                active: true,
-                format: "MMMM y",
-                start: new Date(2014, 11),
-                end: new Date(),
-                status: "Active"
-            },
             details: [
                 {
                     text: "<strong>Fox</strong>: A syntax theme based on Mozilla's Firefox Developer Edition."
                 }
             ],
+            date: {
+                current: true
+            },
             tags: ["tool", "design"]
         },
         {
             id: "projectThemesChrome",
             name: "Themes (Chrome Developer Tools)",
-            date: {
-                active: true,
-                format: "MMMM y",
-                start: new Date(2014, 11),
-                end: new Date(),
-                status: "Active"
-            },
             details: [
                 {
                     text: "<strong>Chromegray</strong>: A theme based on <a href='https://github.com/kkga'>@kkga</a>'s Spacegray Sublime Text 2/3 UI theme and <a href='https://github.com/chriskempson'>@chriskempson</a>'s base16 Ocean syntax theme."
                 }
             ],
+            date: {
+                current: false
+            },
             tags: ["tool", "design"]
         },
         {
             id: "projectThemesST",
             name: "Themes (Sublime Text)",
-            date: {
-                active: true,
-                format: "MMMM y",
-                start: new Date(2014, 10),
-                end: new Date(),
-                status: "Active"
-            },
             details: [
                 {
                     text: "<strong>Fox</strong>: A UI + Syntax theme based on Mozilla's Firefox Developer Edition."
                 }
             ],
+            date: {
+                current: true
+            },
             tags: ["tool", "design"]
         },
         {
             id: "projectCasa",
             name: "Casa",
             link: "https://github.com/casa-",
-            date: {
-                active: false,
-                format: "MMMM y",
-                start: new Date(2014, 8),
-                end: new Date(),
-                status: "Inactive"
-            },
             details: [
                 {
                     text: "Conceived at Hack the North on September 19-21 2014, Casa is a platform that eases the subletting process for students, co-op workers, and young professionals"
@@ -245,13 +235,6 @@ angular.module('karel.controllers')
             id: "projectDimensions",
             name: "Dimensions",
             link: "https://github.com/karelvuong/dimensions",
-            date: {
-                active: false,
-                format: "MMMM y",
-                start: new Date(2014, 6),
-                end: new Date(),
-                status: "Inactive"
-            },
             details: [
                 {
                     text: "A tool for designers, brand managers, social media groups, and growth hackers to optimize their branding strategy and image by offering an interactive space to visualize campaigns and designs using up-to-date dimensions of products, devices, and social media websites."
