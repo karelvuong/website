@@ -27,7 +27,7 @@
                         <p class="secondary">{{job.position}}</p>
                         <p class="date">
                             {{job.date.start | date : "MMMM y"}}{{job.date.end ? ' &mdash; ' : ''}}{{job.date.current ? "Present" : job.date.end | date : "MMMM y"}}
-                            <span class="duration">({{ job.date.duration }} months)</span>
+                            <span class="duration" ng-if="job.date.duration">({{ job.date.duration }} months)</span>
                         </p>
                         <ul class="details list">
                             <li ng-repeat="detail in job.details">
@@ -59,9 +59,9 @@
 
                     <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
                         <p class="primary">{{project.name}} <a ng-href="{{project.link}}" ng-if="project.link"><i class="oi" data-glyph="link-intact"></i></a></p>
-                        <p class="date">
+                        <p class="date" ng-if="project.date">
                             {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
-                            <span class="duration">({{ project.date.status }})</span>
+                            <span class="duration" ng-if="project.date.status">({{ project.date.status }})</span>
                         </p>
                         <ul class="details list">
                             <li ng-repeat="detail in project.details">
@@ -157,19 +157,6 @@
                     <h2 class="resume_section_title"><i class="oi" data-glyph="code"></i> Skills</h2>
 
                     <div class="resume_sub-section row">
-                        <div class="col-tight col-xs-12">
-                            <p class="list_heading">Frameworks</p>
-
-                            <div class="resume_item" id="competenciesDevFrontEnd">
-                                <ul class="details list">
-                                    <li>Jekyll</li>
-                                    <li>Meteor</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="resume_sub-section row">
                         <div class="col-tight col-xs-6">
                             <p class="list_heading">Front End</p>
 
@@ -206,6 +193,19 @@
                                     <li>Node.js</li>
                                     <li>Java</li>
                                     <li>C++</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume_sub-section row">
+                        <div class="col-tight col-xs-12">
+                            <p class="list_heading">Frameworks</p>
+
+                            <div class="resume_item" id="competenciesDevFrontEnd">
+                                <ul class="details list">
+                                    <li>Jekyll</li>
+                                    <li>Meteor</li>
                                 </ul>
                             </div>
                         </div>
@@ -267,7 +267,6 @@
                                 <div class="resume_item" id="toolsDev">
                                     <ul class="details list">
                                         <li>Chrome Developer Tools</li>
-                                        <li>Sublime Text</li>
                                         <li>
                                             Tools
                                             <ul class="list list--sub">
