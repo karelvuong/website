@@ -59,7 +59,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "<strong>Toronto Youth Cabinet</strong>",
+                    text: "<strong><a href='http://thetyc.ca/'>Toronto Youth Cabinet - Website</a></strong>",
                     date: {
                         current: true,
                         start: new Date(2014, 6),
@@ -68,7 +68,7 @@ angular.module('karel.controllers')
                     },
                     list: [
                         {
-                            text: "Launched comprehensive rebranding campaign for the official youth advisory body to the City of Toronto by designing new logo, styleguide, and design material."
+                            text: "Launched rebranding campaign by designing new logo, styleguide, and design material."
                         }
                     ]
                 }
@@ -86,10 +86,21 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Defined brand identity across all print and digital mediums: corporate identity, logo, electronic pitch kit, promotional material, sponsor packages, and email campaigns"
+                    text: "<strong><a href='http://1MMM.org/feed'>#1MMM Feed</a></strong>",
+                        date: {
+                            current: false,
+                            start: new Date(2014, 2),
+                            end: new Date(2014, 6),
+                            duration: getMonthDifference(new Date(2014, 2), new Date(2014, 6))
+                        },
+                        list: [
+                            {
+                                text: "Developed interactive, content driven feed that aggregates musical moments hashtagged with #1MMM across all social media websites."
+                            }
+                        ]
                 },
                 {
-                    text: "Developed interactive, content driven feed to aggregate musical moments hashtagged with #1MMM on social media websites."
+                    text: "Defined brand identity across all print and digital mediums: corporate identity, logo, electronic pitch kit, promotional material, sponsor packages, and email campaigns"
                 },
                 {
                     text: "Oversaw digital outreach by developing concepts with viral potential to drive brand awareness and achieve visible social media presence through analytics and content strategy"
@@ -130,7 +141,10 @@ angular.module('karel.controllers')
         {
             id: "projectFlow",
             name: "Flow",
-            link: "/construction",
+            link: {
+                internal: true,
+                url: "/construction",
+            },
             date: {
                 active: true,
                 format: "MMMM y",
@@ -146,47 +160,11 @@ angular.module('karel.controllers')
             tags: ["web"]
         },
         {
-            id: "projectTYC",
-            name: "Toronto Youth Cabinet",
-            link: "http://theTYC.ca",
-            date: {
-                active: true,
-                format: "MMMM y",
-                start: new Date(2014, 6),
-                end: new Date(),
-                status: "Active"
-            },
-            details: [
-                {
-                    text: "The website for the official youth advisory body to the City of Toronto."
-                }
-            ],
-            tags: ["web"]
-        },
-        {
-            id: "project1MMM",
-            name: "1 Million Music Moments",
-            link: "http://1MMM.org",
-            date: {
-                active: true,
-                format: "MMMM y",
-                start: new Date(2014, 0),
-                end: new Date(),
-                status: "Active"
-            },
-            details: [
-                {
-                    text: "A feed that aggregates musical moments hashtagged with #1MMM on all social media networks."
-                }
-            ],
-            tags: ["web"]
-        },
-        {
             id: "projectThemesBrackets",
             name: "Themes (Brackets)",
             details: [
                 {
-                    text: "<strong>Fox</strong>: A syntax theme based on Mozilla's Firefox Developer Edition."
+                    text: "<strong><a href='https://github.com/karelvuong/fox-brackets--dark'>Fox</a></strong>: A syntax theme based on Mozilla's Firefox Developer Edition."
                 }
             ],
             date: {
@@ -199,7 +177,7 @@ angular.module('karel.controllers')
             name: "Themes (Chrome Developer Tools)",
             details: [
                 {
-                    text: "<strong>Chromegray</strong>: A theme based on <a href='https://github.com/kkga'>@kkga</a>'s Spacegray Sublime Text 2/3 UI theme and <a href='https://github.com/chriskempson'>@chriskempson</a>'s base16 Ocean syntax theme."
+                    text: "<strong><a href='https://github.com/karelvuong/chromegray'>Chromegray</a></strong>: A theme based on the popular Spacegray Sublime Text 2/3 UI theme."
                 }
             ],
             date: {
@@ -212,7 +190,7 @@ angular.module('karel.controllers')
             name: "Themes (Sublime Text)",
             details: [
                 {
-                    text: "<strong>Fox</strong>: A UI + Syntax theme based on Mozilla's Firefox Developer Edition."
+                    text: "<strong><a href='https://github.com/karelvuong/fox'>Fox</a></strong>: A UI + Syntax theme based on Mozilla's Firefox Developer Edition."
                 }
             ],
             date: {
@@ -223,25 +201,34 @@ angular.module('karel.controllers')
         {
             id: "projectCasa",
             name: "Casa",
-            link: "https://github.com/casa-",
+            link: {
+                internal: false,
+                url: "https://github.com/casa-"
+            },
             details: [
                 {
-                    text: "Conceived at Hack the North on September 19-21 2014, Casa is a platform that eases the subletting process for students, co-op workers, and young professionals"
+                    text: "A platform that eases the subletting process for students, co-op workers, and young professionals."
+                },
+                {
+                    text: "Conceived at Hack the North 2014 in 36 hours."
                 }
             ],
             tags: ["web", "hackathon"]
         },
-        {
-            id: "projectDimensions",
-            name: "Dimensions",
-            link: "https://github.com/karelvuong/dimensions",
-            details: [
-                {
-                    text: "A tool for designers, brand managers, social media groups, and growth hackers to optimize their branding strategy and image by offering an interactive space to visualize campaigns and designs using up-to-date dimensions of products, devices, and social media websites."
-                }
-            ],
-            tags: ["web"]
-        },
+        // {
+        //     id: "projectDimensions",
+        //     name: "Dimensions",
+        //     link: {
+        //         internal: false,
+        //         url: "https://github.com/karelvuong/dimensions"
+        //     },
+        //     details: [
+        //         {
+        //             text: "A tool for designers, brand managers, social media groups, and growth hackers to optimize their branding strategy and image by offering an interactive space to visualize campaigns and designs using up-to-date dimensions of products, devices, and social media websites."
+        //         }
+        //     ],
+        //     tags: ["web"]
+        // },
         {
             id: "projectCuro",
             name: "Curo",
@@ -254,7 +241,10 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Conceived at the RBC Next Great Innovator Challenge 2014, Curo is a platform that leverages client and transaction data to offer intelligent personalization and actionable signal data, changing the dynamics of the current RBC retail-client relationship from one that is reactive in nature to proactive, and to one that is a real-time relationship."
+                    text: "A business intelligence and analytics platform that translates client and transactional data into actionable signal data to offer recommendations for account managers and financial service representatives."
+                },
+                {
+                    text: "Conceived in 36 hours at the RBC Next Great Innovator Challenge 2014."
                 }
             ],
             tags: ["web", "hackathon"]
@@ -262,7 +252,10 @@ angular.module('karel.controllers')
         {
             id: "projectClinico",
             name: "Clinico",
-            link: "http://challengepost.com/software/clinico",
+            link: {
+                internal: false,
+                url: "http://challengepost.com/software/clinico"
+            }   ,
             date: {
                 active: false,
                 format: "MMMM y",
@@ -271,7 +264,10 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Conceived at the Eli Lilly Clinical Trial Visualization Redesign Challenge, Clinico is a mobile application that transforms clinical trial protocols into interactive, engaging, patient-focused platforms for discovering and understanding clinical research and data."
+                    text: "An iOS prototype that translates clinical trial protocols into guided, patient-centric interfaces."
+                },
+                {
+                    text: "Conceived at the Eli Lilly Clinical Trial Visualization Redesign Challenge."
                 }
             ],
             tags: ["design", "mobile", "contest"]

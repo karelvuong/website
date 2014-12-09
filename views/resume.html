@@ -31,7 +31,9 @@
                         </p>
                         <ul class="details list">
                             <li ng-repeat="detail in job.details">
-                                <p><span ng-bind-html="detail.text"></span> <span ng-if="detail.date">({{detail.date.start | date : "MMMM y"}}{{detail.date.end ? ' &mdash; ' : ''}}{{detail.date.current ? "Present" : detail.date.end | date : "MMMM y"}})</span></p>
+                                <p>
+                                    <span ng-bind-html="detail.text"></span> <span ng-if="detail.date">({{detail.date.start | date : "MMMM y"}}{{detail.date.end ? ' &mdash; ' : ''}}{{detail.date.current ? "Present" : detail.date.end | date : "MMMM y"}})</span>
+                                </p>
                                 <ul class="list" ng-if="detail.list">
                                     <li ng-repeat="subDetail in detail.list" ng-bind-html="subDetail.text"></li>
                                 </ul>
@@ -58,7 +60,7 @@
                     </div>
 
                     <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
-                        <p class="primary">{{project.name}} <a ng-href="{{project.link}}" ng-if="project.link"><i class="oi" data-glyph="link-intact"></i></a></p>
+                        <p class="primary">{{project.name}} <a ng-href="{{project.link.url}}" ng-if="project.link"><i class="oi" ng-if="!project.link.internal" data-glyph="external-link"></i><i class="oi" ng-if="project.link.internal" data-glyph="link-intact"></i></a></p>
                         <p class="date" ng-if="project.date">
                             {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
                             <span class="duration" ng-if="project.date.status">({{ project.date.status }})</span>
@@ -67,7 +69,9 @@
                             <li ng-repeat="detail in project.details">
                                 <p ng-bind-html="detail.text"></p>
                                 <ul class="list" ng-if="detail.list">
-                                    <li ng-repeat="subDetail in detail.list"><p ng-bind-html="subDetail.text"></p></li>
+                                    <li ng-repeat="subDetail in detail.list">
+                                        <p ng-bind-html="subDetail.text"></p>
+                                    </li>
                                 </ul>
                             </li>
                        </ul>
@@ -95,7 +99,8 @@
                         <ul class="details list">
                             <li>Trinity Entrance Scholarship for avg. of 95%</li>
                             <li>Queen Elizabeth II Aiming for the Top Scholarship</li>
-                            <li>Professional Experience Year</li>
+                            <li>Professional Experience Year (PEY)</li>
+                            <li>Work Abroad Program (WAP)</li>
                         </ul>
                     </div>
                 </div>
@@ -108,7 +113,7 @@
                     <h2 class="resume_section_title"><i class="oi" data-glyph="people"></i> Community</h2>
 
                     <div class="resume_item" id="volunteerEdAppHack">
-                        <p class="primary">EdAppHack 2014 <a ng-href="http://edapphack.com"><i class="oi" data-glyph="link-intact"></i></a></p>
+                        <p class="primary">EdAppHack 2014 <a ng-href="http://edapphack.com"><i class="oi" data-glyph="external-link"></i></a></p>
                         <p class="secondary">Mentor</p>
                         <p class="date">October 2014</p>
                         <ul class="details list">
