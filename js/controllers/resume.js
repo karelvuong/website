@@ -12,7 +12,9 @@ angular.module('karel.controllers')
             location: "Redwood City, CA",
             date: {
                 current: false,
-                start: new Date(2015, 0)
+                future: true,
+                start: new Date(2015, 0),
+                end: new Date(2015, 3)
             }
         },
         {
