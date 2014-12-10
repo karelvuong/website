@@ -244,7 +244,7 @@ angular.module('karel.controllers')
                     text: "A business intelligence and analytics platform that translates client and transactional data into actionable signal data to offer recommendations for account managers and financial service representatives."
                 },
                 {
-                    text: "Conceived in 36 hours at the RBC Next Great Innovator Challenge 2014."
+                    text: "Conceived at the RBC Next Great Innovator Challenge 2014 in 36 hours."
                 }
             ],
             tags: ["web", "hackathon"]
