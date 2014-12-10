@@ -36,14 +36,6 @@ angular.module('karel', [
       }
     }
   })
-  .state('about', {
-    url: "/about",
-    views: {
-      "site": {
-        templateUrl: "/views/about.html"
-      }
-    }
-  })
   .state('resume', {
     url: "/resume",
     views: {
@@ -51,13 +43,5 @@ angular.module('karel', [
         templateUrl: "/views/resume.html"
       }
     }
-  })
-  .state('portfolio.casa', {
-    url: "/casa",
-    templateUrl: "/views/portfolio/casa.html"
-  })
-  .state('portfolio.flow', {
-    url: "/flow",
-    templateUrl: "/views/portfolio/flow.html"
   })
 });
