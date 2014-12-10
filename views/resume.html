@@ -28,6 +28,7 @@
                         <p class="date">
                             {{job.date.start | date : "MMMM y"}}{{job.date.end ? ' &mdash; ' : ''}}{{job.date.current ? "Present" : job.date.end | date : "MMMM y"}}
                             <span class="duration" ng-if="job.date.duration">({{ job.date.duration }} months)</span>
+                            <span class="duration" ng-if="job.date.future">(Future)</span>
                         </p>
                         <ul class="details list">
                             <li ng-repeat="detail in job.details">
@@ -97,7 +98,7 @@
                             </p>
                         </header>
                         <ul class="details list">
-                            <li>Trinity Entrance Scholarship for avg. of 95%</li>
+                            <li>Trinity Entrance Scholarship</li>
                             <li>Queen Elizabeth II Aiming for the Top Scholarship</li>
                             <li>Professional Experience Year (PEY)</li>
                             <li>Work Abroad Program (WAP)</li>
@@ -175,12 +176,7 @@
                                             <li>LESS</li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        JavaScript
-                                        <ul class="list list--sub">
-                                            <li>AngularJS</li>
-                                        </ul>
-                                    </li>
+                                    <li>JavaScript</li>
                                 </ul>
                             </div>
                         </div>
@@ -209,6 +205,7 @@
 
                             <div class="resume_item" id="competenciesDevFrontEnd">
                                 <ul class="details list">
+                                    <li>AngularJS</li>
                                     <li>Jekyll</li>
                                     <li>Meteor</li>
                                 </ul>
