@@ -29,10 +29,13 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Led efforts for the rebuild of an enterprise-wide business process management and modelling platform used by over 3,000 active employees."
+                    text: "Led efforts for rebuild of the business process management and modelling platform used by over 3,000 active employees."
                 },
                 {
                     text: "Modernized platform's core architecture and technology stack to move away from strictly Oracle based to a three-tiered architecture using AngularJS, Python, MongoDB and Oracle."
+                },
+                {
+                    text: "Conceputalized Lean Six Sigma Green Belt project > reducing cost by deactivate unused applications (make this sound better) > redesigning workflows to be more efficient > improving processes."
                 }
             ]
         },
@@ -47,6 +50,9 @@ angular.module('karel.controllers')
                 duration: getMonthDifference(new Date(2014, 0), new Date(2014, 6))
             },
             details: [
+                {
+                    text: "Developed an administrative tool to offer a visual interface for supporting and maintaining platform applications, reducing <mark>lead time</mark> and "
+                }
             ]
         },
         {
