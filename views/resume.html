@@ -62,6 +62,7 @@
 
                     <div class="resume_item" id="{{project.id}}" ng-repeat="project in projects | filter: (showOnlyActive ? showOnlyActive : null)">
                         <p class="primary">{{project.name}} <a ng-href="{{project.link.url}}" ng-if="project.link"><i class="oi" ng-if="!project.link.internal" data-glyph="external-link"></i><i class="oi" ng-if="project.link.internal" data-glyph="link-intact"></i></a></p>
+                        <p class="secondary">{{project.client}}</p>
                         <p class="date" ng-if="project.date">
                             {{project.date.start | date : project.date.format}}{{project.date.end ? ' &mdash; ' : ''}}{{project.date.active ? "Present" : project.date.end | date : project.date.format}}
                             <span class="duration" ng-if="project.date.status">({{ project.date.status }})</span>
@@ -137,7 +138,7 @@
                     </div>
 
                     <div class="resume_item" id="awardEliLilly">
-                        <p class="primary">Eli Lilly: Clinical Trial Visualization Redesign</p>
+                        <p class="primary">Eli Lilly - Clinical Trial Visualization Redesign</p>
                         <p class="secondary">Honourable Mention</p>
                         <p class="date">November 2013</p>
                         <ul class="details list">

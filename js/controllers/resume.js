@@ -33,9 +33,6 @@ angular.module('karel.controllers')
                 },
                 {
                     text: "Modernized platform's core architecture and technology stack to move away from strictly Oracle based to a three-tiered architecture using AngularJS, Python, MongoDB and Oracle."
-                },
-                {
-                    text: "Conceputalized Lean Six Sigma Green Belt project > reducing cost by deactivate unused applications (make this sound better) > redesigning workflows to be more efficient > improving processes."
                 }
             ]
         },
@@ -51,7 +48,10 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Developed an administrative tool to offer a visual interface for supporting and maintaining platform applications, reducing <mark>lead time</mark> and "
+                    text: "Initiated Lean Six Sigma Green Belt project to redesign and improve workflows for marketing, manufacturing, reliability, and software organizations."
+                },
+                {
+                    text: "Developed administrative tool to allow platform customers to visually interface with the database, offsetting support and maintenance responsibilities from the core team."
                 }
             ]
         },
@@ -130,10 +130,10 @@ angular.module('karel.controllers')
                     text: "Designed and developed apps for BlackBerry 10 using the Native SDK with the Cascades UI Framework (C++, QT/QML):",
                     list: [
                         {
-                            text: "<strong>cella</strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
+                            text: "<strong><a href='http://bit.ly/cellaBBW'>Cella</a></strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
                         },
                         {
-                            text: "<strong>cooler</strong> (BfB Certified): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
+                            text: "<strong><a href='http://bit.ly/coolerbb'>Cooler</a></strong> (BfB Certified): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
                         }
                     ]
                 }
@@ -149,6 +149,7 @@ angular.module('karel.controllers')
         {
             id: "projectFlow",
             name: "Flow",
+            client: "BlackBerry",
             link: {
                 internal: true,
                 url: "/construction",
@@ -178,7 +179,7 @@ angular.module('karel.controllers')
             date: {
                 current: true
             },
-            tags: ["tool", "design"]
+            tags: ["design", "tool"]
         },
         {
             id: "projectThemesChrome",
@@ -191,7 +192,7 @@ angular.module('karel.controllers')
             date: {
                 current: false
             },
-            tags: ["tool", "design"]
+            tags: ["design", "tool"]
         },
         {
             id: "projectThemesST",
@@ -204,11 +205,12 @@ angular.module('karel.controllers')
             date: {
                 current: true
             },
-            tags: ["tool", "design"]
+            tags: ["design", "tool"]
         },
         {
             id: "projectCasa",
             name: "Casa",
+            client: "Hack the North 2014",
             link: {
                 internal: false,
                 url: "https://github.com/casa-"
@@ -221,7 +223,7 @@ angular.module('karel.controllers')
                     text: "Conceived at Hack the North 2014 in 36 hours."
                 }
             ],
-            tags: ["web", "hackathon"]
+            tags: ["hackathon", "web"]
         },
         // {
         //     id: "projectDimensions",
@@ -240,6 +242,7 @@ angular.module('karel.controllers')
         {
             id: "projectCuro",
             name: "Curo",
+            client: "RBC Royal Bank - Next Great Innovator",
             date: {
                 active: false,
                 format: "MMMM d, y",
@@ -255,11 +258,12 @@ angular.module('karel.controllers')
                     text: "Conceived at the RBC Next Great Innovator Challenge 2014 in 36 hours."
                 }
             ],
-            tags: ["web", "hackathon"]
+            tags: ["hackathon", "web"]
         },
         {
             id: "projectClinico",
             name: "Clinico",
+            client: "Eli Lilly - Clinical Trial Visualization Redesign",
             link: {
                 internal: false,
                 url: "http://challengepost.com/software/clinico"
@@ -278,7 +282,7 @@ angular.module('karel.controllers')
                     text: "Conceived at the Eli Lilly Clinical Trial Visualization Redesign Challenge."
                 }
             ],
-            tags: ["design", "mobile", "contest"]
+            tags: ["contest", "design", "mobile"]
         }
     ]
 
