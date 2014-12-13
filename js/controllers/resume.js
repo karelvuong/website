@@ -108,10 +108,10 @@ angular.module('karel.controllers')
                         ]
                 },
                 {
-                    text: "Defined brand identity across all print and digital mediums: corporate identity, logo, electronic pitch kit, promotional material, sponsor packages, and email campaigns"
+                    text: "Defined brand identity across all print and digital mediums: corporate identity, logo, electronic pitch kit, promotional material, sponsor packages, and email campaigns."
                 },
                 {
-                    text: "Oversaw digital outreach by developing concepts with viral potential to drive brand awareness and achieve visible social media presence through analytics and content strategy"
+                    text: "Oversaw digital outreach by developing concepts with viral potential to drive brand awareness and achieve visible social media presence through analytics and content strategy."
                 }
             ]
         },
@@ -130,10 +130,10 @@ angular.module('karel.controllers')
                     text: "Designed and developed apps for BlackBerry 10 using the Native SDK with the Cascades UI Framework (C++, QT/QML):",
                     list: [
                         {
-                            text: "<strong><a href='http://bit.ly/cellaBBW'>Cella</a></strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
+                            text: "<strong><a href='http://bit.ly/karel-cella-bbw'>Cella</a></strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
                         },
                         {
-                            text: "<strong><a href='http://bit.ly/coolerbb'>Cooler</a></strong> (BfB Certified): a designer tool that allows colour schemes and palettes to be created using algorithms that perform real-time colour manipulations based on RGB and HSV values"
+                            text: "<strong><a href='http://bit.ly/karel-cooler-bbw'>Cooler</a></strong> (BfB Certified): an app for designers that algorithmically generates colour schemes and palettes through real-time colour manipulation based on RGB and HSV values."
                         }
                     ]
                 }
@@ -252,7 +252,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "A business intelligence and analytics platform that translates client and transactional data into actionable signal data to offer recommendations for account managers and financial service representatives."
+                    text: "A business intelligence and analytics prototype platform that translates client and transactional data into actionable signal data to offer recommendations for account managers and financial service representatives."
                 },
                 {
                     text: "Conceived at the RBC Next Great Innovator Challenge 2014 in 36 hours."

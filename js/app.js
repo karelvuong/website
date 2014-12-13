@@ -44,4 +44,12 @@ angular.module('karel', [
       }
     }
   })
+  .state('work-flow', {
+    url: "/n/",
+    views: {
+      "site": {
+        templateUrl: "/views/resume.html"
+      }
+    }
+  })
 });
