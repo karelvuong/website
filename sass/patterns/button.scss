@@ -1,11 +1,11 @@
 button {
-  background-color: #000;
-  border: none;
-  color: #fff;
+  background-color: #F8F9F9;
+  border: 1px solid #E0E8EF;
+  color: #232A2E;
   cursor: pointer;
   font: {
     family: "Open Sans";
-    size: 16px;
+    size: 12px;
     weight: 700;
   }
   margin-top: 20px;
@@ -17,7 +17,8 @@ button {
   }
 
   &:hover {
-    background-color: #000;
+    background-color: #232A2E;
+    border-color: #232A2E;
     color: #fff;
   }
 }
