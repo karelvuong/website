@@ -279,7 +279,10 @@ angular.module('karel.controllers')
                     text: "An iOS prototype that translates clinical trial protocols into guided, patient-centric interfaces."
                 },
                 {
-                    text: "Conceived at the Eli Lilly Clinical Trial Visualization Redesign Challenge."
+                    text: "Designed for the Eli Lilly Clinical Trial Visualization Redesign Challenge."
+                },
+                {
+                    text: "Awarded with an honourable mention and a $3,000 cash prize."
                 }
             ],
             tags: ["contest", "design", "mobile"]
