@@ -180,6 +180,8 @@
 
 
 .page--work {
+    padding: 80px 40px;
+
     &--flow {
         .accent-clr--primary {
             color: #1C6A96;
@@ -188,11 +190,7 @@
 
     .section {
         margin: 0 auto;
-        max-width: 720px;
-
-        .inner {
-            padding: 0 40px;
-        }
+        max-width: 680px;
 
         & + .section:before {
             content: '';
@@ -201,93 +199,6 @@
             height: 3px;
             margin: 80px auto;
             width: 80px
-        }
-    }
-
-    .section--toc {
-        padding: 80px 0;
-
-        ol {
-            color: #aaa;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        li {}
-
-        a {
-            color: #aaa;
-            letter-spacing: 4px;
-            margin-left: 20px;
-
-            &:hover {
-                color: #000;
-            }
-        }
-    }
-
-    .section--headline {
-        padding: 80px 0;
-        position: relative;
-
-        & + .section:before {
-            margin: 0 auto 80px;
-        }
-    }
-
-    .text--primary {
-        p {
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 40px;
-        }
-    }
-
-    .text--secondary {
-        p {
-            color: #555;
-            font-size: 20px;
-            line-height: 35px;
-            margin-bottom: 0;
-
-            & + p {
-                margin-top: 40px;
-            }
-
-            & + ol,
-            & + ul {
-                margin: 80px 0;
-
-                .list--header {
-                    margin-bottom: 20px;
-                }
-
-                .list--footer {
-                    color: #999;
-                    font-size: 12px;
-                    line-height: 16px;
-                    margin-top: 10px;
-                }
-            }
-        }
-
-        ul, ol {
-            li {
-                font-size: 16px;
-                line-height: 25px;
-
-                & + li {
-                    margin-top: 20px;
-                }
-            }
-        }
-    }
-
-    .text--tbc {
-        p {
-            color: #ddd;
-            font-size: 30px;
         }
     }
 }
