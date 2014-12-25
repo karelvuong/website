@@ -22,10 +22,10 @@ angular.module('karel.controllers')
             position: "Product Manager Intern, Analytics R&D - Quality",
             location: "Waterloo, ON",
             date: {
-                current: true,
+                current: false,
                 start: new Date(2014, 6),
-                end: new Date(),
-                duration: getMonthDifference(new Date(2014, 6), new Date())
+                end: new Date(2014, 11),
+                duration: getMonthDifference(new Date(2014, 6), new Date(2014, 11))
             },
             details: [
                 {
