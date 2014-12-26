@@ -35,6 +35,14 @@ $resume-sub-section-padding: 20px;
 
 .resume_column {
     padding: 0;
+
+    @media (max-width: $breakpoint-md-max){
+        & + & {
+        border-top: 1px solid #efefef;
+            margin-top: 60px;
+            padding-top: 60px;
+        }
+    }
 }
 
 .resume_section {
