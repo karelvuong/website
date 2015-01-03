@@ -91,7 +91,7 @@
 
                     <div class="resume_item" id="educationUofT">
                         <header>
-                            <p class="primary">University of Toronto, Trinity College<span>, Toronto ON</span></p>
+                            <p class="primary">University of Toronto - Trinity College<span>, Toronto ON</span></p>
                             <p class="secondary">Computer Science, B.Sc.</p>
                             <p class="date">
                                 September 2011 &mdash; Present
@@ -112,15 +112,26 @@
 
 
                 <div class="resume_section">
-                    <h2 class="resume_section_title"><i class="oi" data-glyph="people"></i> Community</h2>
+                    <h2 class="resume_section_title"><i class="oi" data-glyph="people"></i> Volunteer</h2>
 
-                    <div class="resume_item" id="volunteerEdAppHack">
-                        <p class="primary">EdAppHack 2014 <a ng-href="http://edapphack.com"><i class="oi" data-glyph="external-link"></i></a></p>
-                        <p class="secondary">Mentor</p>
-                        <p class="date">October 2014</p>
+                    <div class="resume_item" ng-repeat="volunteer in volunteering">
+                        <p class="primary">{{volunteer.company}}</p>
+                        <p class="secondary">{{volunteer.position}}</p>
+                        <p class="date">
+                            {{volunteer.date.start | date : "MMMM y"}}{{volunteer.date.end ? ' &mdash; ' : ''}}{{volunteer.date.current ? "Present" : volunteer.date.end | date : "MMMM y"}}
+                            <span class="duration" ng-if="volunteer.date.duration">({{ volunteer.date.duration }} months)</span>
+                            <span class="duration" ng-if="volunteer.date.future">(Future)</span>
+                        </p>
                         <ul class="details list">
-                            <li>Mentored group received an honourable mention for their application prototype, TimeLine.</li>
-                        </ul>
+                            <li ng-repeat="detail in volunteer.details">
+                                <p>
+                                    <span ng-bind-html="detail.text"></span> <span ng-if="detail.date">({{detail.date.start | date : "MMMM y"}}{{detail.date.end ? ' &mdash; ' : ''}}{{detail.date.current ? "Present" : detail.date.end | date : "MMMM y"}})</span>
+                                </p>
+                                <ul class="list" ng-if="detail.list">
+                                    <li ng-repeat="subDetail in detail.list" ng-bind-html="subDetail.text"></li>
+                                </ul>
+                            </li>
+                       </ul>
                     </div>
                 </div>
 
