@@ -48,10 +48,10 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "Initiated Lean Six Sigma Green Belt project to redesign and improve workflows for marketing, manufacturing, reliability, and software organizations."
+                    text: "Conceptualized Lean Six Sigma Green Belt project to redesign and improve processes for marketing, manufacturing, reliability, and software development organizations."
                 },
                 {
-                    text: "Developed administrative tool to allow platform customers to visually interface with the database, offsetting support and maintenance responsibilities from the core team."
+                    text: "Developed administrative tool that acted as a database front end client to allow core team and customers to perform platform support, improving support response time and accelerating onboarding process for new hires."
                 }
             ]
         },
@@ -60,25 +60,69 @@ angular.module('karel.controllers')
             position: "Consultant",
             location: "Toronto, ON",
             date: {
-                current: true,
+                current: false,
                 start: new Date(2014, 6),
-                end: new Date(),
-                duration: getMonthDifference(new Date(2014, 6), new Date())
+                end: new Date(2015, 0),
+                duration: getMonthDifference(new Date(2014, 6), new Date(2015, 0))
             },
             details: [
                 {
                     text: "<strong><a href='http://thetyc.ca/'>Toronto Youth Cabinet - Website</a></strong>",
                     date: {
-                        current: true,
+                        current: false,
                         start: new Date(2014, 6),
-                        end: new Date(),
-                        duration: getMonthDifference(new Date(2014, 6), new Date())
+                        end: new Date(2015, 0),
+                        duration: getMonthDifference(new Date(2014, 6), new Date(2015, 0))
                     },
                     list: [
                         {
                             text: "Launched rebranding campaign by designing new logo, styleguide, and design material."
                         }
                     ]
+                }
+            ]
+        },
+        {
+            company: "Independent",
+            position: "Mobile Application Developer (BlackBerry 10)",
+            location: "Toronto, ON",
+            date: {
+                current: false,
+                start: new Date(2013, 8),
+                end: new Date(2014, 0),
+                duration: getMonthDifference(new Date(2013, 8), new Date(2014, 0))
+            },
+            details: [
+                {
+                    text: "Designed and developed apps for BlackBerry 10 using the Native SDK with the Cascades UI Framework (C++, QT/QML):",
+                    list: [
+                        {
+                            text: "<strong><a href='http://bit.ly/karel-cella-bbw'>Cella</a></strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
+                        },
+                        {
+                            text: "<strong><a href='http://bit.ly/karel-cooler-bbw'>Cooler</a></strong> (BfB Certified): an app for designers that algorithmically generates colour schemes and palettes through real-time colour manipulation based on RGB and HSV values."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+
+
+
+
+
+
+    $scope.volunteering = [
+        {
+            company: "EdAppHack 2014",
+            position: "Mentor",
+            date: {
+                start: new Date(2014, 9)
+            },
+            details: [
+                {
+                    text: "Mentored group of secondary school students received an honourable mention for their application prototype, TimeLine."
                 }
             ]
         },
@@ -114,30 +158,6 @@ angular.module('karel.controllers')
                     text: "Oversaw digital outreach by developing concepts with viral potential to drive brand awareness and achieve visible social media presence through analytics and content strategy."
                 }
             ]
-        },
-        {
-            company: "Independent",
-            position: "Mobile Application Developer (BlackBerry 10)",
-            location: "Toronto, ON",
-            date: {
-                current: false,
-                start: new Date(2013, 8),
-                end: new Date(2014, 0),
-                duration: getMonthDifference(new Date(2013, 8), new Date(2014, 0))
-            },
-            details: [
-                {
-                    text: "Designed and developed apps for BlackBerry 10 using the Native SDK with the Cascades UI Framework (C++, QT/QML):",
-                    list: [
-                        {
-                            text: "<strong><a href='http://bit.ly/karel-cella-bbw'>Cella</a></strong> (BfB Certified): a home inventory management app that securely stores information of possessions in a three-tiered organizational system."
-                        },
-                        {
-                            text: "<strong><a href='http://bit.ly/karel-cooler-bbw'>Cooler</a></strong> (BfB Certified): an app for designers that algorithmically generates colour schemes and palettes through real-time colour manipulation based on RGB and HSV values."
-                        }
-                    ]
-                }
-            ]
         }
     ]
 
@@ -147,28 +167,6 @@ angular.module('karel.controllers')
 
     $scope.projects = [
         {
-            id: "projectFlow",
-            name: "Flow",
-            client: "BlackBerry",
-            link: {
-                internal: true,
-                url: "/construction",
-            },
-            date: {
-                active: true,
-                format: "MMMM y",
-                start: new Date(2014, 4),
-                end: new Date(),
-                status: "Active"
-            },
-            details: [
-                {
-                    text: "An enterprise-wide business process management and modelling platform used by over 3,000 active employees within BlackBerry worldwide"
-                }
-            ],
-            tags: ["web"]
-        },
-        {
             id: "projectThemesBrackets",
             name: "Themes (Brackets)",
             details: [
@@ -177,7 +175,10 @@ angular.module('karel.controllers')
                 }
             ],
             date: {
-                current: true
+                active: true,
+                format: "MMMM y",
+                start: new Date(2014, 10),
+                end: new Date()
             },
             tags: ["design", "tool"]
         },
@@ -190,7 +191,7 @@ angular.module('karel.controllers')
                 }
             ],
             date: {
-                current: false
+                active: false
             },
             tags: ["design", "tool"]
         },
@@ -199,13 +200,37 @@ angular.module('karel.controllers')
             name: "Themes (Sublime Text)",
             details: [
                 {
-                    text: "<strong><a href='https://github.com/karelvuong/fox'>Fox</a></strong>: A UI + Syntax theme based on Mozilla's Firefox Developer Edition."
+                    text: "<strong><a href='https://github.com/karelvuong/fox'>Fox</a></strong>: A UI + syntax theme based on Mozilla's Firefox Developer Edition."
                 }
             ],
             date: {
-                current: true
+                active: true,
+                format: "MMMM y",
+                start: new Date(2014, 10),
+                end: new Date()
             },
             tags: ["design", "tool"]
+        },
+        {
+            id: "projectFlow",
+            name: "Flow",
+            client: "BlackBerry",
+            link: {
+                internal: true,
+                url: "/construction"
+            },
+            details: [
+                {
+                    text: "An enterprise-wide business process management and modelling platform used by over 3,000 active employees within BlackBerry worldwide"
+                }
+            ],
+            date: {
+                active: false,
+                format: "MMMM y",
+                start: new Date(2014, 6),
+                end: new Date(2014, 11)
+            },
+            tags: ["web"]
         },
         {
             id: "projectCasa",
@@ -214,6 +239,12 @@ angular.module('karel.controllers')
             link: {
                 internal: false,
                 url: "https://github.com/casa-"
+            },
+            date: {
+                active: false,
+                format: "MMMM y",
+                start: new Date(2014, 8),
+                status: "Complete"
             },
             details: [
                 {
@@ -225,20 +256,6 @@ angular.module('karel.controllers')
             ],
             tags: ["hackathon", "web"]
         },
-        // {
-        //     id: "projectDimensions",
-        //     name: "Dimensions",
-        //     link: {
-        //         internal: false,
-        //         url: "https://github.com/karelvuong/dimensions"
-        //     },
-        //     details: [
-        //         {
-        //             text: "A tool for designers, brand managers, social media groups, and growth hackers to optimize their branding strategy and image by offering an interactive space to visualize campaigns and designs using up-to-date dimensions of products, devices, and social media websites."
-        //         }
-        //     ],
-        //     tags: ["web"]
-        // },
         {
             id: "projectCuro",
             name: "Curo",
@@ -252,7 +269,7 @@ angular.module('karel.controllers')
             },
             details: [
                 {
-                    text: "A business intelligence and analytics prototype platform that translates client and transactional data into actionable signal data to offer recommendations for account managers and financial service representatives."
+                    text: "A business intelligence and analytics platform prototype that translates client and transactional data into actionable signal data to offer recommendations for account managers and financial service representatives."
                 },
                 {
                     text: "Conceived at the RBC Next Great Innovator Challenge 2014 in 36 hours."
@@ -282,7 +299,7 @@ angular.module('karel.controllers')
                     text: "Designed for the Eli Lilly Clinical Trial Visualization Redesign Challenge."
                 },
                 {
-                    text: "Awarded with an honourable mention and a $3,000 cash prize."
+                    text: "Awarded with <a href='http://portal.lillycoi.com/2013/11/14/winners-selected-in-clinical-trial-visualization-redesign-challenge/' target='_blank'>honourable mention</a> and a $3,000 cash prize."
                 }
             ],
             tags: ["contest", "design", "mobile"]
