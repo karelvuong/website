@@ -44,11 +44,11 @@ angular.module('karel', [
       }
     }
   })
-  .state('portfolio-flow', {
-    url: "/portfolio/flow",
+  .state('w-flow', {
+    url: "/w/flow",
     views: {
       "site": {
-        templateUrl: "/views/portfolio/flow.html"
+        templateUrl: "/views/w/flow.html"
       }
     }
   })
