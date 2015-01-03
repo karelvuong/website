@@ -42,6 +42,10 @@ body {
           box-sizing: border-box;
 }
 
+
+::-moz-selection { background-color: #F9F09F; }
+::selection      { background-color: #F9F09F; }
+
 /* -------------------------------------------------------------------------
  * TYPOGRAPHY
  * ------------------------------------------------------------------------- */
