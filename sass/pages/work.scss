@@ -180,8 +180,6 @@
 
 
 .page--work {
-    padding: 80px 40px;
-
     &--flow {
         .accent-clr--primary {
             color: #1C6A96;
@@ -190,15 +188,24 @@
 
     .section {
         margin: 0 auto;
-        max-width: 680px;
 
-        & + .section:before {
-            content: '';
-            background-color: #ddd;
-            display: block;
-            height: 3px;
-            margin: 80px auto;
-            width: 80px
+        .inner {
+            margin: 0 40px;
+        }
+
+        & + .section--text {
+            border-top: 1px solid #efefef;
+            margin-top: 60px;
+            padding-top: 60px;
+        }
+
+        &--cover {
+            background-color: #168EEA;
+            padding: 40px;
+        }
+
+        &--text {
+            max-width: $page-width--max;
         }
     }
 }
