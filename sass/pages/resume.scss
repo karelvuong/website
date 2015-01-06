@@ -1,28 +1,9 @@
 $resume-section-padding: 60px;
 $resume-sub-section-padding: 20px;
 
-.page--resume {}
-
-.resume_header {
-    padding: 80px 40px;
-    text-align: center;
-
-    .heading_text--primary,
-    .heading_text--secondary {
-        line-height: 1;
-    }
-
-    .heading_text--primary {
-        font-size: 40px;
-        font-weight: 700;
-    }
-
-    .heading_text--secondary {
-        font-size: 16px;
-    }
-
-    @media (max-width: $breakpoint-md-max){
-        text-align: left;
+.page--resume {
+    .section--headline {
+        text-align: center;
     }
 }
 

@@ -185,27 +185,4 @@
             color: #1C6A96;
         }
     }
-
-    .section {
-        margin: 0 auto;
-
-        .inner {
-            margin: 0 40px;
-        }
-
-        & + .section--text {
-            border-top: 1px solid #efefef;
-            margin-top: 60px;
-            padding-top: 60px;
-        }
-
-        &--cover {
-            background-color: #168EEA;
-            padding: 40px;
-        }
-
-        &--text {
-            max-width: $page-width--max;
-        }
-    }
 }

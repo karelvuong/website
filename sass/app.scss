@@ -16,6 +16,7 @@
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/sidebar";
+@import "layouts/page";
 
 @import "pages/portfolio";
 @import "pages/resume";
@@ -50,35 +51,25 @@ body {
  * TYPOGRAPHY
  * ------------------------------------------------------------------------- */
 h1, h2, h3, h4 {
-    font-weight: 700;
     margin: 0;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: 700;
     line-height: 1.6125;
-    margin: 40px 0 20px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.4125;
-    margin: 20px 0 10px;
-}
-
-h4 {
-    margin-bottom: 0.5em;
+    margin-bottom: 10px;
 }
 
 p {
     line-height: 30px;
     margin-bottom: 10px;
-
-    &.p1 {
-        font-size: 1.4125em;
-        line-height: 1.42857em;
-        margin: 2em 0;
-    }
 }
 
 a {
